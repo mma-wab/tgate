@@ -1,4 +1,4 @@
-import { useMemo, type ReactNode } from 'react';
+import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
 import {
@@ -7,13 +7,9 @@ import {
   Clock3,
   Copy,
   Gauge,
-  Layers,
-  ListChecks,
-  Lock,
   MapPin,
   RefreshCw,
   Send,
-  Server,
   Share2,
   ShieldAlert,
   ShieldCheck,
@@ -80,61 +76,9 @@ function FeaturedStatusBadge({ status }: { status: FeaturedStatus }) {
   );
 }
 
-function Metric({
-  icon,
-  label,
-  value,
-  valueTitle,
-  children,
-}: {
-  icon: ReactNode;
-  label: string;
-  value: string;
-  valueTitle?: string;
-  children?: ReactNode;
-}) {
-  return (
-    <div className="min-w-0">
-      <dt className="flex items-center gap-1 text-[10px] font-medium uppercase tracking-wide text-muted">
-        <span className="text-muted/80" aria-hidden="true">
-          {icon}
-        </span>
-        {label}
-      </dt>
-      <dd className="num mt-1 text-[13px] font-semibold text-ink" title={valueTitle}>
-        {value}
-      </dd>
-      {children}
-    </div>
-  );
-}
-
-function CardAction({
-  icon,
-  label,
-  onClick,
-}: {
-  icon: ReactNode;
-  label: string;
-  onClick: () => void;
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      title={label}
-      aria-label={label}
-      className="flex min-h-11 flex-col items-center justify-center gap-1 rounded-xl border border-line bg-surface px-1.5 py-2 text-[10px] font-medium leading-3 text-muted transition hover:border-brand/35 hover:bg-brand-soft/60 hover:text-brand-ink"
-    >
-      <span aria-hidden="true">{icon}</span>
-      <span className="text-center">{label}</span>
-    </button>
-  );
-}
-
 function FeaturedProxyCard({
   proxy,
-  sourceLabels,
+  sourceLabels: _sourceLabels,
   index,
 }: {
   proxy: FeaturedProxyRecord;
@@ -155,10 +99,6 @@ function FeaturedProxyCard({
     proxy.latencyMs === null ? '—' : `${formatNumber(Math.round(proxy.latencyMs), lang)} ms`;
   const successRate = percentPrecise(proxy.successRate, lang);
   const lastVerified = formatRelative(proxy.verifiedAt, lang, now);
-  const sourceNames = proxy.sources.map((source) => sourceLabels[source] ?? source);
-  const visibleSources = sourceNames.slice(0, 3);
-  const totalChecks = proxy.successfulChecks + proxy.failedChecks;
-  const serverInfo = `server: ${proxy.server}\nport: ${proxy.port}\nsecret: ${proxy.secret}`;
 
   const share = async () => {
     if (typeof navigator !== 'undefined' && typeof navigator.share === 'function') {
@@ -186,35 +126,33 @@ function FeaturedProxyCard({
       aria-labelledby={titleId}
       className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-surface p-5 shadow-card transition duration-300 hover:border-line-strong hover:shadow-lift motion-safe:hover:-translate-y-0.5"
     >
-      <span
-        className="pointer-events-none absolute end-3 top-1 select-none text-[3.2rem] font-semibold leading-none text-ink/[0.05]"
-        aria-hidden="true"
-      >
-        {rank}
-      </span>
-
       <div className="relative z-10 flex flex-wrap items-center justify-between gap-2">
         <div className="flex flex-wrap items-center gap-1.5">
-          <span className="inline-flex items-center gap-1 rounded-lg border border-brand/20 bg-brand-soft px-2 py-1 text-[11px] font-semibold text-brand-ink">
+          <span className="inline-flex items-center gap-1 rounded-lg border border-brand/20 bg-brand-soft px-2.5 py-1 text-[11px] font-semibold text-brand-ink">
             {t('home.featured.rank')}
-            <span className="num">{rank}</span>
+            <span className="num font-bold">#{rank}</span>
           </span>
           <FeaturedStatusBadge status={proxy.status} />
         </div>
         {country ? (
-          <span className="inline-flex items-center gap-1 rounded-full bg-surface-2 px-2 py-0.5 text-[10px] font-medium text-muted">
-            <MapPin className="size-3" aria-hidden="true" />
+          <span className="inline-flex items-center gap-1 rounded-full bg-surface-2 px-2.5 py-1 text-[11px] font-medium text-ink-soft">
+            <MapPin className="size-3 text-muted" aria-hidden="true" />
             {country}
           </span>
         ) : null}
       </div>
 
-      <div className="relative z-10 mt-4">
-        <h3 id={titleId} className="ltr-data truncate text-[17px] font-semibold leading-6 text-ink" dir="ltr">
+      <div className="relative z-10 mt-3.5">
+        <h3
+          id={titleId}
+          className="ltr-data truncate text-[16px] font-semibold leading-6 text-ink"
+          dir="ltr"
+          title={proxy.server}
+        >
           {proxy.server}
         </h3>
-        <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
-          <span className="ltr-data num text-[12px] text-ink-soft" dir="ltr">
+        <div className="mt-1 flex flex-wrap items-center gap-1.5">
+          <span className="ltr-data num text-[12px] font-medium text-ink-soft" dir="ltr">
             :{proxy.port}
           </span>
           <span className="inline-flex items-center gap-1 rounded-full border border-line px-2 py-0.5 text-[10px] font-medium text-muted">
@@ -227,97 +165,85 @@ function FeaturedProxyCard({
         </div>
       </div>
 
-      <dl className="mt-4 grid grid-cols-2 gap-x-3 gap-y-3 rounded-2xl border border-line/80 bg-surface-2/50 p-3">
-        <Metric
-          icon={<Gauge className="size-3" />}
-          label={t('home.featured.latency')}
-          value={latency}
-          valueTitle={formatLatency(proxy.latencyMs, lang)}
-        />
-        <Metric
-          icon={<Check className="size-3" />}
-          label={t('home.featured.successRate')}
-          value={successRate}
-        >
-          <span className="mt-1.5 block h-1 overflow-hidden rounded-full bg-line" aria-hidden="true">
-            <span
-              className="block h-full rounded-full bg-success"
-              style={{ width: `${Math.min(100, Math.max(0, proxy.successRate))}%` }}
-            />
-          </span>
-        </Metric>
-        <Metric
-          icon={<Clock3 className="size-3" />}
-          label={t('home.featured.lastVerified')}
-          value={lastVerified}
-          valueTitle={proxy.verifiedAt ? formatDateTime(proxy.verifiedAt, lang) : undefined}
-        />
-        <Metric
-          icon={<ListChecks className="size-3" />}
-          label={t('home.featured.checks')}
-          value={formatNumber(proxy.successfulChecks, lang)}
-          valueTitle={t('home.featured.checksHint', {
-            ok: proxy.successfulChecks,
-            total: totalChecks,
-          })}
-        />
+      <dl className="mt-3.5 grid grid-cols-3 gap-2 rounded-2xl border border-line/80 bg-surface-2/40 p-2.5 text-center sm:text-start">
+        <div className="min-w-0">
+          <dt className="flex items-center justify-center gap-1 text-[10px] font-medium uppercase tracking-wide text-muted sm:justify-start">
+            <Gauge className="size-3 text-brand" aria-hidden="true" />
+            {t('home.featured.latency')}
+          </dt>
+          <dd
+            className="num mt-1 text-[13px] font-semibold text-ink"
+            title={formatLatency(proxy.latencyMs, lang)}
+          >
+            {latency}
+          </dd>
+        </div>
+        <div className="min-w-0">
+          <dt className="flex items-center justify-center gap-1 text-[10px] font-medium uppercase tracking-wide text-muted sm:justify-start">
+            <Check className="size-3 text-success" aria-hidden="true" />
+            {t('home.featured.successRate')}
+          </dt>
+          <dd className="num mt-1 text-[13px] font-semibold text-success">{successRate}</dd>
+        </div>
+        <div className="min-w-0">
+          <dt className="flex items-center justify-center gap-1 text-[10px] font-medium uppercase tracking-wide text-muted sm:justify-start">
+            <Clock3 className="size-3 text-muted" aria-hidden="true" />
+            {t('home.featured.lastVerified')}
+          </dt>
+          <dd
+            className="mt-1 truncate text-[12px] font-medium text-ink-soft"
+            title={proxy.verifiedAt ? formatDateTime(proxy.verifiedAt, lang) : undefined}
+          >
+            {lastVerified}
+          </dd>
+        </div>
       </dl>
 
-      <div className="mt-3 flex flex-wrap items-center gap-1.5">
-        <span className="inline-flex items-center gap-1 text-[10px] font-medium uppercase tracking-wide text-muted">
-          <Layers className="size-3" aria-hidden="true" />
-          {t('home.featured.sources')}
-        </span>
-        {visibleSources.map((source) => (
-          <span
-            key={source}
-            className="max-w-[10rem] truncate rounded-full border border-line bg-surface-2 px-2 py-0.5 text-[10px] text-ink-soft"
-            title={source}
-          >
-            {source}
-          </span>
-        ))}
-        {sourceNames.length > visibleSources.length ? (
-          <span className="text-[10px] text-muted">+{sourceNames.length - visibleSources.length}</span>
-        ) : null}
-      </div>
-
-      <div className="mt-auto pt-5">
+      <div className="mt-auto space-y-2 pt-4">
         <a
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className={buttonStyles('primary', 'lg', 'w-full')}
+          className={buttonStyles('primary', 'lg', 'w-full min-h-[44px] shadow-sm')}
           aria-label={`${t('home.featured.connect')} — ${proxy.server}`}
           title={t('home.featured.connectHint')}
         >
           <Send className="size-4" aria-hidden="true" />
-          {t('home.featured.connect')}
+          <span className="font-semibold">{t('home.featured.connect')}</span>
           <span className="sr-only"> ({t('common.newTab')})</span>
         </a>
 
-        <div className="mt-2 grid grid-cols-3 gap-2">
-          <CardAction
-            icon={<Copy className="size-4" />}
-            label={t('home.featured.copyLinkShort')}
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
             onClick={() => void copy(link, t('home.featured.copyLinkDone'))}
-          />
-          <CardAction
-            icon={<Server className="size-4" />}
-            label={t('home.featured.copyServerShort')}
-            onClick={() => void copy(serverInfo, t('home.featured.copyServerDone'))}
-          />
-          <CardAction
-            icon={<Share2 className="size-4" />}
-            label={t('home.featured.shareShort')}
-            onClick={() => void share()}
-          />
-        </div>
+            title={t('home.featured.copyLink')}
+            aria-label={`${t('home.featured.copyLink')} — ${proxy.server}`}
+            className="inline-flex min-h-[42px] flex-1 items-center justify-center gap-2 rounded-xl border border-line bg-surface px-3 py-2 text-[12px] font-medium text-ink-soft transition hover:border-brand/40 hover:bg-brand-soft/50 hover:text-brand-ink"
+          >
+            <Copy className="size-4" aria-hidden="true" />
+            <span>{t('home.featured.copyLinkShort')}</span>
+          </button>
 
-        <p className="mt-2 flex items-start gap-1.5 text-[10px] leading-4 text-muted">
-          <Lock className="mt-0.5 size-3 shrink-0" aria-hidden="true" />
-          {t('home.featured.secretNote')}
-        </p>
+          <button
+            type="button"
+            onClick={() => void share()}
+            title={t('home.featured.share')}
+            aria-label={`${t('home.featured.share')} — ${proxy.server}`}
+            className="inline-flex size-[42px] shrink-0 items-center justify-center rounded-xl border border-line bg-surface text-muted transition hover:border-brand/40 hover:bg-brand-soft/50 hover:text-brand-ink"
+          >
+            <Share2 className="size-4" aria-hidden="true" />
+          </button>
+
+          <Link
+            to={`/proxies/${proxy.id}`}
+            title={t('proxy.viewDetails', { name: proxy.server })}
+            aria-label={t('proxy.viewDetails', { name: proxy.server })}
+            className="inline-flex size-[42px] shrink-0 items-center justify-center rounded-xl border border-line bg-surface text-muted transition hover:border-brand/40 hover:bg-brand-soft/50 hover:text-brand-ink"
+          >
+            <ArrowUpRight className="size-4" aria-hidden="true" />
+          </Link>
+        </div>
       </div>
     </motion.article>
   );
@@ -332,13 +258,12 @@ function FeaturedProxySkeleton() {
       </div>
       <Skeleton className="mt-5 h-5 w-3/5" />
       <Skeleton className="mt-2 h-4 w-2/5" />
-      <Skeleton className="mt-4 h-[116px] w-full rounded-2xl" />
-      <Skeleton className="mt-3 h-5 w-4/5" />
-      <Skeleton className="mt-5 h-12 w-full rounded-xl" />
-      <div className="mt-2 grid grid-cols-3 gap-2">
-        <Skeleton className="h-12" />
-        <Skeleton className="h-12" />
-        <Skeleton className="h-12" />
+      <Skeleton className="mt-4 h-[72px] w-full rounded-2xl" />
+      <Skeleton className="mt-auto h-11 w-full rounded-xl" />
+      <div className="mt-2 flex items-center gap-2">
+        <Skeleton className="h-10 flex-1 rounded-xl" />
+        <Skeleton className="size-10 rounded-xl" />
+        <Skeleton className="size-10 rounded-xl" />
       </div>
     </div>
   );

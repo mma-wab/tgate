@@ -81,7 +81,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
               type="button"
               onClick={onClose}
               aria-label={t('nav.closeMenu')}
-              className="inline-flex size-10 items-center justify-center rounded-xl border border-line bg-surface text-ink-soft transition hover:bg-surface-2 hover:text-ink"
+              className="inline-flex size-11 items-center justify-center rounded-xl border border-line bg-surface text-ink-soft transition hover:bg-surface-2 hover:text-ink"
             >
               <X className="size-5" aria-hidden="true" />
             </button>

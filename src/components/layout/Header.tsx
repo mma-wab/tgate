@@ -76,7 +76,7 @@ export function Header() {
               aria-label={t('nav.openMenu')}
               aria-expanded={menuOpen}
               aria-controls="mobile-navigation"
-              className="inline-flex size-10 items-center justify-center rounded-xl border border-line bg-surface text-ink-soft transition hover:bg-surface-2 hover:text-ink lg:hidden"
+              className="inline-flex size-11 items-center justify-center rounded-xl border border-line bg-surface text-ink-soft transition hover:bg-surface-2 hover:text-ink lg:hidden"
             >
               <Menu className="size-5" aria-hidden="true" />
             </button>

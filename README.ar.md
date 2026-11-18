@@ -129,6 +129,7 @@ npm run build
 - التوفر ليس ثقة؛ اقرأ `/security` قبل الاتصال.
 - للإبلاغ عن ثغرة اتبع [SECURITY.md](./SECURITY.md).
 
-## الترخيص
+## الترخيص وحقوق الملكية
 
-MIT — راجع [LICENSE](./LICENSE).
+© 2026 Mohammed Majid. جميع الحقوق محفوظة.  
+مرخص تحت رخصة [MIT License](./LICENSE).

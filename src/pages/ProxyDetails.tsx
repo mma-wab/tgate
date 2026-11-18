@@ -21,6 +21,8 @@ import {
 } from 'lucide-react';
 import { useI18n } from '../i18n';
 import { useProxies } from '../contexts/ProxiesContext';
+import { useTopProxies } from '../hooks/useTopProxies';
+import { featuredProxyToRecord } from '../lib/top-proxies';
 import { useNow } from '../hooks/useNow';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { useCopy } from '../hooks/useCopy';
@@ -50,14 +52,18 @@ export default function ProxyDetails() {
   const { id } = useParams<{ id: string }>();
   const { t, lang, isRTL } = useI18n();
   const { dataset, status, refresh } = useProxies();
+  const { dataset: topDataset, status: topStatus } = useTopProxies();
   const now = useNow();
   const copy = useCopy();
   const [revealed, setRevealed] = useState(false);
 
-  const proxy = useMemo(
-    () => dataset?.proxies.find((item) => item.id === id) ?? null,
-    [dataset, id],
-  );
+  const proxy = useMemo(() => {
+    const fromCurated = dataset?.proxies.find((item) => item.id === id);
+    if (fromCurated) return fromCurated;
+    const fromTop = topDataset?.proxies.find((item) => item.id === id);
+    if (fromTop) return featuredProxyToRecord(fromTop);
+    return null;
+  }, [dataset, topDataset, id]);
 
   useEffect(() => {
     setRevealed(false);
@@ -85,7 +91,7 @@ export default function ProxyDetails() {
     </Link>
   );
 
-  if (status === 'loading') {
+  if (status === 'loading' && topStatus === 'loading') {
     return (
       <Container className="py-12 sm:py-16">
         <div className="space-y-4">
@@ -100,7 +106,7 @@ export default function ProxyDetails() {
     );
   }
 
-  if (status === 'error') {
+  if (status === 'error' && !proxy) {
     return (
       <Container className="py-12 sm:py-16">
         <ErrorState
@@ -178,20 +184,31 @@ export default function ProxyDetails() {
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-2">
-              <ConnectButton proxy={proxy} size="md" />
+            <div className="flex flex-wrap items-center gap-2.5">
+              <ConnectButton proxy={proxy} size="md" className="min-h-[44px]" />
+              {link ? (
+                <CopyIconButton
+                  text={link}
+                  label={t('home.featured.copyLinkShort')}
+                  copiedMessage={t('proxy.linkCopied')}
+                  variant="label"
+                  className="min-h-[44px]"
+                />
+              ) : null}
               <CopyIconButton
                 text={address}
-                label={t('common.copyAddress')}
+                label={t('home.featured.copyServerShort')}
                 copiedMessage={t('proxy.addressCopied')}
                 variant="label"
+                className="min-h-[44px]"
               />
               <Button
                 variant="secondary"
                 iconLeft={<Share2 className="size-4" />}
+                className="min-h-[44px]"
                 onClick={() =>
                   void copy(
-                    typeof window !== 'undefined' ? window.location.href : address,
+                    typeof window !== 'undefined' ? window.location.href : (link ?? address),
                     t('details.shareCopied'),
                   )
                 }

@@ -104,11 +104,12 @@ export function ProxyCardSkeleton() {
       <Skeleton className="mt-2 h-3.5 w-2/5" />
       <Skeleton className="mt-4 h-[68px] w-full rounded-2xl" />
       <Skeleton className="mt-4 h-10 w-full" />
-      <div className="mt-5 flex gap-2">
-        <Skeleton className="h-11 flex-1" />
-        <Skeleton className="size-11" />
-        <Skeleton className="size-11" />
-        <Skeleton className="size-11" />
+      <div className="mt-auto space-y-2 pt-5">
+        <Skeleton className="h-11 w-full rounded-xl" />
+        <div className="flex gap-2">
+          <Skeleton className="h-10 flex-1 rounded-xl" />
+          <Skeleton className="size-10 rounded-xl" />
+        </div>
       </div>
     </div>
   );

@@ -14,6 +14,8 @@ import {
 } from 'lucide-react';
 import { useI18n } from '../i18n';
 import { useProxies } from '../contexts/ProxiesContext';
+import { useTopProxies } from '../hooks/useTopProxies';
+import { featuredProxyToRecord } from '../lib/top-proxies';
 import { useNow } from '../hooks/useNow';
 import { usePageMeta } from '../hooks/usePageMeta';
 import {
@@ -51,6 +53,7 @@ function statusLabelFor(status: StatusFilter, lang: 'ar' | 'en'): string {
 export default function Directory() {
   const { t, lang } = useI18n();
   const { dataset, status, skipped, issues, isRefreshing, refresh } = useProxies();
+  const { dataset: topDataset, status: topStatus, refresh: refreshTop } = useTopProxies();
   const [searchParams, setSearchParams] = useSearchParams();
   const now = useNow();
 
@@ -74,7 +77,15 @@ export default function Directory() {
     path: '/proxies',
   });
 
-  const proxies = dataset?.proxies ?? [];
+  const proxies = useMemo(() => {
+    if (dataset && dataset.proxies.length > 0) {
+      return dataset.proxies;
+    }
+    if (topDataset && topDataset.proxies.length > 0) {
+      return topDataset.proxies.map(featuredProxyToRecord);
+    }
+    return [];
+  }, [dataset, topDataset]);
   const visible = useMemo(() => filterProxies(proxies, filters, now), [proxies, filters, now]);
   const counts = useMemo(() => countByStatus(proxies), [proxies]);
   const countries = useMemo(
@@ -96,11 +107,16 @@ export default function Directory() {
 
   const clearFilters = () => setSearchParams(new URLSearchParams(), { replace: true });
   const active = hasActiveFilters(filters);
-  const loading = status === 'loading';
-  const offlineAll = status === 'ready' && proxies.length > 0 && counts.online === 0;
+  const loading = (status === 'loading' && (!dataset || dataset.proxies.length === 0)) && (topStatus === 'loading' && !topDataset);
+  const isReady = (status === 'ready' || topStatus === 'ready') && !loading;
+  const offlineAll = isReady && proxies.length > 0 && counts.online === 0;
+  const lastSyncTime = dataset?.lastUpdated ?? topDataset?.updatedAt ?? null;
 
   const handleRefresh = async () => {
-    await refresh({ bypassCache: true });
+    await Promise.allSettled([
+      refresh({ bypassCache: true }),
+      refreshTop(),
+    ]);
   };
 
   return (
@@ -119,11 +135,11 @@ export default function Directory() {
           >
             {t('directory.refresh')}
           </Button>
-          {dataset?.lastUpdated ? (
+          {lastSyncTime ? (
             <span className="text-[12px] text-muted">
               {t('directory.lastSync')}:{' '}
-              <time className="num" dateTime={dataset.lastUpdated} title={formatDateTime(dataset.lastUpdated, lang)}>
-                {formatRelative(dataset.lastUpdated, lang, now)}
+              <time className="num" dateTime={lastSyncTime} title={formatDateTime(lastSyncTime, lang)}>
+                {formatRelative(lastSyncTime, lang, now)}
               </time>
             </span>
           ) : (
@@ -302,7 +318,7 @@ export default function Directory() {
             />
           ) : null}
 
-          {status === 'ready' && proxies.length === 0 ? (
+          {isReady && proxies.length === 0 ? (
             <EmptyState
               icon={Database}
               title={t('directory.empty.title')}
@@ -320,7 +336,7 @@ export default function Directory() {
             />
           ) : null}
 
-          {status === 'ready' && proxies.length > 0 && visible.length === 0 ? (
+          {isReady && proxies.length > 0 && visible.length === 0 ? (
             <EmptyState
               icon={SearchX}
               title={active ? t('directory.noMatch.title') : t('directory.statusCounts')}
@@ -339,7 +355,7 @@ export default function Directory() {
             />
           ) : null}
 
-          {status === 'ready' && visible.length > 0 ? (
+          {isReady && visible.length > 0 ? (
             <>
               {offlineAll ? (
                 <InlineNote tone="warning" className="mb-4">

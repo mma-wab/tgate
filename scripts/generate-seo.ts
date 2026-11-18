@@ -88,6 +88,8 @@ function render(template: string, route: RouteEntry): string {
   html = replaceMeta(html, 'name', 'twitter:title', title);
   html = replaceMeta(html, 'name', 'twitter:description', description);
   html = replaceMeta(html, 'name', 'twitter:image', `${baseUrl}/og-image.png`);
+  html = replaceMeta(html, 'name', 'author', 'Mohammed Majid');
+  html = replaceMeta(html, 'name', 'copyright', '© 2026 Mohammed Majid. All rights reserved.');
   html = replaceMeta(html, 'name', 'robots', route.noindex ? 'noindex, nofollow' : 'index, follow');
   html = replaceLink(html, 'canonical', url);
   html = replaceLink(html, 'alternate', url, 'ar');
@@ -97,21 +99,47 @@ function render(template: string, route: RouteEntry): string {
 }
 
 function readProxies(): RouteEntry[] {
+  const result: RouteEntry[] = [];
   try {
     const raw = JSON.parse(readFileSync(resolve(root, 'data/proxies.json'), 'utf8')) as unknown;
     const { dataset } = parseProxyDataset(raw);
-    return dataset.proxies.map((proxy) => ({
-      path: `/proxies/${proxy.id}`,
-      title: ar['meta.details.title'].replace('{name}', proxy.name).replace('{server}', proxy.server),
-      description: ar['meta.details.description'],
-      priority: '0.7',
-      changefreq: 'daily',
-      lastmod: (proxy.lastChecked ?? proxy.lastOnline ?? '').slice(0, 10) || undefined,
-    }));
+    for (const proxy of dataset.proxies) {
+      result.push({
+        path: `/proxies/${proxy.id}`,
+        title: ar['meta.details.title'].replace('{name}', proxy.name).replace('{server}', proxy.server),
+        description: ar['meta.details.description'],
+        priority: '0.7',
+        changefreq: 'daily',
+        lastmod: (proxy.lastChecked ?? proxy.lastOnline ?? '').slice(0, 10) || undefined,
+      });
+    }
   } catch (error) {
     console.warn('[seo] Could not read proxy details for prerendering:', error);
-    return [];
   }
+
+  try {
+    const topRaw = JSON.parse(readFileSync(resolve(root, 'data/top-proxies.json'), 'utf8')) as {
+      proxies?: Array<{ id: string; server: string; verifiedAt?: string }>;
+    };
+    if (Array.isArray(topRaw?.proxies)) {
+      for (const p of topRaw.proxies) {
+        if (!result.some((r) => r.path === `/proxies/${p.id}`)) {
+          result.push({
+            path: `/proxies/${p.id}`,
+            title: ar['meta.details.title'].replace('{name}', p.server).replace('{server}', p.server),
+            description: ar['meta.details.description'],
+            priority: '0.8',
+            changefreq: 'daily',
+            lastmod: (p.verifiedAt ?? '').slice(0, 10) || undefined,
+          });
+        }
+      }
+    }
+  } catch {
+    // optional top-proxies dataset
+  }
+
+  return result;
 }
 
 const template = readFileSync(templatePath, 'utf8');

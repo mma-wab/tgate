@@ -1,7 +1,9 @@
 import { useMemo } from 'react';
 import { useI18n } from '../i18n';
 import { useProxies } from '../contexts/ProxiesContext';
+import { useTopProxies } from '../hooks/useTopProxies';
 import { computeStats } from '../lib/directory';
+import { featuredProxyToRecord } from '../lib/top-proxies';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { Hero } from '../components/home/Hero';
 import { StatsSection } from '../components/home/StatsSection';
@@ -12,10 +14,24 @@ import { HowPreview, SecurityPreview, FaqPreview, SubmitCta } from '../component
 export default function Home() {
   const { t } = useI18n();
   const { dataset, status } = useProxies();
-  const stats = useMemo(
-    () => computeStats(dataset?.proxies ?? [], dataset?.lastUpdated ?? null),
-    [dataset],
-  );
+  const { dataset: topDataset, status: topStatus } = useTopProxies();
+
+  const stats = useMemo(() => {
+    if (dataset && dataset.proxies.length > 0) {
+      return computeStats(dataset.proxies, dataset.lastUpdated);
+    }
+    if (topDataset && topDataset.proxies.length > 0) {
+      const converted = topDataset.proxies.map(featuredProxyToRecord);
+      return computeStats(converted, topDataset.updatedAt);
+    }
+    return computeStats([], null);
+  }, [dataset, topDataset]);
+
+  const loading =
+    status === 'loading' &&
+    (!dataset || dataset.proxies.length === 0) &&
+    topStatus === 'loading' &&
+    !topDataset;
 
   usePageMeta({
     title: t('meta.home.title'),
@@ -37,10 +53,10 @@ export default function Home() {
 
   return (
     <>
-      <Hero stats={stats} loading={status === 'loading'} />
-      <StatsSection stats={stats} loading={status === 'loading'} />
+      <Hero stats={stats} loading={loading} />
       <FeaturedProxies />
-      <HomeDirectory />
+      <StatsSection stats={stats} loading={loading} />
+      {dataset && dataset.proxies.length > 0 ? <HomeDirectory /> : null}
       <HowPreview />
       <SecurityPreview />
       <FaqPreview />

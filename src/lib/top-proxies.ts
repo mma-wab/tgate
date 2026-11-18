@@ -1,4 +1,5 @@
 import type { ValidationIssue, Result } from './validation';
+import type { ProxyRecord } from '../types/proxy';
 import {
   buildTelegramProxyLink,
   isValidTimestamp,
@@ -740,4 +741,40 @@ export function buildFeaturedTelegramLink(
   url.searchParams.set('port', String(proxy.port));
   url.searchParams.set('secret', proxy.secret);
   return url.toString();
+}
+
+/**
+ * Converts a featured proxy record into a standard ProxyRecord for directory,
+ * details, and statistics display when the manual database is empty.
+ */
+export function featuredProxyToRecord(featured: FeaturedProxyRecord): ProxyRecord {
+  const status = featured.status === 'online' ? 'online' : featured.status === 'offline' ? 'offline' : 'unknown';
+  return {
+    id: featured.id,
+    name: featured.server,
+    type: 'mtproto',
+    server: featured.server,
+    port: featured.port,
+    secret: featured.secret,
+    country: featured.country,
+    sourceId: featured.sources[0] ?? 'collector',
+    trust: 'trusted-source',
+    status,
+    latencyMs: featured.latencyMs,
+    lastChecked: featured.verifiedAt,
+    lastOnline: featured.verifiedAt,
+    consecutiveFailures: featured.failedChecks,
+    history: featured.verifiedAt
+      ? [
+          {
+            at: featured.verifiedAt,
+            status: status === 'online' ? 'online' : 'offline',
+            latencyMs: featured.latencyMs,
+            method: 'mtproto',
+          },
+        ]
+      : [],
+    createdAt: featured.verifiedAt ?? new Date().toISOString(),
+    notes: `Top #${featured.rank} · Score: ${featured.score}`,
+  };
 }

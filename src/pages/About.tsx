@@ -83,6 +83,25 @@ export default function About() {
           </div>
 
           <div className="mt-8 rounded-3xl border border-line bg-surface p-6 shadow-card">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-brand">
+                  {isRTL ? 'ملكية المشروع والتطوير' : 'Project Ownership & Author'}
+                </span>
+                <h2 className="mt-1 text-xl font-bold text-ink">Mohammed Majid</h2>
+                <p className="mt-1 text-[13px] text-muted">
+                  {isRTL
+                    ? 'المطور والمالك الرسمي لمشروع Telegram Proxy Hub. جميع الحقوق محفوظة.'
+                    : 'Official author and owner of Telegram Proxy Hub. All rights reserved.'}
+                </p>
+              </div>
+              <span className="inline-flex self-start rounded-full border border-line bg-surface-2 px-3 py-1.5 text-[12px] font-medium text-ink-soft sm:self-auto">
+                © {new Date().getFullYear()} Mohammed Majid
+              </span>
+            </div>
+          </div>
+
+          <div className="mt-6 rounded-3xl border border-line bg-surface p-6 shadow-card">
             <h2 className="text-lg font-semibold">{t('about.contact.title')}</h2>
             <p className="mt-2 text-[13px] leading-6 text-muted">{t('about.contact.body')}</p>
             <div className="mt-5 flex flex-wrap gap-2.5">

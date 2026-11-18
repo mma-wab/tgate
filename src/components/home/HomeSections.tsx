@@ -65,15 +65,14 @@ export function HowPreview() {
                 key={step.title}
                 className="relative overflow-hidden rounded-2xl border border-line bg-surface p-5 shadow-card"
               >
-                <span
-                  className="absolute end-4 top-3 text-[2.6rem] font-semibold leading-none text-ink/[0.05]"
-                  aria-hidden="true"
-                >
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <span className="flex size-10 items-center justify-center rounded-xl bg-brand-soft text-brand">
-                  <Icon className="size-[18px]" aria-hidden="true" />
-                </span>
+                <div className="flex items-center justify-between">
+                  <span className="flex size-10 items-center justify-center rounded-xl bg-brand-soft text-brand">
+                    <Icon className="size-[18px]" aria-hidden="true" />
+                  </span>
+                  <span className="num rounded-lg border border-line bg-surface-2 px-2 py-0.5 text-[11px] font-semibold text-muted">
+                    0{index + 1}
+                  </span>
+                </div>
                 <h3 className="mt-4 text-[15px] font-semibold">{step.title}</h3>
                 <p className="mt-1.5 text-[13px] leading-6 text-muted">{step.body}</p>
               </li>

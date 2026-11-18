@@ -126,28 +126,35 @@ export function ProxyCardActions({
   const address = formatHostPort(proxy);
 
   return (
-    <div className="flex items-center gap-2">
-      <ConnectButton proxy={proxy} size="sm" compact className="flex-1" />
-      <CopyIconButton
-        text={address}
-        label={`${t('common.copyAddress')} — ${name}`}
-        copiedMessage={t('proxy.addressCopied')}
-      />
-      {link ? (
-        <CopyIconButton
-          text={link}
-          label={`${t('common.copyLink')} — ${name}`}
-          copiedMessage={t('proxy.linkCopied')}
-        />
-      ) : null}
-      <Link
-        to={`/proxies/${proxy.id}`}
-        title={t('proxy.viewDetails', { name })}
-        aria-label={t('proxy.viewDetails', { name })}
-        className="inline-flex size-11 items-center justify-center rounded-xl border border-line bg-surface text-muted transition hover:border-brand/35 hover:bg-brand-soft/60 hover:text-brand-ink"
-      >
-        <ArrowUpRight className="size-4" aria-hidden="true" />
-      </Link>
+    <div className="space-y-2">
+      <ConnectButton proxy={proxy} size="md" className="w-full min-h-[44px] font-semibold shadow-sm" />
+      <div className="flex items-center gap-2">
+        {link ? (
+          <CopyIconButton
+            text={link}
+            variant="label"
+            label={t('home.featured.copyLinkShort')}
+            copiedMessage={t('proxy.linkCopied')}
+            className="flex-1 min-h-[42px]"
+          />
+        ) : (
+          <CopyIconButton
+            text={address}
+            variant="label"
+            label={t('home.featured.copyServerShort')}
+            copiedMessage={t('proxy.addressCopied')}
+            className="flex-1 min-h-[42px]"
+          />
+        )}
+        <Link
+          to={`/proxies/${proxy.id}`}
+          title={t('proxy.viewDetails', { name })}
+          aria-label={t('proxy.viewDetails', { name })}
+          className="inline-flex size-[42px] shrink-0 items-center justify-center rounded-xl border border-line bg-surface text-muted transition hover:border-brand/40 hover:bg-brand-soft/50 hover:text-brand-ink"
+        >
+          <ArrowUpRight className="size-4" aria-hidden="true" />
+        </Link>
+      </div>
     </div>
   );
 }

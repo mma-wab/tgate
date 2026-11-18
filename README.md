@@ -183,6 +183,7 @@ Full instructions, custom domains, and the data-branch option are in [docs/DEPLO
 - Availability is not trust; read `/security` before connecting.
 - To report a vulnerability, follow [SECURITY.md](./SECURITY.md).
 
-## License
+## License and Copyright
 
-MIT — see [LICENSE](./LICENSE).
+© 2026 Mohammed Majid. All rights reserved.  
+Released under the [MIT License](./LICENSE).

@@ -12,7 +12,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
       aria-label={t('lang.switchAria')}
       title={t('lang.switchAria')}
       className={cn(
-        'inline-flex h-10 items-center gap-2 rounded-xl border border-line bg-surface px-3 text-[12px] font-semibold text-ink-soft transition hover:border-line-strong hover:bg-surface-2',
+        'inline-flex h-11 items-center gap-2 rounded-xl border border-line bg-surface px-3 text-[12px] font-semibold text-ink-soft transition hover:border-line-strong hover:bg-surface-2',
         className,
       )}
     >
@@ -33,7 +33,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       aria-label={isDark ? t('theme.toggleToLight') : t('theme.toggleToDark')}
       title={isDark ? t('theme.light') : t('theme.dark')}
       className={cn(
-        'inline-flex size-10 items-center justify-center rounded-xl border border-line bg-surface text-ink-soft transition hover:border-line-strong hover:bg-surface-2',
+        'inline-flex size-11 items-center justify-center rounded-xl border border-line bg-surface text-ink-soft transition hover:border-line-strong hover:bg-surface-2',
         className,
       )}
     >

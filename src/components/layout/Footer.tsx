@@ -143,7 +143,7 @@ export function Footer() {
           <p className="max-w-4xl text-[12px] leading-6 text-muted">{t('footer.disclaimer')}</p>
           <div className="mt-5 flex flex-col gap-2 text-[11px] text-muted sm:flex-row sm:items-center sm:justify-between">
             <p>
-              © {year} Telegram Proxy Hub · {t('footer.rights')}
+              © {year} Mohammed Majid. All rights reserved.
             </p>
             <p>{t('footer.built')}</p>
           </div>

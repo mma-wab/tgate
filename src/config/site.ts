@@ -9,6 +9,8 @@ const rawContactEmail = (import.meta.env.VITE_CONTACT_EMAIL as string | undefine
 export const siteConfig = {
   name: 'Telegram Proxy Hub',
   nameAr: 'مركز بروكسيات تيليجرام',
+  author: 'Mohammed Majid',
+  copyright: '© 2026 Mohammed Majid. All rights reserved.',
   url: rawSiteUrl ? trimTrailingSlash(rawSiteUrl) : '',
   repoUrl: rawRepoUrl ? trimTrailingSlash(rawRepoUrl) : '',
   dataUrl: rawDataUrl ?? '',
