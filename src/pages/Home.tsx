@@ -6,10 +6,8 @@ import { computeStats } from '../lib/directory';
 import { featuredProxyToRecord } from '../lib/top-proxies';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { Hero } from '../components/home/Hero';
-import { StatsSection } from '../components/home/StatsSection';
 import { FeaturedProxies } from '../components/home/FeaturedProxies';
-import { HomeDirectory } from '../components/home/HomeDirectory';
-import { HowPreview, SecurityPreview, FaqPreview, SubmitCta } from '../components/home/HomeSections';
+import { HowPreview, FaqPreview, SubmitCta } from '../components/home/HomeSections';
 
 export default function Home() {
   const { t } = useI18n();
@@ -55,10 +53,7 @@ export default function Home() {
     <>
       <Hero stats={stats} loading={loading} />
       <FeaturedProxies />
-      <StatsSection stats={stats} loading={loading} />
-      {dataset && dataset.proxies.length > 0 ? <HomeDirectory /> : null}
       <HowPreview />
-      <SecurityPreview />
       <FaqPreview />
       <SubmitCta />
     </>

@@ -11,7 +11,6 @@ import {
   RefreshCw,
   Send,
   Share2,
-  ShieldAlert,
   ShieldCheck,
   WifiOff,
 } from 'lucide-react';
@@ -408,22 +407,12 @@ export function FeaturedProxies() {
           ) : null}
         </div>
 
-        <InlineNote tone="neutral" className="mt-8">
-          <div className="flex items-start gap-2.5">
-            <ShieldAlert className="mt-0.5 size-4 shrink-0 text-warning" aria-hidden="true" />
-            <div>
-              <p>{t('home.featured.notice')}</p>
-              <Link
-                to="/guidelines"
-                className="mt-2 inline-flex items-center gap-1 rounded text-[12px] font-semibold text-brand-ink transition hover:text-brand-strong"
-              >
-                {t('home.featured.noticeCta')}
-                <ArrowUpRight className="size-3.5" aria-hidden="true" />
-              </Link>
-            </div>
-          </div>
-        </InlineNote>
-        <p className="mt-3 text-center text-[10.5px] text-muted">{t('home.featured.footerNote')}</p>
+        <p className="mt-8 text-center text-[11px] text-muted">
+          {t('home.featured.footerNote')}{' '}
+          <Link to="/guidelines" className="font-medium text-brand-ink hover:underline">
+            {t('home.featured.noticeCta')}
+          </Link>
+        </p>
       </Container>
     </Section>
   );
