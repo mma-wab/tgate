@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security and privacy guide
+    url: https://telegram-proxy-hub.pages.dev/security
+    about: Read what an availability check does and does not prove before reporting a proxy.

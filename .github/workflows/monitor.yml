@@ -1,0 +1,53 @@
+name: Monitor proxies
+
+on:
+  schedule:
+    # Every two hours. Adjust to your free-tier build budget.
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: proxy-monitor
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate dataset before probing
+        run: npm run validate:proxies
+
+      - name: Probe approved endpoints
+        env:
+          PROXY_MONITOR_TIMEOUT_MS: '8000'
+          PROXY_MONITOR_CONCURRENCY: '4'
+          PROXY_MONITOR_FAILURE_THRESHOLD: '2'
+        run: npm run monitor:proxies
+
+      - name: Commit changes only when data changed
+        run: |
+          if git diff --quiet -- data/proxies.json; then
+            echo "No proxy data changes."
+            exit 0
+          fi
+          git config user.name "proxy-hub-bot"
+          git config user.email "proxy-hub-bot@users.noreply.github.com"
+          git add data/proxies.json
+          git commit -m "chore(data): refresh proxy availability"
+          git push

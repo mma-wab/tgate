@@ -1,0 +1,81 @@
+name: Proxy submission
+description: Propose an MTProto endpoint for manual review. Nothing is published automatically.
+title: "[proxy] "
+labels: ["proxy-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping the directory. **Every field below becomes public in this issue.**
+        Do not include personal information, Telegram account details, login codes, or two-step passwords.
+
+        Pending and rejected submissions never appear on the public site. Only maintainers can add a reviewed endpoint to `data/proxies.json`.
+
+  - type: input
+    id: server
+    attributes:
+      label: Server
+      description: Public hostname or IPv4 address. No scheme, path, or port.
+      placeholder: proxy-host.tld
+    validations:
+      required: true
+
+  - type: input
+    id: port
+    attributes:
+      label: Port
+      description: TCP port between 1 and 65535.
+      placeholder: "443"
+    validations:
+      required: true
+
+  - type: input
+    id: secret
+    attributes:
+      label: Secret (hex)
+      description: Even-length hexadecimal string between 32 and 256 characters. This is public by design in a proxy link.
+      placeholder: "ee..."
+    validations:
+      required: true
+
+  - type: input
+    id: name
+    attributes:
+      label: Display name
+      description: Optional short label. Defaults to the server address.
+      placeholder: Example label
+
+  - type: input
+    id: country
+    attributes:
+      label: Country (ISO 3166-1 alpha-2)
+      description: Only if you are certain. Leave empty otherwise.
+      placeholder: DE
+
+  - type: input
+    id: source
+    attributes:
+      label: Source URL
+      description: The https:// page or channel where this endpoint was published.
+      placeholder: https://
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes for reviewers
+      description: Operator, age of the proxy, why you trust it. Do not include personal data.
+      maxlength: 280
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I have the right to share these connection details.
+          required: true
+        - label: I understand this issue is public and the endpoint will be verified before publication.
+          required: true
+        - label: This is an MTProto proxy, not a SOCKS5 or HTTP proxy.
+          required: true
+        - label: I did not include personal information or Telegram account credentials.
+          required: true

@@ -1,0 +1,4 @@
+# Cloudflare Pages serves the prerendered shells in /proxies/<id>/index.html
+# directly. Unknown paths fall back to the generated 404.html, which boots the
+# SPA and renders the in-app not-found page. No catch-all redirect is needed.
+/index.html / 301

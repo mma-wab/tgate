@@ -1,0 +1,49 @@
+{
+  "name": "telegram-proxy-hub",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A bilingual directory for discovering, checking, and connecting to Telegram MTProto proxies.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "npm run data:sync && vite",
+    "build": "npm run typecheck && npm run data:sync && vite build && npm run seo",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "data:sync": "tsx scripts/sync-public-data.ts",
+    "seo": "tsx scripts/generate-seo.ts",
+    "assets": "tsx scripts/generate-assets.ts",
+    "validate:proxies": "tsx scripts/validate-proxies.ts",
+    "collect:proxies": "tsx scripts/collect-proxies.ts",
+    "collect:proxies:dry": "tsx scripts/collect-proxies.ts --dry-run",
+    "monitor:proxies": "tsx scripts/monitor-proxies.ts",
+    "proxies:add": "tsx scripts/add-proxy.ts",
+    "sources:import": "tsx scripts/import-proxies.ts"
+  },
+  "dependencies": {
+    "@fontsource-variable/plus-jakarta-sans": "5.3.0",
+    "@fontsource/ibm-plex-sans-arabic": "5.3.0",
+    "framer-motion": "14.14.0",
+    "lucide-react": "1.74.0",
+    "react": "19.2.9",
+    "react-dom": "19.2.9",
+    "react-router-dom": "7.18.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.3.5",
+    "@types/node": "24.19.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "5.2.0",
+    "tailwindcss": "4.3.5",
+    "tsx": "4.21.0",
+    "typescript": "5.9.3",
+    "vite": "7.3.8",
+    "vitest": "5.1.0"
+  }
+}

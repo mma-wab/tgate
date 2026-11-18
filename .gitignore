@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+*.local
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Editor and OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local proxy review queue — never commit unreviewed endpoints
+data/candidates.json
+data/queue/
+*.tmp
+coverage/
+
+# Collector HTTP cache (ETag/Last-Modified responses)
+.cache/
+
+# Testing artifacts
+.playwright/
+screenshots/

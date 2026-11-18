@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "featuredCount": 10,
+  "maxCandidates": 100,
+  "verificationAttempts": 3,
+  "timeoutMs": 5000,
+  "concurrency": 4,
+  "maxResponseBytes": 2097152,
+  "minimumSuccessRate": 60,
+  "minimumSuccessfulChecks": 2,
+  "maximumLatencyMs": 3000,
+  "maximumDataAgeMinutes": 480,
+  "failureThreshold": 3,
+  "exclusionHours": 12,
+  "runnerRegion": "github-actions",
+  "schedule": {
+    "collectionCron": "15 */2 * * *",
+    "verification": "same-run",
+    "note": "GitHub Actions schedules cannot be changed at runtime. Keep this value in sync with .github/workflows/collect.yml."
+  },
+  "allowedHosts": ["raw.githubusercontent.com"],
+  "sources": [
+    {
+      "id": "iwizard7",
+      "name": "iwizard7 MTProxy List",
+      "repo": "https://github.com/iwizard7/MTProxy_list",
+      "enabled": true,
+      "feeds": [
+        {
+          "url": "https://raw.githubusercontent.com/iwizard7/MTProxy_list/data/proxies/working.txt",
+          "priority": 3
+        },
+        {
+          "url": "https://raw.githubusercontent.com/iwizard7/MTProxy_list/data/proxies/stable.txt",
+          "priority": 2
+        },
+        {
+          "url": "https://raw.githubusercontent.com/iwizard7/MTProxy_list/data/proxies/best.txt",
+          "priority": 4
+        },
+        {
+          "url": "https://raw.githubusercontent.com/iwizard7/MTProxy_list/data/proxies/endpoints.json",
+          "priority": 4
+        }
+      ]
+    },
+    {
+      "id": "radikal",
+      "name": "0xRadikal Free Telegram Proxy",
+      "repo": "https://github.com/0xRadikal/Free-Telegram-Proxy",
+      "enabled": true,
+      "feeds": [
+        {
+          "url": "https://raw.githubusercontent.com/0xRadikal/Free-Telegram-Proxy/main/top100.txt",
+          "priority": 4
+        },
+        {
+          "url": "https://raw.githubusercontent.com/0xRadikal/Free-Telegram-Proxy/main/resilient/tme.txt",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "solispirit",
+      "name": "SoliSpirit MTProto",
+      "repo": "https://github.com/SoliSpirit/mtproto",
+      "enabled": true,
+      "feeds": [
+        {
+          "url": "https://raw.githubusercontent.com/SoliSpirit/mtproto/master/all_proxies.txt",
+          "priority": 2
+        }
+      ]
+    }
+  ],
+  "exclusions": []
+}
