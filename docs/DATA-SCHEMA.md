@@ -118,7 +118,7 @@ The UI computes “availability verified” from `lastOnline`, not from the curr
 4. Run `npm run validate:proxies` and `npm run monitor:proxies`.
 5. Commit only `data/proxies.json` and any review documentation that is safe to publish. Never commit pending credentials.
 
-## Featured top-10 dataset
+## Featured top-12 dataset
 
 `data/top-proxies.json` is written only by the collector (see
 [docs/COLLECTOR.md](./COLLECTOR.md)) and copied to
@@ -132,7 +132,7 @@ static copy; it never probes anything itself.
   "totalSources": 3,
   "totalDiscovered": 791,
   "totalVerified": 94,
-  "featuredCount": 10,
+  "featuredCount": 12,
   "maxAgeMinutes": 480,
   "sourceLabels": { "iwizard7": "iwizard7 MTProxy List" },
   "proxies": [

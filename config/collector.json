@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "featuredCount": 10,
+  "featuredCount": 12,
   "maxCandidates": 100,
   "verificationAttempts": 3,
   "timeoutMs": 5000,

@@ -1,6 +1,6 @@
 # Deployment guide
 
-This project is a static site. It builds to `dist/` and needs no server, database, or paid service. The recommended free host is **Cloudflare Pages**; GitHub Actions handles availability monitoring and the automated top-10 collector ([docs/COLLECTOR.md](./COLLECTOR.md)).
+This project is a static site. It builds to `dist/` and needs no server, database, or paid service. The recommended free host is **Cloudflare Pages**; GitHub Actions handles availability monitoring and the automated top-12 collector ([docs/COLLECTOR.md](./COLLECTOR.md)).
 
 - [1. Before you deploy](#1-before-you-deploy)
 - [2. Publish the repository to GitHub](#2-publish-the-repository-to-github)

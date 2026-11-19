@@ -17,7 +17,7 @@ An independent, bilingual (Arabic / English) directory for discovering, checking
 - **Proxy details** — availability history chart, recent checks, deep link, copy actions, masked secret reveal, trust and monitoring explanations.
 - **Honest data model** — strict JSON schema, deduplication, public-endpoint validation, availability separate from trust, no fabricated entries.
 - **MTProto-aware monitoring** — GitHub Actions workflow runs an obfuscated2 handshake plus `req_pq_multi` / `resPQ` probe, records latency and history, and reports `unknown` when verification is not possible.
-- **Automated top-10 list** — a scheduled collector fetches approved public sources, verifies plain and Fake-TLS (`ee…`) secrets with a real MTProto exchange, ranks only verified endpoints, publishes `data/top-proxies.json`, and never pads missing positions. See [docs/COLLECTOR.md](./docs/COLLECTOR.md).
+- **Automated top-12 list** — a scheduled collector fetches approved public sources, verifies plain and Fake-TLS (`ee…`) secrets with a real MTProto exchange, ranks only verified endpoints, publishes `data/top-proxies.json`, and never pads missing positions. See [docs/COLLECTOR.md](./docs/COLLECTOR.md).
 - **Source management** — documented sources, import candidates into a gitignored review queue, manual approval before publication.
 - **Submission flow** — local validation, duplicate detection, honeypot, client-side rate limit, consent, and a prefilled GitHub Issue. Nothing is auto-published.
 - **SEO and hosting** — build-time route shells, canonical/Open Graph/Twitter metadata, JSON-LD, sitemap, robots, security headers, Cloudflare Pages configuration.
@@ -44,7 +44,7 @@ config/
 data/
   proxies.json            Public dataset (single source of truth)
   sources.json            Approved source registry
-  top-proxies.json        Verified top-10 snapshot written by the collector
+  top-proxies.json        Verified top-12 snapshot written by the collector
   collector-state.json    Rolling verification history and exclusions
 public/
   data/proxies.json       Generated copy served by the site

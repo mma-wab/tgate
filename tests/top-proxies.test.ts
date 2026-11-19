@@ -35,7 +35,7 @@ const verification = (overrides: Partial<RankableVerification> = {}): RankableVe
 });
 
 const rankOptions = {
-  featuredCount: 10,
+  featuredCount: 12,
   minimumSuccessRate: 60,
   minimumSuccessfulChecks: 2,
   maximumLatencyMs: 3000,
@@ -164,7 +164,7 @@ describe('ranking', () => {
       ),
       rankOptions,
     );
-    expect(result).toHaveLength(10);
+    expect(result).toHaveLength(12);
   });
 
   it('excludes low success rates, excessive latency, and stale verification', () => {

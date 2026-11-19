@@ -121,7 +121,7 @@ const ar = {
   'home.stats.offlineCountHint': 'انقطاع أو انتهاء مهلة بعد تكرار الفشل',
 
   'home.featured.eyebrow': 'قائمة مُتحقق منها آليًا',
-  'home.featured.title': 'أفضل 10 بروكسيات تلغرام حالياً',
+  'home.featured.title': 'أفضل 12 بروكسي تلغرام حالياً',
   'home.featured.description':
     'نفحص اتصال MTProto فعليًا كل ساعتين، ثم ننشر أفضل البروكسيات التي اجتازت الحد المطلوب. المراكز الناقصة تبقى فارغة.',
   'home.featured.refresh': 'تحديث القائمة',
@@ -136,7 +136,7 @@ const ar = {
   'home.featured.staleNotice':
     'تجاوزت البيانات نافذة الحداثة المسموح بها. قد لا تعمل بعض البروكسيات المعروضة الآن؛ نعرض آخر نسخة صالحة بوضوح ولا ندّعي أنها محدّثة.',
   'home.featured.partial':
-    'يتوفر الآن {count} من أصل 10 بروكسيات مُتحقق منها. لا نملأ المراكز الناقصة ببروكسيات غير مُتحقق منها.',
+    'يتوفر الآن {count} من أصل 12 بروكسياً مُتحققاً منها. لا نملأ المراكز الناقصة ببروكسيات غير مُتحقق منها.',
   'home.featured.empty.title': 'لا توجد بروكسيات مُتحقق منها الآن',
   'home.featured.empty.body':
     'لم تجتز أي بروكسية فحص MTProto المطلوب بعد. تُحدَّث القائمة تلقائيًا كل ساعتين، ويمكنك إعادة المحاولة الآن.',
@@ -692,7 +692,7 @@ const en: Dictionary = {
   'home.stats.offlineCountHint': 'Outage or timeout after repeated failures',
 
   'home.featured.eyebrow': 'Automatically verified',
-  'home.featured.title': 'Top 10 Telegram Proxies Right Now',
+  'home.featured.title': 'Top 12 Telegram Proxies Right Now',
   'home.featured.description':
     'We run genuine MTProto checks every two hours and publish the best proxies that pass the threshold. Missing positions stay empty.',
   'home.featured.refresh': 'Refresh list',
@@ -708,7 +708,7 @@ const en: Dictionary = {
   'home.featured.staleNotice':
     'This data is older than the freshness window. Some proxies may no longer work; we show the last valid snapshot and do not claim it is live.',
   'home.featured.partial':
-    'Only {count} of 10 verified proxies are available right now. Missing positions are never filled with unverified proxies.',
+    'Only {count} of 12 verified proxies are available right now. Missing positions are never filled with unverified proxies.',
   'home.featured.empty.title': 'No verified proxies right now',
   'home.featured.empty.body':
     'No proxy has passed the required MTProto check yet. The list updates automatically every two hours, and you can try again now.',

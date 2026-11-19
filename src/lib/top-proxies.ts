@@ -413,7 +413,7 @@ export function rankTopProxies(
 ): FeaturedProxyRecord[] {
   const now = options.now ?? Date.now();
   const maxAgeMs = options.maximumDataAgeMinutes * 60_000;
-  const limit = Math.min(10, Math.max(1, options.featuredCount));
+  const limit = Math.min(50, Math.max(1, options.featuredCount));
 
   const ranked = verifications
     .map((verification) => {
@@ -516,8 +516,8 @@ export function parseTopProxyDataset(raw: unknown): TopDatasetParse {
 
   const featuredCount =
     typeof raw.featuredCount === 'number' && Number.isInteger(raw.featuredCount)
-      ? Math.min(10, Math.max(0, raw.featuredCount))
-      : 10;
+      ? Math.min(50, Math.max(0, raw.featuredCount))
+      : 12;
   const maxAgeMinutes =
     typeof raw.maxAgeMinutes === 'number' &&
     Number.isFinite(raw.maxAgeMinutes) &&
@@ -537,7 +537,7 @@ export function parseTopProxyDataset(raw: unknown): TopDatasetParse {
   const seen = new Set<string>();
   let skipped = 0;
 
-  raw.proxies.slice(0, 10).forEach((entry, index) => {
+  raw.proxies.slice(0, 50).forEach((entry, index) => {
     const recordIssue = (code: ValidationIssue['code'], field: string, message: string) => {
       issues.push({ code, field, message, index });
       skipped += 1;

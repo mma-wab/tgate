@@ -211,7 +211,7 @@ export function parseCollectorConfig(raw: unknown): CollectorConfig {
   if (!isRecord(raw)) throw new CollectorConfigError(['Configuration root must be an object.']);
   if (raw.schemaVersion !== 1) issues.push('schemaVersion must be 1.');
 
-  const featuredCount = readInteger(raw, 'featuredCount', 1, 10, issues);
+  const featuredCount = readInteger(raw, 'featuredCount', 1, 50, issues);
   const maxCandidates = readInteger(raw, 'maxCandidates', 1, 300, issues);
   const verificationAttempts = readInteger(raw, 'verificationAttempts', 1, 5, issues);
   const timeoutMs = readInteger(raw, 'timeoutMs', 1500, 30_000, issues);

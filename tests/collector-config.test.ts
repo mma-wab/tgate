@@ -16,7 +16,7 @@ const validConfig = (): MutableConfig =>
 describe('collector configuration', () => {
   it('accepts the repository configuration', () => {
     const config = parseCollectorConfig(validConfig());
-    expect(config.featuredCount).toBe(10);
+    expect(config.featuredCount).toBe(12);
     expect(config.sources).toHaveLength(3);
     expect(config.sources.filter((source) => source.enabled)).toHaveLength(3);
     expect(config.allowedHosts).toContain('raw.githubusercontent.com');

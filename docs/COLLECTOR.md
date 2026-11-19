@@ -1,4 +1,4 @@
-# Automated top-10 collector
+# Automated top-12 collector
 
 The collector discovers free MTProto proxies from explicitly approved public
 feeds, validates and deduplicates them, performs a real MTProto handshake
@@ -24,7 +24,7 @@ fields:
 
 | Field | Purpose |
 | --- | --- |
-| `featuredCount` | Number of proxies published on the homepage (default `10`). |
+| `featuredCount` | Number of proxies published on the homepage (default `12`). |
 | `maxCandidates` | Upper bound on endpoints verified per run. |
 | `verificationAttempts` | Handshake attempts per endpoint per run. |
 | `timeoutMs` / `concurrency` | Per-socket timeout and parallelism limits. |
