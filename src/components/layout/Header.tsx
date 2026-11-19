@@ -1,13 +1,12 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, Plus } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { useI18n } from '../../i18n';
 import { cn } from '../../lib/cn';
 import { Logo } from '../ui/Logo';
 import { LanguageSwitcher, ThemeToggle } from './Controls';
 import { MobileMenu } from './MobileMenu';
 import { Container } from '../ui/LayoutPrimitives';
-import { buttonStyles } from '../ui/Button';
 import { NAV_ENTRIES } from './navigation';
 
 export function Header() {
@@ -61,13 +60,6 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Link
-              to="/submit"
-              className={buttonStyles('secondary', 'sm', 'hidden xl:inline-flex')}
-            >
-              <Plus className="size-4" aria-hidden="true" />
-              {t('nav.submit')}
-            </Link>
             <LanguageSwitcher className="hidden min-[390px]:inline-flex" />
             <ThemeToggle />
             <button

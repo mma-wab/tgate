@@ -17,7 +17,6 @@ const ProxyDetails = lazy(() => import('./pages/ProxyDetails'));
 const HowItWorks = lazy(() => import('./pages/HowItWorks'));
 const Security = lazy(() => import('./pages/Security'));
 const Faq = lazy(() => import('./pages/Faq'));
-const Submit = lazy(() => import('./pages/Submit'));
 const About = lazy(() => import('./pages/About'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const Terms = lazy(() => import('./pages/Terms'));
@@ -73,7 +72,6 @@ export default function App() {
                         <Route path="/how-it-works" element={<HowItWorks />} />
                         <Route path="/security" element={<Security />} />
                         <Route path="/faq" element={<Faq />} />
-                        <Route path="/submit" element={<Submit />} />
                         <Route path="/about" element={<About />} />
                         <Route path="/privacy" element={<Privacy />} />
                         <Route path="/terms" element={<Terms />} />

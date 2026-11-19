@@ -2,12 +2,11 @@ import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { Link, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import { ArrowUpLeft, ChevronLeft, ChevronRight, Plus, X } from 'lucide-react';
+import { ArrowUpLeft, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { useI18n } from '../../i18n';
 import { Logo } from '../ui/Logo';
 import { LanguageSwitcher, ThemeToggle } from './Controls';
 import { NAV_ENTRIES } from './navigation';
-import { buttonStyles } from '../ui/Button';
 import { cn } from '../../lib/cn';
 
 export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
@@ -116,16 +115,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
 
             <div className="my-6 h-px bg-line" />
 
-            <Link
-              to="/submit"
-              onClick={onClose}
-              className={buttonStyles('primary', 'md', 'w-full')}
-            >
-              <Plus className="size-4" aria-hidden="true" />
-              {t('nav.submit')}
-            </Link>
-
-            <div className="mt-6 flex items-center gap-2">
+            <div className="flex items-center gap-2">
               <LanguageSwitcher className="flex-1" />
               <ThemeToggle />
             </div>

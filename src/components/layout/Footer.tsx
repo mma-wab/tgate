@@ -40,13 +40,13 @@ export function Footer() {
             </h2>
             <ul className="mt-4 space-y-1.5">
               <li>
-                <Link to="/proxies" className={footerLinkClass}>
-                  {t('nav.proxies')}
+                <Link to="/" className={footerLinkClass}>
+                  {t('nav.home')}
                 </Link>
               </li>
               <li>
-                <Link to="/how-it-works" className={footerLinkClass}>
-                  {t('footer.how')}
+                <Link to="/proxies" className={footerLinkClass}>
+                  {t('nav.proxies')}
                 </Link>
               </li>
               <li>
@@ -55,8 +55,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/submit" className={footerLinkClass}>
-                  {t('footer.submit')}
+                <Link to="/about" className={footerLinkClass}>
+                  {t('footer.about')}
                 </Link>
               </li>
             </ul>
@@ -68,20 +68,33 @@ export function Footer() {
             </h2>
             <ul className="mt-4 space-y-1.5">
               <li>
+                <Link to="/how-it-works" className={footerLinkClass}>
+                  {t('footer.how')}
+                </Link>
+              </li>
+              <li>
                 <Link to="/security" className={footerLinkClass}>
                   {t('footer.security')}
                 </Link>
               </li>
               <li>
-                <Link to="/guidelines" className={footerLinkClass}>
-                  {t('footer.guidelines')}
+                <Link to="/privacy" className={footerLinkClass}>
+                  {t('footer.privacy')}
                 </Link>
               </li>
               <li>
-                <Link to="/about" className={footerLinkClass}>
-                  {t('footer.about')}
+                <Link to="/terms" className={footerLinkClass}>
+                  {t('footer.terms')}
                 </Link>
               </li>
+            </ul>
+          </nav>
+
+          <nav aria-label={t('footer.legal')}>
+            <h2 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-ink">
+              {t('footer.legal')}
+            </h2>
+            <ul className="mt-4 space-y-1.5">
               {siteConfig.repoUrl ? (
                 <li>
                   <a
@@ -105,24 +118,6 @@ export function Footer() {
                   {t('footer.telegram')}
                   <ArrowUpRight className="size-3.5" aria-hidden="true" />
                 </a>
-              </li>
-            </ul>
-          </nav>
-
-          <nav aria-label={t('footer.legal')}>
-            <h2 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-ink">
-              {t('footer.legal')}
-            </h2>
-            <ul className="mt-4 space-y-1.5">
-              <li>
-                <Link to="/privacy" className={footerLinkClass}>
-                  {t('footer.privacy')}
-                </Link>
-              </li>
-              <li>
-                <Link to="/terms" className={footerLinkClass}>
-                  {t('footer.terms')}
-                </Link>
               </li>
               <li>
                 <a

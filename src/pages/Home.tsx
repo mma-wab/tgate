@@ -7,7 +7,7 @@ import { featuredProxyToRecord } from '../lib/top-proxies';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { Hero } from '../components/home/Hero';
 import { FeaturedProxies } from '../components/home/FeaturedProxies';
-import { HowPreview, FaqPreview, SubmitCta } from '../components/home/HomeSections';
+import { HowPreview, FaqPreview } from '../components/home/HomeSections';
 
 export default function Home() {
   const { t } = useI18n();
@@ -55,7 +55,6 @@ export default function Home() {
       <FeaturedProxies />
       <HowPreview />
       <FaqPreview />
-      <SubmitCta />
     </>
   );
 }

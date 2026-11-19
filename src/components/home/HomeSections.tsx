@@ -6,7 +6,6 @@ import {
   CheckCheck,
   Eye,
   ListFilter,
-  Sparkles,
 } from 'lucide-react';
 import { useI18n } from '../../i18n';
 import { faqItems } from '../../i18n/content';
@@ -115,37 +114,6 @@ export function FaqPreview() {
             </div>
           </div>
           <Accordion items={items} defaultOpenFirst />
-        </div>
-      </Container>
-    </Section>
-  );
-}
-
-export function SubmitCta() {
-  const { t } = useI18n();
-  return (
-    <Section>
-      <Container>
-        <div className="relative overflow-hidden rounded-[2rem] border border-brand/15 bg-brand-soft/70 px-6 py-10 sm:px-10 lg:px-12 lg:py-12">
-          <div className="dot-grid pointer-events-none absolute inset-0 opacity-40" aria-hidden="true" />
-          <div className="relative flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-2xl">
-              <p className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-ink">
-                <Sparkles className="size-3.5" aria-hidden="true" />
-                {t('home.submit.eyebrow')}
-              </p>
-              <h2 className="mt-3 text-2xl font-semibold sm:text-3xl">{t('home.submit.title')}</h2>
-              <p className="mt-2 text-sm leading-7 text-ink-soft">{t('home.submit.body')}</p>
-            </div>
-            <div className="flex shrink-0 flex-wrap gap-2.5">
-              <Link to="/submit" className={buttonStyles('primary', 'lg')}>
-                {t('home.submit.cta')}
-              </Link>
-              <Link to="/security" className={buttonStyles('secondary', 'lg')}>
-                {t('home.submit.secondary')}
-              </Link>
-            </div>
-          </div>
         </div>
       </Container>
     </Section>

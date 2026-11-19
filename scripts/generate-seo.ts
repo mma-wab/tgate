@@ -37,13 +37,6 @@ const staticRoutes: Array<Omit<RouteEntry, 'title' | 'description'> & { titleKey
   { path: '/privacy', titleKey: 'meta.privacy.title', descriptionKey: 'meta.privacy.description' },
   { path: '/terms', titleKey: 'meta.terms.title', descriptionKey: 'meta.terms.description' },
   { path: '/guidelines', titleKey: 'meta.guidelines.title', descriptionKey: 'meta.guidelines.description' },
-  {
-    path: '/submit',
-    titleKey: 'meta.submit.title',
-    descriptionKey: 'meta.submit.description',
-    noindex: true,
-    priority: '0.3',
-  },
 ];
 
 function absolutePath(path: string): string {

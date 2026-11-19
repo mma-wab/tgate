@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, Database, Plus, Telescope, WifiOff } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Database, Telescope, WifiOff } from 'lucide-react';
 import { useI18n } from '../../i18n';
 import { useProxies } from '../../contexts/ProxiesContext';
 import { DEFAULT_FILTERS, filterProxies } from '../../lib/directory';
@@ -49,16 +49,10 @@ export function HomeDirectory() {
               title={t('home.directory.emptyTitle')}
               description={t('home.directory.emptyBody')}
               actions={
-                <>
-                  <Link to="/submit" className={buttonStyles('primary', 'md')}>
-                    <Plus className="size-4" aria-hidden="true" />
-                    {t('home.directory.emptyCta')}
-                  </Link>
-                  <Link to="/about" className={buttonStyles('secondary', 'md')}>
-                    <Telescope className="size-4" aria-hidden="true" />
-                    {t('directory.empty.secondary')}
-                  </Link>
-                </>
+                <Link to="/about" className={buttonStyles('primary', 'md')}>
+                  <Telescope className="size-4" aria-hidden="true" />
+                  {t('directory.empty.secondary')}
+                </Link>
               }
             />
           ) : null}

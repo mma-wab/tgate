@@ -324,14 +324,9 @@ export default function Directory() {
               title={t('directory.empty.title')}
               description={t('directory.empty.body')}
               actions={
-                <>
-                  <Link to="/submit" className={buttonStyles('primary', 'md')}>
-                    {t('directory.empty.cta')}
-                  </Link>
-                  <Link to="/about" className={buttonStyles('secondary', 'md')}>
-                    {t('directory.empty.secondary')}
-                  </Link>
-                </>
+                <Link to="/about" className={buttonStyles('primary', 'md')}>
+                  {t('directory.empty.secondary')}
+                </Link>
               }
             />
           ) : null}

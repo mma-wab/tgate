@@ -22,9 +22,6 @@ export function Hero({ stats, loading }: { stats: DirectoryStats; loading: boole
 
   return (
     <section className="relative overflow-hidden py-12 sm:py-16 lg:py-20">
-      <div className="hero-glow pointer-events-none absolute inset-0" aria-hidden="true" />
-      <div className="hero-grid pointer-events-none absolute inset-0" aria-hidden="true" />
-
       <Container className="relative max-w-4xl text-center">
         <motion.div {...motionProps} className="mx-auto flex flex-col items-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-surface/90 px-3.5 py-1.5 text-[12px] font-medium text-ink-soft shadow-sm backdrop-blur">

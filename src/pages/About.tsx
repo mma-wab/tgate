@@ -57,9 +57,6 @@ export default function About() {
           {t('nav.proxies')}
           <Forward className="size-4" aria-hidden="true" />
         </Link>
-        <Link to="/submit" className={buttonStyles('secondary', 'md')}>
-          {t('footer.submit')}
-        </Link>
       </PageHeader>
 
       <Section>

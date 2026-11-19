@@ -78,9 +78,6 @@ export default function Faq() {
             <Link to="/proxies" className={buttonStyles('primary', 'md')}>
               {t('nav.proxies')}
             </Link>
-            <Link to="/submit" className={buttonStyles('secondary', 'md')}>
-              {t('footer.submit')}
-            </Link>
           </div>
         </Container>
       </Section>

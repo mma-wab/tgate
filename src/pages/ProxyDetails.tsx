@@ -326,15 +326,17 @@ export default function ProxyDetails() {
                     {t('common.copyLink')}
                   </Button>
                 ) : null}
-                <a
-                  href={reportHref || '/submit'}
-                  target={reportHref ? '_blank' : undefined}
-                  rel={reportHref ? 'noopener noreferrer' : undefined}
-                  className={buttonStyles('ghost', 'md')}
-                >
-                  <Flag className="size-4" aria-hidden="true" />
-                  {t('details.report')}
-                </a>
+                {reportHref ? (
+                  <a
+                    href={reportHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={buttonStyles('ghost', 'md')}
+                  >
+                    <Flag className="size-4" aria-hidden="true" />
+                    {t('details.report')}
+                  </a>
+                ) : null}
               </div>
             </section>
 
