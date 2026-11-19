@@ -744,6 +744,15 @@ export function buildFeaturedTelegramLink(
 }
 
 /**
+ * Builds the direct tg:// protocol URI scheme for direct native app launch on Android and desktop.
+ */
+export function buildFeaturedTelegramTgLink(
+  proxy: Pick<FeaturedProxyRecord, 'server' | 'port' | 'secret'>,
+): string {
+  return `tg://proxy?server=${encodeURIComponent(proxy.server)}&port=${proxy.port}&secret=${encodeURIComponent(proxy.secret)}`;
+}
+
+/**
  * Converts a featured proxy record into a standard ProxyRecord for directory,
  * details, and statistics display when the manual database is empty.
  */

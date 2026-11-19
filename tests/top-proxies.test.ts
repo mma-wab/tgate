@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   buildFeaturedTelegramLink,
+  buildFeaturedTelegramTgLink,
   isTopProxyStale,
   mergeCandidates,
   normalizeSecret,
@@ -255,6 +256,18 @@ describe('buildFeaturedTelegramLink', () => {
       }),
     ).toBe(
       'https://t.me/proxy?server=relay1.proxyhub.dev&port=443&secret=a1b2c3d4e5f60718293a4b5c6d7e8f90',
+    );
+  });
+
+  it('builds the direct tg:// proxy URI for direct native Telegram app launch', () => {
+    expect(
+      buildFeaturedTelegramTgLink({
+        server: 'relay1.proxyhub.dev',
+        port: 443,
+        secret: 'a1b2c3d4e5f60718293a4b5c6d7e8f90',
+      }),
+    ).toBe(
+      'tg://proxy?server=relay1.proxyhub.dev&port=443&secret=a1b2c3d4e5f60718293a4b5c6d7e8f90',
     );
   });
 });

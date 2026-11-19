@@ -32,7 +32,7 @@ import {
   percentPrecise,
 } from '../../lib/format';
 import { cn } from '../../lib/cn';
-import { buildFeaturedTelegramLink } from '../../lib/top-proxies';
+import { buildFeaturedTelegramLink, buildFeaturedTelegramTgLink } from '../../lib/top-proxies';
 import { Badge } from '../ui/Badge';
 import { Button, buttonStyles } from '../ui/Button';
 import { Container, Section, SectionHeading } from '../ui/LayoutPrimitives';
@@ -94,6 +94,8 @@ function FeaturedProxyCard({
   const [detailsOpen, setDetailsOpen] = useState(false);
 
   const link = buildFeaturedTelegramLink(proxy);
+  const tgLink = buildFeaturedTelegramTgLink(proxy);
+  const isAndroid = typeof navigator !== 'undefined' && /android/i.test(navigator.userAgent);
   const titleId = `featured-proxy-${proxy.id}`;
   const rank = String(proxy.rank).padStart(2, '0');
   const country = countryLabel(proxy.country, lang);
@@ -101,6 +103,27 @@ function FeaturedProxyCard({
     proxy.latencyMs === null ? '—' : `${formatNumber(Math.round(proxy.latencyMs), lang)} ms`;
   const successRate = percentPrecise(proxy.successRate, lang);
   const lastVerified = formatRelative(proxy.verifiedAt, lang, now);
+
+  const handleConnect = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (isAndroid) {
+      e.preventDefault();
+      // On Android devices, open the native Telegram app directly via tg://
+      window.location.href = tgLink;
+
+      // Graceful fallback: If Telegram is not installed after 2s, open official web link
+      const fallbackTimer = window.setTimeout(() => {
+        if (document.visibilityState === 'visible') {
+          window.open(link, '_blank', 'noopener,noreferrer');
+        }
+      }, 2000);
+
+      window.addEventListener(
+        'pagehide',
+        () => window.clearTimeout(fallbackTimer),
+        { once: true },
+      );
+    }
+  };
 
   const share = async () => {
     if (typeof navigator !== 'undefined' && typeof navigator.share === 'function') {
@@ -229,16 +252,17 @@ function FeaturedProxyCard({
 
       <div className="mt-auto space-y-2 pt-4">
         <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={isAndroid ? tgLink : link}
+          onClick={handleConnect}
+          target={isAndroid ? undefined : '_blank'}
+          rel={isAndroid ? undefined : 'noopener noreferrer'}
           className={buttonStyles('primary', 'lg', 'w-full min-h-[44px] shadow-sm')}
           aria-label={`${t('home.featured.connect')} — ${proxy.server}`}
           title={t('home.featured.connectHint')}
         >
           <Send className="size-4" aria-hidden="true" />
           <span className="font-semibold">{t('home.featured.connect')}</span>
-          <span className="sr-only"> ({t('common.newTab')})</span>
+          {!isAndroid ? <span className="sr-only"> ({t('common.newTab')})</span> : null}
         </a>
 
         <div className="flex items-center gap-2">
