@@ -1,16 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-label="Telegram Proxy Hub">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-label="T-Gate">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#35b6ee" />
-      <stop offset="100%" stop-color="#1479ad" />
+    <linearGradient id="tgate-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
     </linearGradient>
   </defs>
-  <rect width="40" height="40" rx="12" fill="url(#g)" />
-  <g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="2.1">
-    <path d="M15.2 19.4a6.8 6.8 0 0 1 9.6 0" opacity="0.95" />
-    <path d="M11.6 15.2a12 12 0 0 1 16.8 0" opacity="0.7" />
-  </g>
-  <circle cx="20" cy="25.4" r="2.3" fill="#ffffff" />
-  <circle cx="28.3" cy="12.4" r="1.35" fill="#ffffff" opacity="0.85" />
-  <circle cx="11.7" cy="12.4" r="1.35" fill="#ffffff" opacity="0.55" />
+  <rect width="40" height="40" rx="11" fill="url(#tgate-grad)" />
+  <!-- Gate Portal Arch -->
+  <path
+    d="M 13.5 29 L 13.5 20.5 C 13.5 16.9 16.4 14 20 14 C 23.6 14 26.5 16.9 26.5 20.5 L 26.5 29"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="2.4"
+    stroke-linecap="round"
+  />
+  <!-- Top Bar of T -->
+  <rect x="8.5" y="9.5" width="23" height="3.8" rx="1.9" fill="#ffffff" />
+  <!-- Central T Transmission Stem -->
+  <line x1="20" y1="13.3" x2="20" y2="23" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" />
+  <!-- Core Connection Node -->
+  <circle cx="20" cy="24" r="2.2" fill="#ffffff" />
+  <!-- Base Ground Nodes -->
+  <circle cx="13.5" cy="29" r="1.3" fill="#ffffff" opacity="0.9" />
+  <circle cx="26.5" cy="29" r="1.3" fill="#ffffff" opacity="0.9" />
 </svg>

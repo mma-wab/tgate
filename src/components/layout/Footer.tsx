@@ -25,10 +25,10 @@ export function Footer() {
                 <LogoMark className="size-9" />
                 <span
                   dir="ltr"
-                  className="text-[15px] font-semibold tracking-tight text-ink"
+                  className="text-[17px] font-bold tracking-tight text-ink"
                   style={{ fontFamily: 'var(--font-sans)' }}
                 >
-                  Telegram <span className="text-brand">Proxy Hub</span>
+                  T-<span className="text-brand">Gate</span>
                 </span>
               </div>
               <p className="mt-4 text-sm leading-7 text-muted">{t('footer.tagline')}</p>

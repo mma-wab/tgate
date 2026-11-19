@@ -3,8 +3,8 @@
  * Long-form editorial content lives in `content.ts`.
  */
 const ar = {
-  'app.name': 'مركز بروكسيات تيليجرام',
-  'app.shortName': 'بروكسي هَب',
+  'app.name': 'T-Gate · بوابة بروكسيات تيليجرام',
+  'app.shortName': 'T-Gate',
   'app.independent': 'مشروع مجتمعي مستقل، غير تابع لتلغرام.',
 
   'nav.home': 'الرئيسية',
@@ -536,7 +536,7 @@ const ar = {
   'validation.nameTooLong': 'الاسم أطول من الحد المسموح.',
   'validation.noteTooLong': 'الملاحظة أطول من الحد المسموح.',
 
-  'meta.home.title': 'مركز بروكسيات تيليجرام | ابحث واتصل ببروكسيات MTProto',
+  'meta.home.title': 'T-Gate | بوابة بروكسيات MTProto لتيليجرام',
   'meta.home.description':
     'دليل مستقل لبروكسيات تلغرام MTProto: حالة الاتصال، زمن الاستجابة، سجل الفحص، وروابط اتصال مباشرة. مجاني، بدون تسجيل، وبالعربية والإنجليزية.',
   'meta.proxies.title': 'دليل بروكسيات MTProto | مركز بروكسيات تيليجرام',
@@ -574,8 +574,8 @@ export type TranslationKey = keyof typeof ar;
 export type Dictionary = Record<TranslationKey, string>;
 
 const en: Dictionary = {
-  'app.name': 'Telegram Proxy Hub',
-  'app.shortName': 'Proxy Hub',
+  'app.name': 'T-Gate · Telegram Proxy Portal',
+  'app.shortName': 'T-Gate',
   'app.independent': 'An independent community project, not affiliated with Telegram.',
 
   'nav.home': 'Home',
@@ -1108,7 +1108,7 @@ const en: Dictionary = {
   'validation.nameTooLong': 'The name exceeds the allowed length.',
   'validation.noteTooLong': 'The note exceeds the allowed length.',
 
-  'meta.home.title': 'Telegram Proxy Hub | Find and Connect to MTProto Proxies',
+  'meta.home.title': 'T-Gate | Find and Connect to MTProto Proxies',
   'meta.home.description':
     'An independent Telegram MTProto proxy directory with live availability, response times, check history, and one-click connection links. Free, no login, in Arabic and English.',
   'meta.proxies.title': 'MTProto Proxy Directory | Telegram Proxy Hub',

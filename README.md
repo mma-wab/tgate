@@ -1,4 +1,4 @@
-# Telegram Proxy Hub
+# T-Gate · Telegram Proxy Portal
 
 An independent, bilingual (Arabic / English) directory for discovering, checking, and connecting to **Telegram MTProto proxies**. It is a link directory, not a proxy server: it does not relay traffic, does not require an account, and does not collect Telegram credentials.
 

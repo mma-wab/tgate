@@ -51,7 +51,7 @@ export default function Home() {
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      name: 'Telegram Proxy Hub',
+      name: 'T-Gate',
       description: t('meta.home.description'),
       inLanguage: ['ar', 'en'],
       potentialAction: {

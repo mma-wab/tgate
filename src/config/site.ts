@@ -7,8 +7,8 @@ const rawTopDataUrl = (import.meta.env.VITE_TOP_DATA_URL as string | undefined)?
 const rawContactEmail = (import.meta.env.VITE_CONTACT_EMAIL as string | undefined)?.trim();
 
 export const siteConfig = {
-  name: 'Telegram Proxy Hub',
-  nameAr: 'مركز بروكسيات تيليجرام',
+  name: 'T-Gate',
+  nameAr: 'T-Gate · بوابة بروكسيات تيليجرام',
   author: 'Mohammed Majid',
   copyright: '© 2026 Mohammed Majid. All rights reserved.',
   url: rawSiteUrl ? trimTrailingSlash(rawSiteUrl) : '',

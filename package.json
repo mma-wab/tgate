@@ -1,5 +1,5 @@
 {
-  "name": "telegram-proxy-hub",
+  "name": "t-gate",
   "private": true,
   "version": "1.0.0",
   "description": "A bilingual directory for discovering, checking, and connecting to Telegram MTProto proxies.",
