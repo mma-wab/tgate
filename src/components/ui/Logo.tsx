@@ -1,4 +1,3 @@
-import { useI18n } from '../../i18n';
 import { cn } from '../../lib/cn';
 
 export function LogoMark({ className }: { className?: string }) {
@@ -38,7 +37,6 @@ export function LogoMark({ className }: { className?: string }) {
 }
 
 export function Logo({ onClick, className }: { onClick?: () => void; className?: string }) {
-  const { t } = useI18n();
   return (
     <a
       href="#top"
@@ -46,18 +44,13 @@ export function Logo({ onClick, className }: { onClick?: () => void; className?:
       className={cn('group flex items-center gap-2.5 rounded-xl', className)}
       aria-label="T-Gate"
     >
-      <LogoMark className="size-9 transition-transform duration-300 group-hover:-rotate-3" />
-      <span className="flex flex-col leading-none">
-        <span
-          dir="ltr"
-          className="text-[17px] font-bold tracking-tight text-ink"
-          style={{ fontFamily: 'var(--font-sans)' }}
-        >
-          T-<span className="text-brand">Gate</span>
-        </span>
-        <span className="mt-1 text-[10px] font-medium tracking-wide text-muted">
-          {t('app.shortName')} · MTProto
-        </span>
+      <LogoMark className="size-9 shrink-0 transition-transform duration-300 group-hover:-rotate-3" />
+      <span
+        dir="ltr"
+        className="text-[18px] font-bold tracking-tight text-ink"
+        style={{ fontFamily: 'var(--font-sans)' }}
+      >
+        T-<span className="text-brand">Gate</span>
       </span>
     </a>
   );
