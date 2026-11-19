@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useI18n } from '../i18n';
 import { useProxies } from '../contexts/ProxiesContext';
 import { useTopProxies } from '../hooks/useTopProxies';
@@ -13,6 +13,19 @@ export default function Home() {
   const { t } = useI18n();
   const { dataset, status } = useProxies();
   const { dataset: topDataset, status: topStatus } = useTopProxies();
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.hash) {
+      const id = window.location.hash.substring(1);
+      const timer = window.setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 50);
+      return () => window.clearTimeout(timer);
+    }
+  }, []);
 
   const stats = useMemo(() => {
     if (dataset && dataset.proxies.length > 0) {
@@ -43,7 +56,7 @@ export default function Home() {
       inLanguage: ['ar', 'en'],
       potentialAction: {
         '@type': 'SearchAction',
-        target: `${window.location.origin}/proxies?q={search_term_string}`,
+        target: `${typeof window !== 'undefined' ? window.location.origin : ''}/#proxies`,
         'query-input': 'required name=search_term_string',
       },
     },

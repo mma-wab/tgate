@@ -1,21 +1,17 @@
-import { Link } from 'react-router-dom';
 import {
-  ArrowLeft,
-  ArrowRight,
   BadgeCheck,
   CheckCheck,
   Eye,
   ListFilter,
+  ShieldCheck,
 } from 'lucide-react';
 import { useI18n } from '../../i18n';
 import { faqItems } from '../../i18n/content';
-import { buttonStyles } from '../ui/Button';
 import { Accordion } from '../ui/Accordion';
 import { Container, Section, SectionHeading } from '../ui/LayoutPrimitives';
 
 export function HowPreview() {
-  const { t, isRTL } = useI18n();
-  const Forward = isRTL ? ArrowLeft : ArrowRight;
+  const { t } = useI18n();
   const steps = [
     {
       icon: ListFilter,
@@ -35,21 +31,13 @@ export function HowPreview() {
   ];
 
   return (
-    <Section tone="soft">
+    <Section id="how-it-works" tone="soft" className="scroll-mt-20">
       <Container>
         <SectionHeading
           eyebrow={t('home.how.eyebrow')}
           title={t('home.how.title')}
           description={t('home.how.subtitle')}
-        >
-          <Link to="/how-it-works" className={buttonStyles('secondary', 'md', 'group')}>
-            {t('home.how.cta')}
-            <Forward
-              className="size-4 transition-transform group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5"
-              aria-hidden="true"
-            />
-          </Link>
-        </SectionHeading>
+        />
 
         <ol className="mt-10 grid gap-4 md:grid-cols-3">
           {steps.map((step, index) => {
@@ -67,47 +55,40 @@ export function HowPreview() {
                     0{index + 1}
                   </span>
                 </div>
-                <h3 className="mt-4 text-[15px] font-semibold">{step.title}</h3>
+                <h3 className="mt-4 text-[15px] font-semibold text-ink">{step.title}</h3>
                 <p className="mt-1.5 text-[13px] leading-6 text-muted">{step.body}</p>
               </li>
             );
           })}
         </ol>
+
+        <div className="mt-8 flex items-center gap-3 rounded-2xl border border-brand/20 bg-brand-soft/40 p-4 text-[13px] leading-6 text-brand-ink">
+          <ShieldCheck className="size-5 shrink-0 text-brand" aria-hidden="true" />
+          <span>{t('details.securityBody')}</span>
+        </div>
       </Container>
     </Section>
   );
 }
 
 export function FaqPreview() {
-  const { t, lang, isRTL } = useI18n();
-  const Forward = isRTL ? ArrowLeft : ArrowRight;
-  const items = faqItems[lang].slice(0, 4).map((item, index) => ({
+  const { t, lang } = useI18n();
+  const items = faqItems[lang].map((item, index) => ({
     id: `home-faq-${index}`,
     question: item.q,
     answer: item.a,
   }));
 
   return (
-    <Section tone="surface">
+    <Section id="faq" tone="surface" className="scroll-mt-20">
       <Container>
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
           <div>
             <SectionHeading
               eyebrow={t('home.faq.eyebrow')}
               title={t('home.faq.title')}
+              description={t('faq.subtitle')}
             />
-            <div className="mt-6 flex flex-wrap gap-2.5">
-              <Link to="/faq" className={buttonStyles('secondary', 'md', 'group')}>
-                {t('home.faq.cta')}
-                <Forward
-                  className="size-4 transition-transform group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5"
-                  aria-hidden="true"
-                />
-              </Link>
-              <Link to="/how-it-works" className={buttonStyles('ghost', 'md')}>
-                {t('footer.how')}
-              </Link>
-            </div>
             <div className="mt-6 flex items-start gap-2.5 rounded-2xl border border-line bg-surface-2/60 p-4 text-[12px] leading-6 text-muted">
               <Eye className="mt-0.5 size-4 shrink-0 text-brand" aria-hidden="true" />
               {t('directory.verificationNote')}

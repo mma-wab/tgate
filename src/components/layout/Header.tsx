@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import { Menu } from 'lucide-react';
 import { useI18n } from '../../i18n';
 import { cn } from '../../lib/cn';
@@ -11,7 +10,6 @@ import { NAV_ENTRIES } from './navigation';
 
 export function Header() {
   const { t } = useI18n();
-  const { pathname } = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const closeMenu = useCallback(() => setMenuOpen(false), []);
@@ -22,10 +20,6 @@ export function Header() {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
 
   return (
     <>
@@ -39,24 +33,15 @@ export function Header() {
           <Logo onClick={closeMenu} />
 
           <nav aria-label={t('nav.main')} className="hidden items-center gap-0.5 lg:flex">
-            {NAV_ENTRIES.map((entry) => {
-              const active = entry.match(pathname);
-              return (
-                <Link
-                  key={entry.href}
-                  to={entry.href}
-                  aria-current={active ? 'page' : undefined}
-                  className={cn(
-                    'relative rounded-lg px-3 py-2 text-[13px] font-medium transition-colors',
-                    active
-                      ? 'bg-brand-soft/80 text-brand-ink'
-                      : 'text-ink-soft hover:bg-surface-2 hover:text-ink',
-                  )}
-                >
-                  {t(entry.key)}
-                </Link>
-              );
-            })}
+            {NAV_ENTRIES.map((entry) => (
+              <a
+                key={entry.href}
+                href={entry.href}
+                className="relative rounded-lg px-3 py-2 text-[13px] font-medium text-ink-soft transition-colors hover:bg-surface-2 hover:text-ink"
+              >
+                {t(entry.key)}
+              </a>
+            ))}
           </nav>
 
           <div className="flex items-center gap-2">

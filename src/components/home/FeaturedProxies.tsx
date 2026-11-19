@@ -1,18 +1,20 @@
-import { useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import { useMemo, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import {
-  ArrowUpRight,
   Check,
+  ChevronDown,
   Clock3,
   Copy,
   Gauge,
+  KeyRound,
   MapPin,
   RefreshCw,
+  Search,
   Send,
   Share2,
   ShieldCheck,
   WifiOff,
+  X,
 } from 'lucide-react';
 import { useI18n } from '../../i18n';
 import { useCopy } from '../../hooks/useCopy';
@@ -89,6 +91,7 @@ function FeaturedProxyCard({
   const copy = useCopy();
   const { push } = useToast();
   const reduceMotion = useReducedMotion();
+  const [detailsOpen, setDetailsOpen] = useState(false);
 
   const link = buildFeaturedTelegramLink(proxy);
   const titleId = `featured-proxy-${proxy.id}`;
@@ -198,6 +201,32 @@ function FeaturedProxyCard({
         </div>
       </dl>
 
+      {detailsOpen ? (
+        <div className="mt-3.5 rounded-2xl border border-brand/20 bg-brand-soft/30 p-3 text-[12px]">
+          <div className="flex items-center justify-between gap-2 border-b border-brand/15 pb-2">
+            <span className="font-semibold text-brand-ink flex items-center gap-1.5">
+              <KeyRound className="size-3.5 text-brand" />
+              {t('details.showSecret')}
+            </span>
+            <button
+              type="button"
+              onClick={() => void copy(proxy.secret, t('details.copySecret'))}
+              className="inline-flex items-center gap-1 rounded-lg border border-brand/30 bg-surface px-2 py-0.5 text-[11px] font-medium text-brand-ink hover:bg-brand-soft"
+            >
+              <Copy className="size-3" />
+              {t('details.copySecret')}
+            </button>
+          </div>
+          <p className="mt-2 font-mono text-[11px] break-all select-all text-ink-soft ltr-data" dir="ltr">
+            {proxy.secret}
+          </p>
+          <div className="mt-2.5 flex items-center justify-between text-[11px] text-muted border-t border-brand/15 pt-2">
+            <span>{t('details.protocolValue')}</span>
+            <span className="font-medium text-ink-soft">{proxy.port}</span>
+          </div>
+        </div>
+      ) : null}
+
       <div className="mt-auto space-y-2 pt-4">
         <a
           href={link}
@@ -234,14 +263,20 @@ function FeaturedProxyCard({
             <Share2 className="size-4" aria-hidden="true" />
           </button>
 
-          <Link
-            to={`/proxies/${proxy.id}`}
-            title={t('proxy.viewDetails', { name: proxy.server })}
-            aria-label={t('proxy.viewDetails', { name: proxy.server })}
-            className="inline-flex size-[42px] shrink-0 items-center justify-center rounded-xl border border-line bg-surface text-muted transition hover:border-brand/40 hover:bg-brand-soft/50 hover:text-brand-ink"
+          <button
+            type="button"
+            onClick={() => setDetailsOpen((prev) => !prev)}
+            title={detailsOpen ? t('details.hideSecret') : t('details.showSecret')}
+            aria-label={`${detailsOpen ? t('details.hideSecret') : t('details.showSecret')} — ${proxy.server}`}
+            className={cn(
+              'inline-flex size-[42px] shrink-0 items-center justify-center rounded-xl border transition',
+              detailsOpen
+                ? 'border-brand bg-brand-soft text-brand-ink'
+                : 'border-line bg-surface text-muted hover:border-brand/40 hover:bg-brand-soft/50 hover:text-brand-ink',
+            )}
           >
-            <ArrowUpRight className="size-4" aria-hidden="true" />
-          </Link>
+            <ChevronDown className={cn('size-4 transition-transform duration-200', detailsOpen && 'rotate-180')} />
+          </button>
         </div>
       </div>
     </motion.article>
@@ -277,6 +312,25 @@ export function FeaturedProxies() {
   const sourceLabels = dataset?.sourceLabels ?? {};
   const isReady = status === 'ready' && dataset !== null;
 
+  const [query, setQuery] = useState('');
+  const [filterMode, setFilterMode] = useState<'all' | 'online' | 'fast'>('all');
+
+  const filteredProxies = useMemo(() => {
+    return proxies.filter((proxy) => {
+      if (filterMode === 'online' && proxy.status !== 'online') return false;
+      if (filterMode === 'fast' && (proxy.latencyMs === null || proxy.latencyMs >= 200)) return false;
+
+      if (!query.trim()) return true;
+      const q = query.toLowerCase().trim();
+      const serverMatch = proxy.server.toLowerCase().includes(q);
+      const countryMatch = proxy.country ? proxy.country.toLowerCase().includes(q) : false;
+      const countryName = proxy.country ? countryLabel(proxy.country, lang).toLowerCase() : '';
+      const countryNameMatch = countryName.includes(q);
+
+      return serverMatch || countryMatch || countryNameMatch;
+    });
+  }, [proxies, query, filterMode, lang]);
+
   const lastUpdated = dataset?.updatedAt ?? null;
   const lastUpdatedLabel = useMemo(() => {
     if (lastUpdated) {
@@ -295,7 +349,7 @@ export function FeaturedProxies() {
   };
 
   return (
-    <Section id="top-proxies" tone="soft">
+    <Section id="proxies" tone="soft" className="scroll-mt-20">
       <Container>
         <SectionHeading
           eyebrow={t('home.featured.eyebrow')}
@@ -324,13 +378,74 @@ export function FeaturedProxies() {
             >
               {refreshing ? t('home.featured.refreshing') : t('home.featured.refresh')}
             </Button>
-            <span className="sr-only" aria-live="polite">
-              {refreshing ? t('home.featured.refreshing') : ''}
-            </span>
           </div>
         </SectionHeading>
 
-        <div className="mt-10">
+        {isReady && proxies.length > 0 ? (
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="relative flex-1 max-w-md">
+              <Search className="pointer-events-none absolute start-3.5 top-1/2 size-4 -translate-y-1/2 text-muted" />
+              <input
+                type="search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder={t('directory.searchPlaceholder')}
+                className="w-full rounded-2xl border border-line bg-surface py-2.5 pe-9 ps-10 text-[13px] text-ink placeholder:text-muted focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20"
+              />
+              {query ? (
+                <button
+                  type="button"
+                  onClick={() => setQuery('')}
+                  aria-label={t('common.close')}
+                  className="absolute end-3 top-1/2 -translate-y-1/2 text-muted hover:text-ink"
+                >
+                  <X className="size-4" />
+                </button>
+              ) : null}
+            </div>
+
+            <div className="flex flex-wrap items-center gap-1.5">
+              <button
+                type="button"
+                onClick={() => setFilterMode('all')}
+                className={cn(
+                  'rounded-xl px-3 py-1.5 text-[12px] font-semibold transition',
+                  filterMode === 'all'
+                    ? 'bg-brand text-white shadow-sm'
+                    : 'border border-line bg-surface text-ink-soft hover:bg-surface-2',
+                )}
+              >
+                {t('directory.allStatuses')} ({proxies.length})
+              </button>
+              <button
+                type="button"
+                onClick={() => setFilterMode('online')}
+                className={cn(
+                  'rounded-xl px-3 py-1.5 text-[12px] font-semibold transition',
+                  filterMode === 'online'
+                    ? 'bg-brand text-white shadow-sm'
+                    : 'border border-line bg-surface text-ink-soft hover:bg-surface-2',
+                )}
+              >
+                {t('common.online')} ({proxies.filter((p) => p.status === 'online').length})
+              </button>
+              <button
+                type="button"
+                onClick={() => setFilterMode('fast')}
+                className={cn(
+                  'rounded-xl px-3 py-1.5 text-[12px] font-semibold transition',
+                  filterMode === 'fast'
+                    ? 'bg-brand text-white shadow-sm'
+                    : 'border border-line bg-surface text-ink-soft hover:bg-surface-2',
+                )}
+              >
+                ⚡ &lt; 200 ms ({proxies.filter((p) => p.latencyMs !== null && p.latencyMs < 200).length})
+              </button>
+            </div>
+          </div>
+        ) : null}
+
+        <div className="mt-8">
           {status === 'loading' && dataset === null ? (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3" aria-hidden="true">
               {Array.from({ length: 6 }, (_, index) => (
@@ -387,9 +502,29 @@ export function FeaturedProxies() {
             />
           ) : null}
 
-          {isReady && proxies.length > 0 ? (
+          {isReady && proxies.length > 0 && filteredProxies.length === 0 ? (
+            <EmptyState
+              icon={Search}
+              title={t('directory.noMatch.title')}
+              description={t('directory.noMatch.body')}
+              actions={
+                <Button
+                  variant="secondary"
+                  onClick={() => {
+                    setQuery('');
+                    setFilterMode('all');
+                  }}
+                  iconLeft={<X className="size-4" />}
+                >
+                  {t('directory.noMatch.clear')}
+                </Button>
+              }
+            />
+          ) : null}
+
+          {isReady && filteredProxies.length > 0 ? (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
-              {proxies.map((proxy, index) => (
+              {filteredProxies.map((proxy, index) => (
                 <FeaturedProxyCard
                   key={proxy.id}
                   proxy={proxy}
@@ -399,20 +534,7 @@ export function FeaturedProxies() {
               ))}
             </div>
           ) : null}
-
-          {isReady && proxies.length > 0 && proxies.length < 10 ? (
-            <InlineNote tone="brand" className="mt-4">
-              {t('home.featured.partial', { count: proxies.length })}
-            </InlineNote>
-          ) : null}
         </div>
-
-        <p className="mt-8 text-center text-[11px] text-muted">
-          {t('home.featured.footerNote')}{' '}
-          <Link to="/guidelines" className="font-medium text-brand-ink hover:underline">
-            {t('home.featured.noticeCta')}
-          </Link>
-        </p>
       </Container>
     </Section>
   );
