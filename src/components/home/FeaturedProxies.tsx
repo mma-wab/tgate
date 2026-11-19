@@ -406,7 +406,7 @@ export function FeaturedProxies() {
         </SectionHeading>
 
         {isReady && proxies.length > 0 ? (
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div className="relative flex-1 max-w-md">
               <Search className="pointer-events-none absolute start-3.5 top-1/2 size-4 -translate-y-1/2 text-muted" />
               <input
@@ -469,7 +469,7 @@ export function FeaturedProxies() {
           </div>
         ) : null}
 
-        <div className="mt-8">
+        <div className="mt-5">
           {status === 'loading' && dataset === null ? (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3" aria-hidden="true">
               {Array.from({ length: 6 }, (_, index) => (

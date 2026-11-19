@@ -39,7 +39,7 @@ export function HowPreview() {
           description={t('home.how.subtitle')}
         />
 
-        <ol className="mt-10 grid gap-4 md:grid-cols-3">
+        <ol className="mt-6 grid gap-3.5 md:grid-cols-3">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
@@ -62,7 +62,7 @@ export function HowPreview() {
           })}
         </ol>
 
-        <div className="mt-8 flex items-center gap-3 rounded-2xl border border-brand/20 bg-brand-soft/40 p-4 text-[13px] leading-6 text-brand-ink">
+        <div className="mt-5 flex items-center gap-3 rounded-2xl border border-brand/20 bg-brand-soft/40 p-4 text-[13px] leading-6 text-brand-ink">
           <ShieldCheck className="size-5 shrink-0 text-brand" aria-hidden="true" />
           <span>{t('details.securityBody')}</span>
         </div>
@@ -82,14 +82,14 @@ export function FaqPreview() {
   return (
     <Section id="faq" tone="surface" className="scroll-mt-20">
       <Container>
-        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
+        <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-8">
           <div>
             <SectionHeading
               eyebrow={t('home.faq.eyebrow')}
               title={t('home.faq.title')}
               description={t('faq.subtitle')}
             />
-            <div className="mt-6 flex items-start gap-2.5 rounded-2xl border border-line bg-surface-2/60 p-4 text-[12px] leading-6 text-muted">
+            <div className="mt-4 flex items-start gap-2.5 rounded-2xl border border-line bg-surface-2/60 p-4 text-[12px] leading-6 text-muted">
               <Eye className="mt-0.5 size-4 shrink-0 text-brand" aria-hidden="true" />
               {t('directory.verificationNote')}
             </div>

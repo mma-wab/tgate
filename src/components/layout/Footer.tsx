@@ -18,8 +18,8 @@ export function Footer() {
   return (
     <>
       <footer className="border-t border-line bg-surface">
-        <Container className="py-10 lg:py-14">
-          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr]">
+        <Container className="py-8 lg:py-10">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr] lg:gap-8">
             <div className="max-w-sm">
               <div className="flex items-center gap-2.5">
                 <LogoMark className="size-9" />

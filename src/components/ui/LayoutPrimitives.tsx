@@ -29,7 +29,7 @@ export function Section({
     <section
       id={id}
       className={cn(
-        'py-16 sm:py-20 lg:py-24',
+        'py-8 sm:py-10 lg:py-12',
         tone === 'surface' && 'border-y border-line bg-surface',
         tone === 'soft' && 'bg-surface-2/50',
         className,
@@ -97,7 +97,7 @@ export function PageHeader({
 }) {
   return (
     <div className={cn('border-b border-line bg-surface-2/40', className)}>
-      <Container className="py-12 sm:py-16">
+      <Container className="py-8 sm:py-10">
         <div className="max-w-3xl">
           {eyebrow ? (
             <p className="mb-3 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-ink">

@@ -20,7 +20,7 @@ export function Hero({ stats, loading }: { stats: DirectoryStats; loading: boole
       };
 
   return (
-    <section id="top" className="relative overflow-hidden py-12 sm:py-16 lg:py-20 scroll-mt-20">
+    <section id="top" className="relative overflow-hidden pt-8 pb-6 sm:pt-10 sm:pb-8 lg:pt-12 lg:pb-8 scroll-mt-20">
       <Container className="relative max-w-4xl text-center">
         <motion.div {...motionProps} className="mx-auto flex flex-col items-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-surface/90 px-3.5 py-1.5 text-[12px] font-medium text-ink-soft shadow-sm backdrop-blur">
@@ -46,15 +46,15 @@ export function Hero({ stats, loading }: { stats: DirectoryStats; loading: boole
             </span>
           </div>
 
-          <h1 className="mt-6 max-w-3xl text-3xl font-bold tracking-tight text-ink sm:text-5xl sm:leading-[1.15]">
+          <h1 className="mt-4 max-w-3xl text-3xl font-bold tracking-tight text-ink sm:text-5xl sm:leading-[1.15]">
             {t('home.hero.title')}
           </h1>
 
-          <p className="mt-4 max-w-2xl text-[15px] leading-7 text-muted sm:text-lg sm:leading-8">
+          <p className="mt-3 max-w-2xl text-[15px] leading-7 text-muted sm:text-lg sm:leading-8">
             {t('home.hero.subtitle')}
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <a href="#proxies" className={buttonStyles('primary', 'lg', 'group')}>
               <span>{t('home.hero.ctaPrimary')}</span>
               <ForwardIcon
