@@ -163,3 +163,67 @@ export function SketchCircle({ className, children }: { className?: string; chil
     </span>
   );
 }
+
+/**
+ * Subtle hand-drawn background sketch lines, curves, and light hatching
+ * that give a handcrafted notebook/editorial charm without visual noise.
+ */
+export function HandDrawnBackground({ className }: { className?: string }) {
+  return (
+    <div
+      className={cn(
+        'pointer-events-none fixed inset-0 -z-10 overflow-hidden select-none opacity-[0.04] dark:opacity-[0.07] text-ink dark:text-brand transition-opacity duration-300',
+        className,
+      )}
+      aria-hidden="true"
+    >
+      <svg
+        viewBox="0 0 1440 900"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMid slice"
+        className="size-full"
+      >
+        {/* Soft flowing sketch contour line 1 */}
+        <path
+          d="M-80 180C140 120 320 260 580 160C840 60 1100 240 1520 130"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeDasharray="6 8"
+        />
+
+        {/* Soft flowing sketch contour line 2 */}
+        <path
+          d="M-40 450C220 380 480 520 800 420C1120 320 1340 480 1560 390"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+
+        {/* Soft flowing sketch contour line 3 */}
+        <path
+          d="M-60 760C180 700 420 840 740 750C1060 660 1280 820 1540 730"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeDasharray="8 10"
+        />
+
+        {/* Subtle corner hatching / sketch strokes (Top Right) */}
+        <g opacity="0.8">
+          <line x1="1320" y1="40" x2="1420" y2="140" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+          <line x1="1345" y1="35" x2="1435" y2="125" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+          <line x1="1370" y1="30" x2="1450" y2="110" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+        </g>
+
+        {/* Subtle corner hatching / sketch strokes (Bottom Left) */}
+        <g opacity="0.8">
+          <line x1="20" y1="780" x2="120" y2="880" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+          <line x1="45" y1="775" x2="135" y2="865" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+          <line x1="70" y1="770" x2="150" y2="850" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+        </g>
+      </svg>
+    </div>
+  );
+}

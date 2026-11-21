@@ -141,18 +141,18 @@ export function Hero({
                 </div>
               </div>
 
-              <div className="flex items-center gap-1.5 shrink-0">
+              <div className="flex items-center gap-2 shrink-0">
                 <a
                   href={tgLink}
                   onClick={handleConnect}
                   className={buttonStyles(
                     'primary',
-                    'sm',
-                    'h-9 px-3.5 text-[12.5px] font-bold shadow-xs active:scale-[0.98]',
+                    'md',
+                    'h-11 sm:h-12 px-4.5 text-[13.5px] font-bold shadow-sm active:scale-[0.98] rounded-xl sm:rounded-2xl',
                   )}
                   aria-label={`${t('home.featured.connect')} — ${topProxy.server}`}
                 >
-                  <Send className="size-3.5 shrink-0" aria-hidden="true" />
+                  <Send className="size-4 shrink-0" aria-hidden="true" />
                   <span>{t('home.featured.connect')}</span>
                 </a>
 
@@ -161,12 +161,12 @@ export function Hero({
                   onClick={() => void handleCopy()}
                   title={t('home.featured.copyLink')}
                   aria-label={t('home.featured.copyLink')}
-                  className="inline-flex size-9 items-center justify-center rounded-xl border border-line bg-surface-2 text-muted transition hover:border-brand/40 hover:text-ink active:scale-[0.96]"
+                  className="inline-flex size-11 sm:size-12 items-center justify-center rounded-xl sm:rounded-2xl border border-line bg-surface-2 text-muted transition hover:border-brand/40 hover:text-ink active:scale-[0.96]"
                 >
                   {copiedFastest ? (
-                    <Check className="size-3.5 text-success" aria-hidden="true" />
+                    <Check className="size-4 text-success" aria-hidden="true" />
                   ) : (
-                    <Copy className="size-3.5" aria-hidden="true" />
+                    <Copy className="size-4" aria-hidden="true" />
                   )}
                 </button>
               </div>

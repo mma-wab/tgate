@@ -7,6 +7,7 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { ScrollToTop } from './hooks/useScrollToTop';
+import { HandDrawnBackground } from './components/ui/Doodles';
 import Home from './pages/Home';
 
 function SkipLink() {
@@ -27,7 +28,8 @@ export default function App() {
             <ProxiesProvider>
               <SkipLink />
               <ScrollToTop />
-              <div className="flex min-h-screen flex-col bg-page text-ink">
+              <div className="relative flex min-h-screen flex-col bg-page text-ink">
+                <HandDrawnBackground />
                 <Header />
                 <ErrorBoundary>
                   <main id="main-content" tabIndex={-1} className="flex-1 outline-none">

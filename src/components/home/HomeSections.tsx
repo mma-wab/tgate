@@ -73,7 +73,7 @@ export function HowPreview() {
 
 export function FaqPreview() {
   const { t, lang } = useI18n();
-  const items = faqItems[lang].map((item, index) => ({
+  const items = faqItems[lang].slice(0, 3).map((item, index) => ({
     id: `home-faq-${index}`,
     question: item.q,
     answer: item.a,

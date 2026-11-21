@@ -127,19 +127,19 @@ function FeaturedProxyCard({
       </div>
 
       {/* Main Connection CTA Row */}
-      <div className="mt-2.5 flex items-center gap-2">
+      <div className="mt-3 flex items-center gap-2.5">
         <a
           href={tgLink}
           onClick={handleConnect}
           className={buttonStyles(
             'primary',
-            'sm',
-            'flex-1 h-10 font-bold text-[13px] shadow-xs active:scale-[0.98] transition-all',
+            'md',
+            'flex-1 h-12 text-[14px] font-bold shadow-sm hover:shadow-md active:scale-[0.98] transition-all rounded-xl sm:rounded-2xl',
           )}
           aria-label={`${t('home.featured.connect')} — ${proxy.server}`}
           title={t('home.featured.connectHint')}
         >
-          <Send className="size-3.5 shrink-0" aria-hidden="true" />
+          <Send className="size-4 shrink-0" aria-hidden="true" />
           <span>{t('home.featured.connect')}</span>
         </a>
 
@@ -148,12 +148,12 @@ function FeaturedProxyCard({
           onClick={() => void handleCopy()}
           title={t('home.featured.copyLink')}
           aria-label={`${t('home.featured.copyLink')} — ${proxy.server}`}
-          className="inline-flex size-10 shrink-0 items-center justify-center rounded-xl border border-line bg-surface-2 text-muted transition hover:border-brand/40 hover:text-ink active:scale-[0.96]"
+          className="inline-flex size-12 shrink-0 items-center justify-center rounded-xl sm:rounded-2xl border border-line bg-surface-2 text-muted transition hover:border-brand/40 hover:text-ink active:scale-[0.96]"
         >
           {copied ? (
-            <Check className="size-3.5 text-success" aria-hidden="true" />
+            <Check className="size-4 text-success" aria-hidden="true" />
           ) : (
-            <Copy className="size-3.5" aria-hidden="true" />
+            <Copy className="size-4" aria-hidden="true" />
           )}
         </button>
       </div>
@@ -168,9 +168,9 @@ function FeaturedProxySkeleton() {
         <Skeleton className="h-4.5 w-28 rounded-md" />
         <Skeleton className="h-4.5 w-14 rounded-full" />
       </div>
-      <div className="mt-3 flex items-center gap-2">
-        <Skeleton className="h-10 flex-1 rounded-xl" />
-        <Skeleton className="size-10 rounded-xl" />
+      <div className="mt-3 flex items-center gap-2.5">
+        <Skeleton className="h-12 flex-1 rounded-xl sm:rounded-2xl" />
+        <Skeleton className="size-12 rounded-xl sm:rounded-2xl" />
       </div>
     </div>
   );
