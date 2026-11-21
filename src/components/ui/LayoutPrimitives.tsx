@@ -29,7 +29,7 @@ export function Section({
     <section
       id={id}
       className={cn(
-        'py-8 sm:py-10 lg:py-12',
+        'py-3 sm:py-5 lg:py-6',
         tone === 'surface' && 'border-y border-line bg-surface',
         tone === 'soft' && 'bg-surface-2/50',
         className,

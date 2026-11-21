@@ -29,7 +29,7 @@ export function Header() {
           scrolled && 'shadow-xs',
         )}
       >
-        <Container className="flex h-[68px] items-center justify-between gap-4">
+        <Container className="flex h-[56px] sm:h-[60px] items-center justify-between gap-4">
           <Logo onClick={closeMenu} />
 
           <nav aria-label={t('nav.main')} className="hidden items-center gap-0.5 lg:flex">

@@ -39,31 +39,31 @@ export function HowPreview() {
           description={t('home.how.subtitle')}
         />
 
-        <ol className="mt-6 grid gap-3.5 md:grid-cols-3">
+        <ol className="mt-3.5 grid gap-2.5 md:grid-cols-3">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
               <li
                 key={step.title}
-                className="flex items-start gap-3.5 rounded-2xl border border-line bg-surface-2 p-4 transition-colors hover:border-brand/40"
+                className="flex items-start gap-3 rounded-2xl border border-line bg-surface-2 p-3 sm:p-3.5 transition-colors hover:border-brand/40"
               >
-                <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-brand">
-                  <Icon className="size-4.5" aria-hidden="true" />
+                <span className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-brand">
+                  <Icon className="size-4" aria-hidden="true" />
                 </span>
                 <div className="min-w-0">
                   <div className="flex items-center gap-1.5">
-                    <span className="num text-[12px] font-bold text-brand font-mono">0{index + 1}.</span>
-                    <h3 className="text-[13.5px] font-bold text-ink truncate">{step.title}</h3>
+                    <span className="num text-[11px] font-bold text-brand font-mono">0{index + 1}.</span>
+                    <h3 className="text-[13px] font-bold text-ink truncate">{step.title}</h3>
                   </div>
-                  <p className="mt-1 text-[12px] leading-relaxed text-muted">{step.body}</p>
+                  <p className="mt-0.5 text-[11.5px] leading-relaxed text-muted">{step.body}</p>
                 </div>
               </li>
             );
           })}
         </ol>
 
-        <div className="mt-4 flex items-center gap-3 rounded-2xl border border-brand/20 bg-brand-soft/40 p-3.5 text-[12px] leading-relaxed text-brand-ink">
-          <ShieldCheck className="size-4.5 shrink-0 text-brand" aria-hidden="true" />
+        <div className="mt-2.5 flex items-center gap-2.5 rounded-2xl border border-brand/20 bg-brand-soft/40 p-3 text-[11.5px] leading-relaxed text-brand-ink">
+          <ShieldCheck className="size-4 shrink-0 text-brand" aria-hidden="true" />
           <span>{t('details.securityBody')}</span>
         </div>
       </Container>
