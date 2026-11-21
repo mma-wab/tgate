@@ -25,8 +25,8 @@ export function Header() {
     <>
       <header
         className={cn(
-          'sticky top-0 z-40 border-b border-line/80 bg-page/80 backdrop-blur-xl transition-shadow duration-300',
-          scrolled && 'shadow-[0_10px_30px_-24px_rgba(23,43,77,0.35)]',
+          'sticky top-0 z-40 border-b border-line bg-page/90 backdrop-blur-md transition-shadow duration-200',
+          scrolled && 'shadow-xs',
         )}
       >
         <Container className="flex h-[68px] items-center justify-between gap-4">

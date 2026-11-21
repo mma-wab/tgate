@@ -11,10 +11,10 @@ export function LogoMark({ className }: { className?: string }) {
       <defs>
         <linearGradient id="tgate-logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#38bdf8" />
-          <stop offset="100%" stopColor="#0284c7" />
+          <stop offset="100%" stopColor="#229fd8" />
         </linearGradient>
       </defs>
-      <rect width="40" height="40" rx="11" fill="url(#tgate-logo-grad)" />
+      <rect width="40" height="40" rx="12" fill="url(#tgate-logo-grad)" />
       {/* Gate Portal Arch */}
       <path
         d="M 13.5 29 L 13.5 20.5 C 13.5 16.9 16.4 14 20 14 C 23.6 14 26.5 16.9 26.5 20.5 L 26.5 29"

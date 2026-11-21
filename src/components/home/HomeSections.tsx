@@ -31,7 +31,7 @@ export function HowPreview() {
   ];
 
   return (
-    <Section id="how-it-works" tone="soft" className="scroll-mt-20">
+    <Section id="how-it-works" tone="surface" className="scroll-mt-20">
       <Container>
         <SectionHeading
           eyebrow={t('home.how.eyebrow')}
@@ -39,31 +39,31 @@ export function HowPreview() {
           description={t('home.how.subtitle')}
         />
 
-        <ol className="mt-5 grid gap-3 md:grid-cols-3">
+        <ol className="mt-6 grid gap-3.5 md:grid-cols-3">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
               <li
                 key={step.title}
-                className="flex items-start gap-3 rounded-xl border border-line bg-surface p-3.5 shadow-sm"
+                className="flex items-start gap-3.5 rounded-2xl border border-line bg-surface-2 p-4 transition-colors hover:border-brand/40"
               >
-                <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-brand-soft text-brand">
-                  <Icon className="size-4" aria-hidden="true" />
+                <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-brand">
+                  <Icon className="size-4.5" aria-hidden="true" />
                 </span>
                 <div className="min-w-0">
                   <div className="flex items-center gap-1.5">
-                    <span className="num text-[11px] font-bold text-brand">0{index + 1}.</span>
-                    <h3 className="text-[13px] font-semibold text-ink truncate">{step.title}</h3>
+                    <span className="num text-[12px] font-bold text-brand font-mono">0{index + 1}.</span>
+                    <h3 className="text-[13.5px] font-bold text-ink truncate">{step.title}</h3>
                   </div>
-                  <p className="mt-0.5 text-[12px] leading-5 text-muted">{step.body}</p>
+                  <p className="mt-1 text-[12px] leading-relaxed text-muted">{step.body}</p>
                 </div>
               </li>
             );
           })}
         </ol>
 
-        <div className="mt-4 flex items-center gap-2.5 rounded-xl border border-brand/20 bg-brand-soft/30 p-3 text-[12px] leading-5 text-brand-ink">
-          <ShieldCheck className="size-4 shrink-0 text-brand" aria-hidden="true" />
+        <div className="mt-4 flex items-center gap-3 rounded-2xl border border-brand/20 bg-brand-soft/40 p-3.5 text-[12px] leading-relaxed text-brand-ink">
+          <ShieldCheck className="size-4.5 shrink-0 text-brand" aria-hidden="true" />
           <span>{t('details.securityBody')}</span>
         </div>
       </Container>
@@ -80,7 +80,7 @@ export function FaqPreview() {
   }));
 
   return (
-    <Section id="faq" tone="surface" className="scroll-mt-20">
+    <Section id="faq" tone="soft" className="scroll-mt-20">
       <Container>
         <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-8">
           <div>
@@ -89,9 +89,9 @@ export function FaqPreview() {
               title={t('home.faq.title')}
               description={t('faq.subtitle')}
             />
-            <div className="mt-4 flex items-start gap-2.5 rounded-2xl border border-line bg-surface-2/60 p-4 text-[12px] leading-6 text-muted">
+            <div className="mt-4 flex items-start gap-2.5 rounded-2xl border border-line bg-surface p-4 text-[12px] leading-relaxed text-muted shadow-xs">
               <Eye className="mt-0.5 size-4 shrink-0 text-brand" aria-hidden="true" />
-              {t('directory.verificationNote')}
+              <span>{t('directory.verificationNote')}</span>
             </div>
           </div>
           <Accordion items={items} defaultOpenFirst />
