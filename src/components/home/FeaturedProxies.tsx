@@ -43,7 +43,6 @@ function FeaturedProxyCard({
 
   const link = buildFeaturedTelegramLink(proxy);
   const tgLink = buildFeaturedTelegramTgLink(proxy);
-  const isAndroid = typeof navigator !== 'undefined' && /android/i.test(navigator.userAgent);
   const titleId = `featured-proxy-${proxy.id}`;
   const rank = String(proxy.rank).padStart(2, '0');
   const country = countryLabel(proxy.country, lang);
@@ -51,22 +50,20 @@ function FeaturedProxyCard({
     proxy.latencyMs === null ? '—' : `${formatNumber(Math.round(proxy.latencyMs), lang)} ms`;
 
   const handleConnect = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (isAndroid) {
-      e.preventDefault();
-      window.location.href = tgLink;
+    e.preventDefault();
+    window.location.href = tgLink;
 
-      const fallbackTimer = window.setTimeout(() => {
-        if (document.visibilityState === 'visible') {
-          window.open(link, '_blank', 'noopener,noreferrer');
-        }
-      }, 2000);
+    const fallbackTimer = window.setTimeout(() => {
+      if (document.visibilityState === 'visible') {
+        window.open(link, '_blank', 'noopener,noreferrer');
+      }
+    }, 2000);
 
-      window.addEventListener(
-        'pagehide',
-        () => window.clearTimeout(fallbackTimer),
-        { once: true },
-      );
-    }
+    window.addEventListener(
+      'pagehide',
+      () => window.clearTimeout(fallbackTimer),
+      { once: true },
+    );
   };
 
   return (
@@ -117,17 +114,14 @@ function FeaturedProxyCard({
 
       <div className="mt-3.5 flex items-center gap-2">
         <a
-          href={isAndroid ? tgLink : link}
+          href={tgLink}
           onClick={handleConnect}
-          target={isAndroid ? undefined : '_blank'}
-          rel={isAndroid ? undefined : 'noopener noreferrer'}
           className={buttonStyles('primary', 'md', 'flex-1 min-h-[42px] font-semibold shadow-sm active:scale-[0.98] transition-transform')}
           aria-label={`${t('home.featured.connect')} — ${proxy.server}`}
           title={t('home.featured.connectHint')}
         >
           <Send className="size-4" aria-hidden="true" />
           <span>{t('home.featured.connect')}</span>
-          {!isAndroid ? <span className="sr-only"> ({t('common.newTab')})</span> : null}
         </a>
 
         <button

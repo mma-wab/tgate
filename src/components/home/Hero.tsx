@@ -20,12 +20,11 @@ export function Hero({
   const { t, lang } = useI18n();
   const reduceMotion = useReducedMotion();
 
-  const isAndroid = typeof navigator !== 'undefined' && /android/i.test(navigator.userAgent);
   const link = topProxy ? buildFeaturedTelegramLink(topProxy) : '';
   const tgLink = topProxy ? buildFeaturedTelegramTgLink(topProxy) : '';
 
   const handleConnect = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (isAndroid && topProxy) {
+    if (topProxy) {
       e.preventDefault();
       window.location.href = tgLink;
 
@@ -89,10 +88,8 @@ export function Hero({
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             {topProxy ? (
               <a
-                href={isAndroid ? tgLink : link}
+                href={tgLink}
                 onClick={handleConnect}
-                target={isAndroid ? undefined : '_blank'}
-                rel={isAndroid ? undefined : 'noopener noreferrer'}
                 className={buttonStyles('primary', 'lg', 'group shadow-md hover:shadow-lg active:scale-[0.98] transition-all')}
               >
                 <Zap className="size-4 text-amber-300 fill-amber-300" aria-hidden="true" />
