@@ -1,15 +1,47 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Sparkles } from 'lucide-react';
+import { ChevronDown, Zap } from 'lucide-react';
 import { useI18n } from '../../i18n';
 import type { DirectoryStats } from '../../types/proxy';
+import type { FeaturedProxyRecord } from '../../types/top-proxy';
+import { buildFeaturedTelegramLink, buildFeaturedTelegramTgLink } from '../../lib/top-proxies';
 import { formatLatency, formatNumber } from '../../lib/format';
 import { Container } from '../ui/LayoutPrimitives';
 import { buttonStyles } from '../ui/Button';
 
-export function Hero({ stats, loading }: { stats: DirectoryStats; loading: boolean }) {
-  const { t, lang, isRTL } = useI18n();
+export function Hero({
+  stats,
+  loading,
+  topProxy,
+}: {
+  stats: DirectoryStats;
+  loading: boolean;
+  topProxy?: FeaturedProxyRecord | null;
+}) {
+  const { t, lang } = useI18n();
   const reduceMotion = useReducedMotion();
-  const ForwardIcon = isRTL ? ArrowLeft : ArrowRight;
+
+  const isAndroid = typeof navigator !== 'undefined' && /android/i.test(navigator.userAgent);
+  const link = topProxy ? buildFeaturedTelegramLink(topProxy) : '';
+  const tgLink = topProxy ? buildFeaturedTelegramTgLink(topProxy) : '';
+
+  const handleConnect = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (isAndroid && topProxy) {
+      e.preventDefault();
+      window.location.href = tgLink;
+
+      const fallbackTimer = window.setTimeout(() => {
+        if (document.visibilityState === 'visible') {
+          window.open(link, '_blank', 'noopener,noreferrer');
+        }
+      }, 2000);
+
+      window.addEventListener(
+        'pagehide',
+        () => window.clearTimeout(fallbackTimer),
+        { once: true },
+      );
+    }
+  };
 
   const motionProps = reduceMotion
     ? {}
@@ -55,16 +87,26 @@ export function Hero({ stats, loading }: { stats: DirectoryStats; loading: boole
           </p>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <a href="#proxies" className={buttonStyles('primary', 'lg', 'group')}>
-              <span>{t('home.hero.ctaPrimary')}</span>
-              <ForwardIcon
-                className="size-4 transition-transform group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5"
-                aria-hidden="true"
-              />
-            </a>
-            <a href="#how-it-works" className={buttonStyles('secondary', 'lg')}>
-              <Sparkles className="size-4 text-brand" aria-hidden="true" />
-              <span>{t('home.hero.ctaSecondary')}</span>
+            {topProxy ? (
+              <a
+                href={isAndroid ? tgLink : link}
+                onClick={handleConnect}
+                target={isAndroid ? undefined : '_blank'}
+                rel={isAndroid ? undefined : 'noopener noreferrer'}
+                className={buttonStyles('primary', 'lg', 'group shadow-md hover:shadow-lg active:scale-[0.98] transition-all')}
+              >
+                <Zap className="size-4 text-amber-300 fill-amber-300" aria-hidden="true" />
+                <span className="font-semibold">{t('home.hero.fastestCta')}</span>
+                {topProxy.latencyMs !== null ? (
+                  <span className="text-xs bg-white/20 px-2 py-0.5 rounded-full font-mono font-medium">
+                    {Math.round(topProxy.latencyMs)}ms
+                  </span>
+                ) : null}
+              </a>
+            ) : null}
+            <a href="#proxies" className={buttonStyles(topProxy ? 'secondary' : 'primary', 'lg', 'group')}>
+              <span>{t('home.hero.browseCta')}</span>
+              <ChevronDown className="size-4 transition-transform group-hover:translate-y-0.5" aria-hidden="true" />
             </a>
           </div>
         </motion.div>

@@ -64,7 +64,7 @@ export default function Home() {
 
   return (
     <>
-      <Hero stats={stats} loading={loading} />
+      <Hero stats={stats} loading={loading} topProxy={topDataset?.proxies[0] ?? null} />
       <FeaturedProxies />
       <HowPreview />
       <FaqPreview />

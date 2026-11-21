@@ -1,18 +1,11 @@
 import { useMemo, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import {
-  Check,
-  ChevronDown,
-  Clock3,
   Copy,
-  Gauge,
-  KeyRound,
   MapPin,
   RefreshCw,
   Search,
   Send,
-  Share2,
-  ShieldCheck,
   WifiOff,
   X,
 } from 'lucide-react';
@@ -21,15 +14,12 @@ import { useCopy } from '../../hooks/useCopy';
 import { useNow } from '../../hooks/useNow';
 import { useTopProxies } from '../../hooks/useTopProxies';
 import { useToast } from '../../contexts/ToastContext';
-import type { FeaturedProxyRecord, FeaturedStatus } from '../../types/top-proxy';
+import type { FeaturedProxyRecord } from '../../types/top-proxy';
 import {
   countryLabel,
-  featuredStatusLabel,
   formatDateTime,
-  formatLatency,
   formatNumber,
   formatRelative,
-  percentPrecise,
 } from '../../lib/format';
 import { cn } from '../../lib/cn';
 import { buildFeaturedTelegramLink, buildFeaturedTelegramTgLink } from '../../lib/top-proxies';
@@ -37,45 +27,6 @@ import { Badge } from '../ui/Badge';
 import { Button, buttonStyles } from '../ui/Button';
 import { Container, Section, SectionHeading } from '../ui/LayoutPrimitives';
 import { EmptyState, ErrorState, InlineNote, Skeleton } from '../ui/Feedback';
-
-const statusTone: Record<FeaturedStatus, string> = {
-  online: 'border-success/25 bg-success-soft text-success',
-  checking: 'border-brand/25 bg-brand-soft text-brand-ink',
-  offline: 'border-danger/25 bg-danger-soft text-danger',
-  unknown: 'border-line bg-surface-2 text-muted',
-};
-
-const statusDot: Record<FeaturedStatus, string> = {
-  online: 'bg-success',
-  checking: 'bg-brand',
-  offline: 'bg-danger',
-  unknown: 'bg-muted',
-};
-
-function FeaturedStatusBadge({ status }: { status: FeaturedStatus }) {
-  const { lang } = useI18n();
-  return (
-    <span
-      className={cn(
-        'inline-flex items-center gap-1.5 rounded-full border px-2 py-1 text-[11px] font-medium leading-none',
-        statusTone[status],
-      )}
-    >
-      <span className="relative flex size-1.5" aria-hidden="true">
-        {status === 'online' || status === 'checking' ? (
-          <span
-            className={cn(
-              'absolute inline-flex size-full animate-pulse-soft rounded-full opacity-70',
-              statusDot[status],
-            )}
-          />
-        ) : null}
-        <span className={cn('relative inline-flex size-1.5 rounded-full', statusDot[status])} />
-      </span>
-      {featuredStatusLabel(status, lang)}
-    </span>
-  );
-}
 
 function FeaturedProxyCard({
   proxy,
@@ -87,11 +38,8 @@ function FeaturedProxyCard({
   index: number;
 }) {
   const { t, lang } = useI18n();
-  const now = useNow();
   const copy = useCopy();
-  const { push } = useToast();
   const reduceMotion = useReducedMotion();
-  const [detailsOpen, setDetailsOpen] = useState(false);
 
   const link = buildFeaturedTelegramLink(proxy);
   const tgLink = buildFeaturedTelegramTgLink(proxy);
@@ -101,16 +49,12 @@ function FeaturedProxyCard({
   const country = countryLabel(proxy.country, lang);
   const latency =
     proxy.latencyMs === null ? '—' : `${formatNumber(Math.round(proxy.latencyMs), lang)} ms`;
-  const successRate = percentPrecise(proxy.successRate, lang);
-  const lastVerified = formatRelative(proxy.verifiedAt, lang, now);
 
   const handleConnect = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (isAndroid) {
       e.preventDefault();
-      // On Android devices, open the native Telegram app directly via tg://
       window.location.href = tgLink;
 
-      // Graceful fallback: If Telegram is not installed after 2s, open official web link
       const fallbackTimer = window.setTimeout(() => {
         if (document.visibilityState === 'visible') {
           window.open(link, '_blank', 'noopener,noreferrer');
@@ -125,19 +69,6 @@ function FeaturedProxyCard({
     }
   };
 
-  const share = async () => {
-    if (typeof navigator !== 'undefined' && typeof navigator.share === 'function') {
-      try {
-        await navigator.share({ title: `MTProto · ${proxy.server}`, url: link });
-        push(t('home.featured.shareDone'), 'success');
-        return;
-      } catch (error) {
-        if (error instanceof DOMException && error.name === 'AbortError') return;
-      }
-    }
-    await copy(link, t('home.featured.shareCopied'));
-  };
-
   return (
     <motion.article
       layout
@@ -145,163 +76,69 @@ function FeaturedProxyCard({
       animate={{ opacity: 1, y: 0 }}
       transition={{
         duration: reduceMotion ? 0 : 0.28,
-        delay: reduceMotion ? 0 : Math.min(index * 0.04, 0.3),
+        delay: reduceMotion ? 0 : Math.min(index * 0.03, 0.25),
         ease: 'easeOut',
       }}
       aria-labelledby={titleId}
-      className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-surface p-5 shadow-card transition duration-300 hover:border-line-strong hover:shadow-lift motion-safe:hover:-translate-y-0.5"
+      className="group relative flex flex-col justify-between rounded-2xl border border-line bg-surface p-4 shadow-card transition-all duration-200 hover:border-brand/40 hover:shadow-lift motion-safe:hover:-translate-y-0.5"
     >
-      <div className="relative z-10 flex flex-wrap items-center justify-between gap-2">
-        <div className="flex flex-wrap items-center gap-1.5">
-          <span className="inline-flex items-center gap-1 rounded-lg border border-brand/20 bg-brand-soft px-2.5 py-1 text-[11px] font-semibold text-brand-ink">
-            {t('home.featured.rank')}
-            <span className="num font-bold">#{rank}</span>
-          </span>
-          <FeaturedStatusBadge status={proxy.status} />
+      <div>
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 min-w-0">
+            <span className="num font-bold text-[11px] text-muted bg-surface-2 px-1.5 py-0.5 rounded border border-line shrink-0">
+              #{rank}
+            </span>
+            <span
+              id={titleId}
+              dir="ltr"
+              title={proxy.server}
+              className="truncate text-[14px] font-semibold text-ink"
+            >
+              {proxy.server}
+            </span>
+          </div>
+
+          <div className="flex items-center gap-1.5 shrink-0 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-2.5 py-1 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
+            <span className="relative flex size-1.5">
+              <span className="absolute inline-flex size-full animate-pulse-soft rounded-full bg-emerald-500 opacity-75" />
+              <span className="relative inline-flex size-1.5 rounded-full bg-emerald-500" />
+            </span>
+            <span className="num font-bold">⚡ {latency}</span>
+          </div>
         </div>
+
         {country ? (
-          <span className="inline-flex items-center gap-1 rounded-full bg-surface-2 px-2.5 py-1 text-[11px] font-medium text-ink-soft">
-            <MapPin className="size-3 text-muted" aria-hidden="true" />
-            {country}
-          </span>
+          <div className="mt-1 flex items-center gap-1 text-[11px] text-muted">
+            <MapPin className="size-3 text-muted/70 shrink-0" aria-hidden="true" />
+            <span className="truncate">{country}</span>
+          </div>
         ) : null}
       </div>
 
-      <div className="relative z-10 mt-3.5">
-        <h3
-          id={titleId}
-          className="ltr-data truncate text-[16px] font-semibold leading-6 text-ink"
-          dir="ltr"
-          title={proxy.server}
-        >
-          {proxy.server}
-        </h3>
-        <div className="mt-1 flex flex-wrap items-center gap-1.5">
-          <span className="ltr-data num text-[12px] font-medium text-ink-soft" dir="ltr">
-            :{proxy.port}
-          </span>
-          <span className="inline-flex items-center gap-1 rounded-full border border-line px-2 py-0.5 text-[10px] font-medium text-muted">
-            <ShieldCheck className="size-3" aria-hidden="true" />
-            {proxy.protocol}
-          </span>
-          <Badge tone="success" icon={<Check className="size-3" aria-hidden="true" />}>
-            {t('home.featured.verifiedBadge')}
-          </Badge>
-        </div>
-      </div>
-
-      <dl className="mt-3.5 grid grid-cols-3 gap-2 rounded-2xl border border-line/80 bg-surface-2/40 p-2.5 text-center sm:text-start">
-        <div className="min-w-0">
-          <dt className="flex items-center justify-center gap-1 text-[10px] font-medium uppercase tracking-wide text-muted sm:justify-start">
-            <Gauge className="size-3 text-brand" aria-hidden="true" />
-            {t('home.featured.latency')}
-          </dt>
-          <dd
-            className="num mt-1 text-[13px] font-semibold text-ink"
-            title={formatLatency(proxy.latencyMs, lang)}
-          >
-            {latency}
-          </dd>
-        </div>
-        <div className="min-w-0">
-          <dt className="flex items-center justify-center gap-1 text-[10px] font-medium uppercase tracking-wide text-muted sm:justify-start">
-            <Check className="size-3 text-success" aria-hidden="true" />
-            {t('home.featured.successRate')}
-          </dt>
-          <dd className="num mt-1 text-[13px] font-semibold text-success">{successRate}</dd>
-        </div>
-        <div className="min-w-0">
-          <dt className="flex items-center justify-center gap-1 text-[10px] font-medium uppercase tracking-wide text-muted sm:justify-start">
-            <Clock3 className="size-3 text-muted" aria-hidden="true" />
-            {t('home.featured.lastVerified')}
-          </dt>
-          <dd
-            className="mt-1 truncate text-[12px] font-medium text-ink-soft"
-            title={proxy.verifiedAt ? formatDateTime(proxy.verifiedAt, lang) : undefined}
-          >
-            {lastVerified}
-          </dd>
-        </div>
-      </dl>
-
-      {detailsOpen ? (
-        <div className="mt-3.5 rounded-2xl border border-brand/20 bg-brand-soft/30 p-3 text-[12px]">
-          <div className="flex items-center justify-between gap-2 border-b border-brand/15 pb-2">
-            <span className="font-semibold text-brand-ink flex items-center gap-1.5">
-              <KeyRound className="size-3.5 text-brand" />
-              {t('details.showSecret')}
-            </span>
-            <button
-              type="button"
-              onClick={() => void copy(proxy.secret, t('details.copySecret'))}
-              className="inline-flex items-center gap-1 rounded-lg border border-brand/30 bg-surface px-2 py-0.5 text-[11px] font-medium text-brand-ink hover:bg-brand-soft"
-            >
-              <Copy className="size-3" />
-              {t('details.copySecret')}
-            </button>
-          </div>
-          <p className="mt-2 font-mono text-[11px] break-all select-all text-ink-soft ltr-data" dir="ltr">
-            {proxy.secret}
-          </p>
-          <div className="mt-2.5 flex items-center justify-between text-[11px] text-muted border-t border-brand/15 pt-2">
-            <span>{t('details.protocolValue')}</span>
-            <span className="font-medium text-ink-soft">{proxy.port}</span>
-          </div>
-        </div>
-      ) : null}
-
-      <div className="mt-auto space-y-2 pt-4">
+      <div className="mt-3.5 flex items-center gap-2">
         <a
           href={isAndroid ? tgLink : link}
           onClick={handleConnect}
           target={isAndroid ? undefined : '_blank'}
           rel={isAndroid ? undefined : 'noopener noreferrer'}
-          className={buttonStyles('primary', 'lg', 'w-full min-h-[44px] shadow-sm')}
+          className={buttonStyles('primary', 'md', 'flex-1 min-h-[42px] font-semibold shadow-sm active:scale-[0.98] transition-transform')}
           aria-label={`${t('home.featured.connect')} — ${proxy.server}`}
           title={t('home.featured.connectHint')}
         >
           <Send className="size-4" aria-hidden="true" />
-          <span className="font-semibold">{t('home.featured.connect')}</span>
+          <span>{t('home.featured.connect')}</span>
           {!isAndroid ? <span className="sr-only"> ({t('common.newTab')})</span> : null}
         </a>
 
-        <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => void copy(link, t('home.featured.copyLinkDone'))}
-            title={t('home.featured.copyLink')}
-            aria-label={`${t('home.featured.copyLink')} — ${proxy.server}`}
-            className="inline-flex min-h-[42px] flex-1 items-center justify-center gap-2 rounded-xl border border-line bg-surface px-3 py-2 text-[12px] font-medium text-ink-soft transition hover:border-brand/40 hover:bg-brand-soft/50 hover:text-brand-ink"
-          >
-            <Copy className="size-4" aria-hidden="true" />
-            <span>{t('home.featured.copyLinkShort')}</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => void share()}
-            title={t('home.featured.share')}
-            aria-label={`${t('home.featured.share')} — ${proxy.server}`}
-            className="inline-flex size-[42px] shrink-0 items-center justify-center rounded-xl border border-line bg-surface text-muted transition hover:border-brand/40 hover:bg-brand-soft/50 hover:text-brand-ink"
-          >
-            <Share2 className="size-4" aria-hidden="true" />
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setDetailsOpen((prev) => !prev)}
-            title={detailsOpen ? t('details.hideSecret') : t('details.showSecret')}
-            aria-label={`${detailsOpen ? t('details.hideSecret') : t('details.showSecret')} — ${proxy.server}`}
-            className={cn(
-              'inline-flex size-[42px] shrink-0 items-center justify-center rounded-xl border transition',
-              detailsOpen
-                ? 'border-brand bg-brand-soft text-brand-ink'
-                : 'border-line bg-surface text-muted hover:border-brand/40 hover:bg-brand-soft/50 hover:text-brand-ink',
-            )}
-          >
-            <ChevronDown className={cn('size-4 transition-transform duration-200', detailsOpen && 'rotate-180')} />
-          </button>
-        </div>
+        <button
+          type="button"
+          onClick={() => void copy(link, t('home.featured.copyLinkDone'))}
+          title={t('home.featured.copyLink')}
+          aria-label={`${t('home.featured.copyLink')} — ${proxy.server}`}
+          className="inline-flex size-[42px] shrink-0 items-center justify-center rounded-xl border border-line bg-surface text-muted transition hover:border-brand/40 hover:bg-brand-soft/50 hover:text-brand-ink active:scale-[0.96]"
+        >
+          <Copy className="size-4" aria-hidden="true" />
+        </button>
       </div>
     </motion.article>
   );
@@ -309,19 +146,14 @@ function FeaturedProxyCard({
 
 function FeaturedProxySkeleton() {
   return (
-    <div className="flex h-full flex-col rounded-3xl border border-line bg-surface p-5 shadow-card">
-      <div className="flex items-center justify-between">
-        <Skeleton className="h-6 w-24 rounded-lg" />
+    <div className="flex flex-col justify-between rounded-2xl border border-line bg-surface p-4 shadow-card">
+      <div className="flex items-center justify-between gap-2">
+        <Skeleton className="h-5 w-32 rounded-md" />
         <Skeleton className="h-5 w-16 rounded-full" />
       </div>
-      <Skeleton className="mt-5 h-5 w-3/5" />
-      <Skeleton className="mt-2 h-4 w-2/5" />
-      <Skeleton className="mt-4 h-[72px] w-full rounded-2xl" />
-      <Skeleton className="mt-auto h-11 w-full rounded-xl" />
-      <div className="mt-2 flex items-center gap-2">
-        <Skeleton className="h-10 flex-1 rounded-xl" />
-        <Skeleton className="size-10 rounded-xl" />
-        <Skeleton className="size-10 rounded-xl" />
+      <div className="mt-3.5 flex items-center gap-2">
+        <Skeleton className="h-[42px] flex-1 rounded-xl" />
+        <Skeleton className="size-[42px] rounded-xl" />
       </div>
     </div>
   );
@@ -440,18 +272,6 @@ export function FeaturedProxies() {
                 )}
               >
                 {t('directory.allStatuses')} ({proxies.length})
-              </button>
-              <button
-                type="button"
-                onClick={() => setFilterMode('online')}
-                className={cn(
-                  'rounded-xl px-3 py-1.5 text-[12px] font-semibold transition',
-                  filterMode === 'online'
-                    ? 'bg-brand text-white shadow-sm'
-                    : 'border border-line bg-surface text-ink-soft hover:bg-surface-2',
-                )}
-              >
-                {t('common.online')} ({proxies.filter((p) => p.status === 'online').length})
               </button>
               <button
                 type="button"

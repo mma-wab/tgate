@@ -75,9 +75,11 @@ const ar = {
   'a11y.skip': 'تخطَّ إلى المحتوى الرئيسي',
 
   'home.hero.eyebrow': 'دليل مستقل لبروكسيات Telegram MTProto',
-  'home.hero.title': 'ابقَ متصلاً بتلغرام، أينما كنت.',
+  'home.hero.title': 'بروكسيات تلغرام MTProto سريعة ومُباشرة',
   'home.hero.subtitle':
-    'اكتشف بروكسيات Telegram MTProto المتاحة، اطّلع على حالة اتصالها، واتصل بنقرة واحدة.',
+    'اضغط على أي بروكسي للاتصال المباشر وتفعيل البروكسي في تلغرام بنقرة واحدة.',
+  'home.hero.fastestCta': 'اتصال بأسرع بروكسي ⚡',
+  'home.hero.browseCta': 'تصفح الـ 12 بروكسي',
   'home.hero.ctaPrimary': 'استكشف البروكسيات',
   'home.hero.ctaSecondary': 'كيف يعمل؟',
   'home.hero.trustLogin': 'بدون حساب أو تسجيل',
@@ -123,7 +125,7 @@ const ar = {
   'home.featured.eyebrow': 'قائمة مُتحقق منها آليًا',
   'home.featured.title': 'أفضل 12 بروكسي تلغرام حالياً',
   'home.featured.description':
-    'نفحص اتصال MTProto فعليًا كل ساعتين، ثم ننشر أفضل البروكسيات التي اجتازت الحد المطلوب. المراكز الناقصة تبقى فارغة.',
+    'اختر البروكسي المناسب واضغط اتصال لتفعيله مباشرة في تطبيق تلغرام، أو انسخ الرابط.',
   'home.featured.refresh': 'تحديث القائمة',
   'home.featured.refreshing': 'جارٍ التحديث…',
   'home.featured.refreshLimit': 'تم تحديث القائمة قبل قليل. انتظر بضع ثوانٍ قبل المحاولة مجدداً.',
@@ -646,9 +648,11 @@ const en: Dictionary = {
   'a11y.skip': 'Skip to main content',
 
   'home.hero.eyebrow': 'An independent Telegram MTProto proxy directory',
-  'home.hero.title': 'Connect to Telegram. Stay Connected.',
+  'home.hero.title': 'Fast & Working Telegram MTProto Proxies',
   'home.hero.subtitle':
-    'Discover available Telegram MTProto proxies, check their connection status, and connect with one click.',
+    'Connect instantly to unblock and speed up Telegram with a single click.',
+  'home.hero.fastestCta': 'Connect to Fastest ⚡',
+  'home.hero.browseCta': 'Browse 12 Proxies',
   'home.hero.ctaPrimary': 'Explore Proxies',
   'home.hero.ctaSecondary': 'How It Works',
   'home.hero.trustLogin': 'No account required',
@@ -694,7 +698,7 @@ const en: Dictionary = {
   'home.featured.eyebrow': 'Automatically verified',
   'home.featured.title': 'Top 12 Telegram Proxies Right Now',
   'home.featured.description':
-    'We run genuine MTProto checks every two hours and publish the best proxies that pass the threshold. Missing positions stay empty.',
+    'Choose a proxy and tap connect to activate it directly in Telegram, or copy the link.',
   'home.featured.refresh': 'Refresh list',
   'home.featured.refreshing': 'Refreshing…',
   'home.featured.refreshLimit':

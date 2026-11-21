@@ -39,31 +39,31 @@ export function HowPreview() {
           description={t('home.how.subtitle')}
         />
 
-        <ol className="mt-6 grid gap-3.5 md:grid-cols-3">
+        <ol className="mt-5 grid gap-3 md:grid-cols-3">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
               <li
                 key={step.title}
-                className="relative overflow-hidden rounded-2xl border border-line bg-surface p-5 shadow-card"
+                className="flex items-start gap-3 rounded-xl border border-line bg-surface p-3.5 shadow-sm"
               >
-                <div className="flex items-center justify-between">
-                  <span className="flex size-10 items-center justify-center rounded-xl bg-brand-soft text-brand">
-                    <Icon className="size-[18px]" aria-hidden="true" />
-                  </span>
-                  <span className="num rounded-lg border border-line bg-surface-2 px-2 py-0.5 text-[11px] font-semibold text-muted">
-                    0{index + 1}
-                  </span>
+                <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-brand-soft text-brand">
+                  <Icon className="size-4" aria-hidden="true" />
+                </span>
+                <div className="min-w-0">
+                  <div className="flex items-center gap-1.5">
+                    <span className="num text-[11px] font-bold text-brand">0{index + 1}.</span>
+                    <h3 className="text-[13px] font-semibold text-ink truncate">{step.title}</h3>
+                  </div>
+                  <p className="mt-0.5 text-[12px] leading-5 text-muted">{step.body}</p>
                 </div>
-                <h3 className="mt-4 text-[15px] font-semibold text-ink">{step.title}</h3>
-                <p className="mt-1.5 text-[13px] leading-6 text-muted">{step.body}</p>
               </li>
             );
           })}
         </ol>
 
-        <div className="mt-5 flex items-center gap-3 rounded-2xl border border-brand/20 bg-brand-soft/40 p-4 text-[13px] leading-6 text-brand-ink">
-          <ShieldCheck className="size-5 shrink-0 text-brand" aria-hidden="true" />
+        <div className="mt-4 flex items-center gap-2.5 rounded-xl border border-brand/20 bg-brand-soft/30 p-3 text-[12px] leading-5 text-brand-ink">
+          <ShieldCheck className="size-4 shrink-0 text-brand" aria-hidden="true" />
           <span>{t('details.securityBody')}</span>
         </div>
       </Container>
