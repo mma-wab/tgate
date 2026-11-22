@@ -1,8 +1,8 @@
 import { Component, type ErrorInfo, type ReactNode } from 'react';
-import { AlertOctagon } from 'lucide-react';
 import { useI18n } from '../i18n';
 import { Container } from './ui/LayoutPrimitives';
 import { Button } from './ui/Button';
+import { AlertIcon } from './ui/SketchIcons';
 import { Link } from 'react-router-dom';
 
 function ErrorFallback() {
@@ -10,17 +10,17 @@ function ErrorFallback() {
   return (
     <Container className="flex min-h-[60vh] items-center justify-center py-20">
       <div className="max-w-lg text-center">
-        <span className="mx-auto mb-5 flex size-14 items-center justify-center rounded-2xl border border-danger/25 bg-danger-soft text-danger">
-          <AlertOctagon className="size-6" aria-hidden="true" />
+        <span className="sketch-sm mx-auto mb-5 flex size-14 items-center justify-center text-danger">
+          <AlertIcon className="size-6" />
         </span>
-        <h1 className="text-2xl font-semibold">{t('errors.title')}</h1>
+        <h1 className="text-2xl font-extrabold">{t('errors.title')}</h1>
         <p className="mt-3 text-sm leading-7 text-muted">{t('errors.body')}</p>
         <p className="mt-2 text-xs text-muted">{t('errors.boundaryHint')}</p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5">
           <Button onClick={() => window.location.reload()}>{t('errors.reload')}</Button>
           <Link
             to="/"
-            className="inline-flex h-11 items-center rounded-xl border border-line px-4 text-sm font-medium text-ink transition hover:bg-surface-2"
+            className="sketch-pill inline-flex h-11 items-center bg-surface px-4 text-sm font-semibold text-ink transition hover:border-brand/50"
           >
             {t('errors.home')}
           </Link>

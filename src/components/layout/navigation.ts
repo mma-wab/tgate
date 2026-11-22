@@ -6,7 +6,6 @@ export interface NavEntry {
 }
 
 export const NAV_ENTRIES: NavEntry[] = [
-  { key: 'nav.home', href: '#top' },
   { key: 'nav.proxies', href: '#proxies' },
   { key: 'nav.how', href: '#how-it-works' },
   { key: 'nav.faq', href: '#faq' },

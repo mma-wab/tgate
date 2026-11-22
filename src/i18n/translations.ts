@@ -75,9 +75,9 @@ const ar = {
   'a11y.skip': 'تخطَّ إلى المحتوى الرئيسي',
 
   'home.hero.eyebrow': 'دليل مستقل لبروكسيات Telegram MTProto',
-  'home.hero.title': 'بروكسيات تلغرام MTProto سريعة ومُباشرة',
+  'home.hero.title': 'اتصل بتلغرام بنقرة واحدة',
   'home.hero.subtitle':
-    'اضغط على أي بروكسي للاتصال المباشر وتفعيل البروكسي في تلغرام بنقرة واحدة.',
+    'بروكسيات MTProto حيّة تُفحص تلقائيًا وتُفعّل داخل تلغرام فورًا. بلا حساب وبلا إعدادات.',
   'home.hero.fastestCta': 'اتصال بأسرع بروكسي ⚡',
   'home.hero.browseCta': 'تصفح الـ 12 بروكسي',
   'home.hero.ctaPrimary': 'استكشف البروكسيات',
@@ -123,7 +123,7 @@ const ar = {
   'home.stats.offlineCountHint': 'انقطاع أو انتهاء مهلة بعد تكرار الفشل',
 
   'home.featured.eyebrow': 'قائمة مُتحقق منها آليًا',
-  'home.featured.title': 'أفضل 12 بروكسي تلغرام حالياً',
+  'home.featured.title': 'البروكسيات المتاحة الآن',
   'home.featured.description':
     'اختر البروكسي المناسب واضغط اتصال لتفعيله مباشرة في تطبيق تلغرام، أو انسخ الرابط.',
   'home.featured.refresh': 'تحديث القائمة',
@@ -648,9 +648,9 @@ const en: Dictionary = {
   'a11y.skip': 'Skip to main content',
 
   'home.hero.eyebrow': 'An independent Telegram MTProto proxy directory',
-  'home.hero.title': 'Fast & Working Telegram MTProto Proxies',
+  'home.hero.title': 'Connect to Telegram in one tap',
   'home.hero.subtitle':
-    'Connect instantly to unblock and speed up Telegram with a single click.',
+    'Live MTProto proxies, checked automatically and ready to activate inside Telegram. No account, no setup.',
   'home.hero.fastestCta': 'Connect to Fastest ⚡',
   'home.hero.browseCta': 'Browse 12 Proxies',
   'home.hero.ctaPrimary': 'Explore Proxies',
@@ -696,7 +696,7 @@ const en: Dictionary = {
   'home.stats.offlineCountHint': 'Outage or timeout after repeated failures',
 
   'home.featured.eyebrow': 'Automatically verified',
-  'home.featured.title': 'Top 12 Telegram Proxies Right Now',
+  'home.featured.title': 'Proxies available now',
   'home.featured.description':
     'Choose a proxy and tap connect to activate it directly in Telegram, or copy the link.',
   'home.featured.refresh': 'Refresh list',

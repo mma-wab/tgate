@@ -1,16 +1,16 @@
 import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { useI18n } from '../../i18n';
 import { Logo } from '../ui/Logo';
 import { LanguageSwitcher, ThemeToggle } from './Controls';
 import { NAV_ENTRIES } from './navigation';
+import { ArrowUpRightIcon, CloseIcon } from '../ui/SketchIcons';
+import { SketchRuleDashed } from '../ui/Doodles';
 
 export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
-  const { t, isRTL } = useI18n();
+  const { t } = useI18n();
   const reduceMotion = useReducedMotion();
-  const ForwardChevron = isRTL ? ChevronLeft : ChevronRight;
   const panelRef = useRef<HTMLDivElement | null>(null);
   const closeRef = useRef<HTMLButtonElement | null>(null);
 
@@ -59,46 +59,54 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
     <AnimatePresence>
       {open ? (
         <motion.div
-          className="fixed inset-0 z-[70] flex flex-col bg-page lg:hidden"
-          initial={reduceMotion ? false : { opacity: 0, y: -12 }}
+          className="fixed inset-0 z-[70] flex flex-col bg-page md:hidden"
+          initial={reduceMotion ? false : { opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -8 }}
-          transition={{ duration: reduceMotion ? 0 : 0.22, ease: [0.22, 1, 0.36, 1] }}
+          exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -6 }}
+          transition={{ duration: reduceMotion ? 0 : 0.2, ease: [0.22, 1, 0.36, 1] }}
           role="dialog"
           aria-modal="true"
           aria-label={t('nav.mobile')}
           id="mobile-navigation"
           ref={panelRef}
         >
-          <div className="flex h-[68px] shrink-0 items-center justify-between border-b border-line px-4">
+          <div className="flex h-16 shrink-0 items-center justify-between px-5">
             <Logo onClick={onClose} />
             <button
               ref={closeRef}
               type="button"
               onClick={onClose}
               aria-label={t('nav.closeMenu')}
-              className="inline-flex size-11 items-center justify-center rounded-xl border border-line bg-surface text-ink-soft transition hover:bg-surface-2 hover:text-ink"
+              className="sketch-sm inline-flex size-10 items-center justify-center text-ink-soft transition hover:border-brand/50 hover:text-ink"
             >
-              <X className="size-5" aria-hidden="true" />
+              <CloseIcon className="size-5" />
             </button>
           </div>
+          <SketchRuleDashed className="mx-5" />
 
-          <div className="flex-1 overflow-y-auto px-4 py-6">
-            <nav aria-label={t('nav.mobile')} className="flex flex-col gap-1">
-              {NAV_ENTRIES.map((entry) => (
+          <div className="flex-1 overflow-y-auto px-5 py-6">
+            <nav aria-label={t('nav.mobile')} className="flex flex-col">
+              {NAV_ENTRIES.map((entry, index) => (
                 <a
                   key={entry.href}
                   href={entry.href}
                   onClick={onClose}
-                  className="flex items-center justify-between rounded-2xl px-4 py-3.5 text-[15px] font-medium text-ink-soft transition hover:bg-surface-2 hover:text-ink"
+                  className="group flex items-center justify-between gap-3 py-4 text-[17px] font-semibold text-ink transition hover:text-brand"
                 >
-                  {t(entry.key)}
-                  <ForwardChevron className="size-4 text-muted opacity-50" aria-hidden="true" />
+                  <span className="flex items-baseline gap-3">
+                    <span className="num text-[11px] font-semibold text-brand/70">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    {t(entry.key)}
+                  </span>
+                  <ArrowUpRightIcon className="size-4 text-muted transition group-hover:text-brand" />
                 </a>
               ))}
             </nav>
 
-            <div className="my-6 h-px bg-line" />
+            <div className="my-4">
+              <SketchRuleDashed />
+            </div>
 
             <div className="flex items-center gap-2">
               <LanguageSwitcher className="flex-1" />

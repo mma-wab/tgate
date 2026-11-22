@@ -8,7 +8,7 @@ import {
   type ReactNode,
 } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import { AlertTriangle, CheckCircle2, Info, X } from 'lucide-react';
+import { AlertIcon, CheckIcon, CloseIcon, InfoIcon } from '../components/ui/SketchIcons';
 import { useI18n } from '../i18n';
 
 type ToastKind = 'success' | 'error' | 'info';
@@ -26,9 +26,9 @@ interface ToastContextValue {
 const ToastContext = createContext<ToastContextValue | null>(null);
 
 const icons = {
-  success: CheckCircle2,
-  error: AlertTriangle,
-  info: Info,
+  success: CheckIcon,
+  error: AlertIcon,
+  info: InfoIcon,
 };
 
 const tones: Record<ToastKind, string> = {
@@ -83,17 +83,17 @@ export function ToastProvider({ children }: { children: ReactNode }) {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 8, scale: 0.98 }}
                 transition={{ duration: reduceMotion ? 0 : 0.2, ease: 'easeOut' }}
-                className="pointer-events-auto flex max-w-md items-center gap-3 rounded-2xl border border-line bg-surface px-4 py-3 text-sm text-ink shadow-lift"
+                className="sketch-sm pointer-events-auto flex max-w-md items-center gap-3 bg-surface px-4 py-3 text-sm text-ink"
               >
                 <Icon className={`size-5 shrink-0 ${tones[toast.kind]}`} aria-hidden="true" />
                 <p className="min-w-0 flex-1 leading-6">{toast.message}</p>
                 <button
                   type="button"
                   onClick={() => dismiss(toast.id)}
-                  className="rounded-lg p-1 text-muted transition hover:bg-surface-2 hover:text-ink"
+                  className="rounded-lg p-1 text-muted transition hover:text-ink"
                   aria-label={t('common.close')}
                 >
-                  <X className="size-4" aria-hidden="true" />
+                  <CloseIcon className="size-4" />
                 </button>
               </motion.div>
             );

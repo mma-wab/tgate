@@ -1,20 +1,11 @@
 import { useMemo, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import {
-  Check,
-  Copy,
-  MapPin,
-  RefreshCw,
-  Search,
-  Send,
-  X,
-} from 'lucide-react';
-import { useI18n } from '../../i18n';
+import { useI18n, type TranslationKey } from '../../i18n';
 import { useCopy } from '../../hooks/useCopy';
 import { useNow } from '../../hooks/useNow';
 import { useTopProxies } from '../../hooks/useTopProxies';
 import { useToast } from '../../contexts/ToastContext';
-import type { FeaturedProxyRecord } from '../../types/top-proxy';
+import type { FeaturedProxyRecord, FeaturedStatus } from '../../types/top-proxy';
 import {
   countryLabel,
   formatDateTime,
@@ -23,20 +14,40 @@ import {
 } from '../../lib/format';
 import { cn } from '../../lib/cn';
 import { buildFeaturedTelegramLink, buildFeaturedTelegramTgLink } from '../../lib/top-proxies';
-import { Badge } from '../ui/Badge';
-import { Button, buttonStyles } from '../ui/Button';
+import { Button } from '../ui/Button';
 import { Container, Section } from '../ui/LayoutPrimitives';
 import { EmptyState, ErrorState, Skeleton } from '../ui/Feedback';
+import {
+  BoltIcon,
+  CheckIcon,
+  CopyIcon,
+  PinIcon,
+  RefreshIcon,
+  SearchIcon,
+  CloseIcon,
+  ShieldIcon,
+  TelegramPlaneIcon,
+} from '../ui/SketchIcons';
 
-function FeaturedProxyCard({
-  proxy,
-  sourceLabels: _sourceLabels,
-  index,
-}: {
-  proxy: FeaturedProxyRecord;
-  sourceLabels: Record<string, string>;
-  index: number;
-}) {
+const statusTone: Record<FeaturedStatus, { dot: string; label: TranslationKey }> = {
+  online: { dot: 'bg-success', label: 'home.featured.status.online' },
+  checking: { dot: 'bg-warning', label: 'home.featured.status.checking' },
+  offline: { dot: 'bg-danger', label: 'home.featured.status.offline' },
+  unknown: { dot: 'bg-muted', label: 'home.featured.status.unknown' },
+};
+
+function StatusIndicator({ status }: { status: FeaturedStatus }) {
+  const { t } = useI18n();
+  const tone = statusTone[status];
+  return (
+    <span className="inline-flex items-center gap-1.5 text-[11.5px] font-semibold text-ink-soft">
+      <span className={cn('size-2 rounded-full', tone.dot)} aria-hidden="true" />
+      {t(tone.label)}
+    </span>
+  );
+}
+
+function ProxyRow({ proxy, index }: { proxy: FeaturedProxyRecord; index: number }) {
   const { t, lang } = useI18n();
   const copy = useCopy();
   const reduceMotion = useReducedMotion();
@@ -44,11 +55,8 @@ function FeaturedProxyCard({
 
   const link = buildFeaturedTelegramLink(proxy);
   const tgLink = buildFeaturedTelegramTgLink(proxy);
-  const titleId = `featured-proxy-${proxy.id}`;
-  const rank = String(proxy.rank).padStart(2, '0');
   const country = countryLabel(proxy.country, lang);
-  const latency =
-    proxy.latencyMs === null ? '—' : `${formatNumber(Math.round(proxy.latencyMs), lang)} ms`;
+  const fast = proxy.latencyMs !== null && proxy.latencyMs < 200;
 
   const handleConnect = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -74,105 +82,103 @@ function FeaturedProxyCard({
   };
 
   return (
-    <motion.article
+    <motion.li
       layout
-      initial={reduceMotion ? false : { opacity: 0, y: 6 }}
+      initial={reduceMotion ? false : { opacity: 0, y: 5 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
-        duration: reduceMotion ? 0 : 0.22,
-        delay: reduceMotion ? 0 : Math.min(index * 0.02, 0.16),
+        duration: reduceMotion ? 0 : 0.2,
+        delay: reduceMotion ? 0 : Math.min(index * 0.015, 0.12),
         ease: 'easeOut',
       }}
-      aria-labelledby={titleId}
-      className="group relative flex flex-col justify-between rounded-2xl border border-line bg-surface p-3 sm:p-3.5 shadow-card transition-all duration-150 hover:border-brand/40 hover:shadow-lift"
+      className={cn(
+        'grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-x-3 gap-y-2.5 px-4 py-3.5 transition-colors hover:bg-brand-soft/35 sm:grid-cols-[auto_minmax(0,1fr)_auto_auto_auto] sm:py-3',
+        index > 0 && 'border-t border-dashed border-line',
+      )}
     >
-      <div>
-        {/* Top Header Row: Rank, Hostname, and Latency Pill */}
-        <div className="flex items-center justify-between gap-1.5">
-          <div className="flex items-center gap-1.5 min-w-0">
-            <span className="num font-mono text-[10.5px] font-bold text-muted bg-surface-2 px-1.5 py-0.5 rounded-md border border-line shrink-0">
-              #{rank}
-            </span>
-            <span
-              id={titleId}
-              dir="ltr"
-              title={proxy.server}
-              className="truncate text-[13px] font-bold text-ink"
-            >
-              {proxy.server}
-            </span>
-          </div>
+      <span className="num row-span-1 inline-flex h-7 min-w-8 items-center justify-center rounded-[0.7rem] border border-line bg-surface-2 px-1.5 font-mono text-[11px] font-bold text-muted">
+        {String(proxy.rank).padStart(2, '0')}
+      </span>
 
-          <div
-            className={cn(
-              'flex items-center gap-1 shrink-0 rounded-full px-2 py-0.5 text-[10.5px] font-bold font-mono',
-              proxy.latencyMs !== null && proxy.latencyMs < 200
-                ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400'
-                : 'bg-amber-500/10 text-amber-600 dark:text-amber-400',
-            )}
-            title={t('home.featured.latency')}
-          >
-            <span className="size-1.5 rounded-full bg-current" />
-            <span>{latency}</span>
-          </div>
-        </div>
-
-        {/* Compact Country Tag if available */}
+      <div className="min-w-0">
+        <p
+          dir="ltr"
+          title={proxy.server}
+          className="truncate text-start font-mono text-[13px] font-semibold text-ink"
+        >
+          {proxy.server}
+        </p>
         {country ? (
-          <div className="mt-1 flex items-center gap-1 text-[11px] text-muted truncate">
-            <MapPin className="size-3 shrink-0 opacity-60" aria-hidden="true" />
+          <p className="mt-0.5 flex items-center gap-1 text-[11px] text-muted">
+            <PinIcon className="size-3" />
             <span className="truncate">{country}</span>
-          </div>
+          </p>
         ) : null}
       </div>
 
-      {/* Main Connection CTA Row */}
-      <div className="mt-3 flex items-center gap-2.5">
-        <a
-          href={tgLink}
-          onClick={handleConnect}
-          className={buttonStyles(
-            'primary',
-            'md',
-            'flex-1 h-12 text-[14px] font-bold shadow-sm hover:shadow-md active:scale-[0.98] transition-all rounded-xl sm:rounded-2xl',
+      <div className="flex items-center justify-self-end sm:justify-self-auto">
+        <span
+          title={t('home.featured.latency')}
+          className={cn(
+            'num inline-flex items-center gap-1 rounded-full px-2 py-0.5 font-mono text-[11.5px] font-bold',
+            fast ? 'bg-success-soft text-success' : 'bg-surface-2 text-muted',
           )}
-          aria-label={`${t('home.featured.connect')} — ${proxy.server}`}
-          title={t('home.featured.connectHint')}
         >
-          <Send className="size-4 shrink-0" aria-hidden="true" />
-          <span>{t('home.featured.connect')}</span>
-        </a>
-
-        <button
-          type="button"
-          onClick={() => void handleCopy()}
-          title={t('home.featured.copyLink')}
-          aria-label={`${t('home.featured.copyLink')} — ${proxy.server}`}
-          className="inline-flex size-12 shrink-0 items-center justify-center rounded-xl sm:rounded-2xl border border-line bg-surface-2 text-muted transition hover:border-brand/40 hover:text-ink active:scale-[0.96]"
-        >
-          {copied ? (
-            <Check className="size-4 text-success" aria-hidden="true" />
-          ) : (
-            <Copy className="size-4" aria-hidden="true" />
-          )}
-        </button>
+          <BoltIcon className="size-3" />
+          {proxy.latencyMs === null
+            ? '—'
+            : `${formatNumber(Math.round(proxy.latencyMs), lang)} ms`}
+        </span>
       </div>
-    </motion.article>
+
+      <span className="hidden sm:inline-flex">
+        <StatusIndicator status={proxy.status} />
+      </span>
+
+      <div className="col-span-3 flex items-center justify-between gap-2 sm:col-span-1 sm:justify-end">
+        <span className="sm:hidden">
+          <StatusIndicator status={proxy.status} />
+        </span>
+        <div className="flex flex-1 items-center gap-2 sm:flex-none">
+          <a
+            href={tgLink}
+            onClick={handleConnect}
+            aria-label={`${t('home.featured.connect')} — ${proxy.server}`}
+            title={t('home.featured.connectHint')}
+            className="sketch-pill inline-flex h-9 flex-1 items-center justify-center gap-1.5 border-brand/30 bg-brand-soft px-3.5 text-[12.5px] font-bold text-brand-ink transition-colors hover:border-brand hover:bg-brand hover:text-white sm:flex-none"
+          >
+            <TelegramPlaneIcon className="size-4" />
+            <span>{t('home.featured.connect')}</span>
+          </a>
+          <button
+            type="button"
+            onClick={() => void handleCopy()}
+            title={t('home.featured.copyLink')}
+            aria-label={`${t('home.featured.copyLink')} — ${proxy.server}`}
+            className="sketch-sm inline-flex size-9 items-center justify-center text-muted transition hover:border-brand/50 hover:text-brand"
+          >
+            {copied ? (
+              <CheckIcon className="size-4 text-success" />
+            ) : (
+              <CopyIcon className="size-4" />
+            )}
+          </button>
+        </div>
+      </div>
+    </motion.li>
   );
 }
 
-function FeaturedProxySkeleton() {
+function ProxyRowSkeleton() {
   return (
-    <div className="flex flex-col justify-between rounded-2xl border border-line bg-surface p-3.5 shadow-card">
-      <div className="flex items-center justify-between gap-2">
-        <Skeleton className="h-4.5 w-28 rounded-md" />
-        <Skeleton className="h-4.5 w-14 rounded-full" />
+    <li className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 px-4 py-4">
+      <Skeleton className="size-7 rounded-lg" />
+      <div className="space-y-1.5">
+        <Skeleton className="h-3.5 w-40 rounded-md" />
+        <Skeleton className="h-2.5 w-20 rounded-md" />
       </div>
-      <div className="mt-3 flex items-center gap-2.5">
-        <Skeleton className="h-12 flex-1 rounded-xl sm:rounded-2xl" />
-        <Skeleton className="size-12 rounded-xl sm:rounded-2xl" />
-      </div>
-    </div>
+      <Skeleton className="h-6 w-16 rounded-full" />
+    </li>
   );
 }
 
@@ -182,7 +188,6 @@ export function FeaturedProxies() {
   const now = useNow();
   const { dataset, status, refreshing, refresh, stale } = useTopProxies();
   const proxies = dataset?.proxies ?? [];
-  const sourceLabels = dataset?.sourceLabels ?? {};
   const isReady = status === 'ready' && dataset !== null;
 
   const [query, setQuery] = useState('');
@@ -214,6 +219,8 @@ export function FeaturedProxies() {
     return status === 'loading' ? null : t('home.featured.neverUpdated');
   }, [lastUpdated, status, t, lang, now]);
 
+  const fastCount = proxies.filter((p) => p.latencyMs !== null && p.latencyMs < 200).length;
+
   const handleRefresh = async () => {
     const result = await refresh();
     if (result === 'rate-limited') push(t('home.featured.refreshLimit'), 'info');
@@ -222,74 +229,90 @@ export function FeaturedProxies() {
   };
 
   return (
-    <Section id="proxies" tone="soft" className="scroll-mt-16 pt-2 pb-4 sm:pt-3 sm:pb-6">
+    <Section id="proxies" className="scroll-mt-20 pt-7 pb-6 sm:pt-9 sm:pb-8">
       <Container>
-        {/* Compact Heading Row */}
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between border-b border-line pb-2.5">
-          <div className="flex items-center gap-2">
-            <h2 className="text-lg sm:text-xl font-bold tracking-tight text-ink">
+        <div className="flex flex-wrap items-end justify-between gap-x-4 gap-y-3">
+          <div>
+            <h2 className="text-[1.45rem] leading-tight font-extrabold text-ink sm:text-[1.7rem]">
               {t('home.featured.title')}
             </h2>
-            {isReady && proxies.length > 0 ? (
-              <Badge tone={stale ? 'warning' : 'success'}>
-                {t(stale ? 'home.featured.stale' : 'home.featured.fresh')}
-              </Badge>
-            ) : null}
+            <p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11.5px] text-muted">
+              {lastUpdatedLabel ? (
+                <span title={lastUpdated ? formatDateTime(lastUpdated, lang) : undefined}>
+                  {lastUpdatedLabel}
+                </span>
+              ) : null}
+              {isReady && proxies.length > 0 ? (
+                <span className="inline-flex items-center gap-1.5">
+                  <span aria-hidden="true" className="text-line-strong">
+                    ·
+                  </span>
+                  <span
+                    className={cn(
+                      'inline-flex items-center gap-1 font-semibold',
+                      stale ? 'text-warning' : 'text-success',
+                    )}
+                  >
+                    <span
+                      className={cn(
+                        'size-1.5 rounded-full',
+                        stale ? 'bg-warning' : 'bg-success',
+                      )}
+                      aria-hidden="true"
+                    />
+                    {t(stale ? 'home.featured.stale' : 'home.featured.fresh')}
+                  </span>
+                </span>
+              ) : null}
+            </p>
           </div>
 
-          <div className="flex items-center gap-2">
-            <span
-              className="text-[11px] text-muted hidden sm:inline"
-              title={lastUpdated ? formatDateTime(lastUpdated, lang) : undefined}
-            >
-              {lastUpdatedLabel}
-            </span>
-            <Button
-              variant="secondary"
-              size="sm"
-              onClick={() => void handleRefresh()}
-              loading={refreshing}
-              iconLeft={<RefreshCw className="size-3" aria-hidden="true" />}
-              className="h-8 px-2.5 text-xs rounded-xl"
-            >
-              {refreshing ? t('home.featured.refreshing') : t('home.featured.refresh')}
-            </Button>
-          </div>
+          <Button
+            variant="secondary"
+            size="sm"
+            onClick={() => void handleRefresh()}
+            loading={refreshing}
+            iconLeft={<RefreshIcon className="size-3.5" />}
+            className="shrink-0"
+          >
+            {refreshing ? t('home.featured.refreshing') : t('home.featured.refresh')}
+          </Button>
         </div>
 
-        {/* Compact Search & Filter Row */}
         {isReady && proxies.length > 0 ? (
-          <div className="mt-2.5 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-            <div className="relative flex-1 max-w-xs">
-              <Search className="pointer-events-none absolute start-3 top-1/2 size-3.5 -translate-y-1/2 text-muted" />
+          <div className="mt-4 flex flex-col gap-2.5 sm:flex-row sm:items-center sm:justify-between">
+            <div className="relative w-full sm:max-w-xs">
+              <SearchIcon className="pointer-events-none absolute start-3 top-1/2 size-4 -translate-y-1/2 text-muted" />
               <input
                 type="search"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder={t('directory.searchPlaceholder')}
-                className="w-full rounded-xl border border-line bg-surface py-1.5 pe-7 ps-8 text-[12px] text-ink placeholder:text-muted focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand/30 transition-all"
+                aria-label={t('directory.searchLabel')}
+                className="sketch-sm h-10 w-full bg-surface ps-9 pe-9 text-[12.5px] text-ink placeholder:text-muted focus:border-brand focus:outline-none"
               />
               {query ? (
                 <button
                   type="button"
                   onClick={() => setQuery('')}
                   aria-label={t('common.close')}
-                  className="absolute end-2 top-1/2 -translate-y-1/2 text-muted hover:text-ink"
+                  className="absolute end-2 top-1/2 inline-flex size-7 -translate-y-1/2 items-center justify-center rounded-lg text-muted transition hover:text-ink"
                 >
-                  <X className="size-3.5" />
+                  <CloseIcon className="size-4" />
                 </button>
               ) : null}
             </div>
 
-            <div className="flex flex-wrap items-center gap-1">
+            <div className="flex flex-wrap items-center gap-2">
               <button
                 type="button"
                 onClick={() => setFilterMode('all')}
+                aria-pressed={filterMode === 'all'}
                 className={cn(
-                  'rounded-lg px-2.5 py-1 text-[11.5px] font-semibold transition-all',
+                  'sketch-pill h-8 px-3 text-[11.5px] font-semibold transition-colors',
                   filterMode === 'all'
-                    ? 'bg-brand text-white shadow-2xs'
-                    : 'border border-line bg-surface text-ink-soft hover:bg-surface-2',
+                    ? 'border-brand bg-brand text-white'
+                    : 'bg-surface text-ink-soft hover:border-brand/50',
                 )}
               >
                 {t('directory.allStatuses')} ({proxies.length})
@@ -297,27 +320,28 @@ export function FeaturedProxies() {
               <button
                 type="button"
                 onClick={() => setFilterMode('fast')}
+                aria-pressed={filterMode === 'fast'}
                 className={cn(
-                  'rounded-lg px-2.5 py-1 text-[11.5px] font-semibold transition-all',
+                  'sketch-pill inline-flex h-8 items-center gap-1 px-3 text-[11.5px] font-semibold transition-colors',
                   filterMode === 'fast'
-                    ? 'bg-brand text-white shadow-2xs'
-                    : 'border border-line bg-surface text-ink-soft hover:bg-surface-2',
+                    ? 'border-brand bg-brand text-white'
+                    : 'bg-surface text-ink-soft hover:border-brand/50',
                 )}
               >
-                ⚡ &lt; 200 ms ({proxies.filter((p) => p.latencyMs !== null && p.latencyMs < 200).length})
+                <BoltIcon className="size-3.5" />
+                &lt; 200 ms ({fastCount})
               </button>
             </div>
           </div>
         ) : null}
 
-        {/* 12 Proxies Grid: High density & responsive */}
-        <div className="mt-2.5">
+        <div className="mt-4">
           {status === 'loading' && dataset === null ? (
-            <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" aria-hidden="true">
-              {Array.from({ length: 8 }, (_, index) => (
-                <FeaturedProxySkeleton key={index} />
+            <ul className="sketch overflow-hidden" aria-hidden="true">
+              {Array.from({ length: 6 }, (_, index) => (
+                <ProxyRowSkeleton key={index} />
               ))}
-            </div>
+            </ul>
           ) : null}
 
           {status === 'error' ? (
@@ -340,7 +364,7 @@ export function FeaturedProxies() {
                     setQuery('');
                     setFilterMode('all');
                   }}
-                  iconLeft={<X className="size-3.5" />}
+                  iconLeft={<CloseIcon className="size-3.5" />}
                 >
                   {t('directory.noMatch.clear')}
                 </Button>
@@ -349,18 +373,20 @@ export function FeaturedProxies() {
           ) : null}
 
           {isReady && filteredProxies.length > 0 ? (
-            <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <ul className="sketch overflow-hidden">
               {filteredProxies.map((proxy, index) => (
-                <FeaturedProxyCard
-                  key={proxy.id}
-                  proxy={proxy}
-                  sourceLabels={sourceLabels}
-                  index={index}
-                />
+                <ProxyRow key={proxy.id} proxy={proxy} index={index} />
               ))}
-            </div>
+            </ul>
           ) : null}
         </div>
+
+        {isReady && proxies.length > 0 ? (
+          <p className="mt-3 flex items-start gap-1.5 text-[11px] leading-5 text-muted">
+            <ShieldIcon className="mt-px size-3.5 shrink-0 text-brand" />
+            {t('home.featured.footerNote')}
+          </p>
+        ) : null}
       </Container>
     </Section>
   );

@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
-import { X, ShieldCheck } from 'lucide-react';
 import { useI18n } from '../../i18n';
 import { legalContent } from '../../i18n/content';
+import { CloseIcon, ShieldIcon } from '../ui/SketchIcons';
+import { SketchRuleDashed } from '../ui/Doodles';
 
 export type LegalKind = 'privacy' | 'terms' | 'guidelines';
 
@@ -45,11 +46,11 @@ export function LegalModal({
         onClick={onClose}
         aria-hidden="true"
       />
-      <div className="relative z-10 flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-3xl border border-line bg-surface shadow-2xl">
-        <div className="flex items-center justify-between border-b border-line px-6 py-4">
+      <div className="sketch relative z-10 flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden">
+        <div className="flex items-center justify-between px-6 py-4">
           <div className="flex items-center gap-2">
-            <ShieldCheck className="size-5 text-brand" aria-hidden="true" />
-            <h2 id="legal-modal-title" className="text-base font-semibold text-ink">
+            <ShieldIcon className="size-5 text-brand" />
+            <h2 id="legal-modal-title" className="text-base font-bold text-ink">
               {t(titleKey)}
             </h2>
           </div>
@@ -57,13 +58,14 @@ export function LegalModal({
             type="button"
             onClick={onClose}
             aria-label={t('common.close')}
-            className="rounded-xl p-1.5 text-muted transition hover:bg-surface-2 hover:text-ink"
+            className="sketch-sm inline-flex size-9 items-center justify-center text-muted transition hover:border-brand/50 hover:text-ink"
           >
-            <X className="size-5" aria-hidden="true" />
+            <CloseIcon className="size-4" />
           </button>
         </div>
+        <SketchRuleDashed className="mx-6" />
 
-        <div className="flex-1 overflow-y-auto px-6 py-6 space-y-6">
+        <div className="flex-1 space-y-6 overflow-y-auto px-6 py-6">
           {sections.map((section, index) => (
             <div key={index} className="space-y-2">
               <h3 className="text-sm font-semibold text-ink">{section.heading}</h3>
@@ -86,11 +88,11 @@ export function LegalModal({
           ))}
         </div>
 
-        <div className="border-t border-line bg-surface-2/50 px-6 py-3.5 flex justify-end">
+        <div className="flex justify-end px-6 py-3.5">
           <button
             type="button"
             onClick={onClose}
-            className="rounded-xl border border-line bg-surface px-4 py-2 text-xs font-semibold text-ink shadow-sm transition hover:bg-surface-2"
+            className="sketch-pill h-9 bg-surface px-4 text-xs font-semibold text-ink transition hover:border-brand/50"
           >
             {t('common.close')}
           </button>

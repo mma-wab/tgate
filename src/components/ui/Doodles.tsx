@@ -1,8 +1,60 @@
+import type { ReactNode } from 'react';
 import { cn } from '../../lib/cn';
 
 /**
- * Hand-drawn squiggly underline doodle to highlight key words.
+ * Hand-drawn separators and illustrations.
+ *
+ * Everything here is vector + `currentColor`, so the sketches follow the theme
+ * palette and stay crisp at any size. Strokes stay thin and irregular instead of
+ * using gradients or heavy shapes.
  */
+
+/** Wavy pencil separator used instead of a conventional horizontal rule. */
+export function SketchRule({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 300 8"
+      preserveAspectRatio="none"
+      fill="none"
+      className={cn('h-2 w-full text-line-strong', className)}
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path
+        d="M1 4.4c22-1.5 44 1.4 66 0C89 3 111 5.4 133 4.2c22-1.2 44 1.6 66 .3 22-1.3 44 1.3 66 .2 11-.5 22-.4 33 .1"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+        vectorEffect="non-scaling-stroke"
+      />
+    </svg>
+  );
+}
+
+/** Dashed pencil rule for quieter secondary breaks. */
+export function SketchRuleDashed({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 300 8"
+      preserveAspectRatio="none"
+      fill="none"
+      className={cn('h-2 w-full text-line-strong', className)}
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path
+        d="M1 4.2c24-1.2 48 1.2 72 0C97 3 121 5.2 145 4c24-1.2 48 1.4 72 .2 27-1.3 54 1 81 0"
+        stroke="currentColor"
+        strokeWidth="1.3"
+        strokeLinecap="round"
+        strokeDasharray="5 7"
+        vectorEffect="non-scaling-stroke"
+      />
+    </svg>
+  );
+}
+
+/** Squiggly underline that marks a key word without a highlighter block. */
 export function SquiggleUnderline({ className }: { className?: string }) {
   return (
     <svg
@@ -11,6 +63,7 @@ export function SquiggleUnderline({ className }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       className={cn('h-2.5 w-auto text-brand', className)}
       aria-hidden="true"
+      focusable="false"
     >
       <path
         d="M2 9.5C24.5 3 48.5 13.5 71 8C93.5 2.5 117.5 12.5 140 7C153 3.8 167 6.5 178 7.5"
@@ -24,92 +77,95 @@ export function SquiggleUnderline({ className }: { className?: string }) {
 }
 
 /**
- * Playful hand-drawn sketch paper airplane with gentle dashed motion trails.
+ * Hero sketch: a paper plane leaving a hand-drawn orbit. It communicates
+ * "this opens Telegram" without adding copy.
  */
-export function PaperPlaneDoodle({ className }: { className?: string }) {
+export function TelegramSketch({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 64 64"
+      viewBox="0 0 260 230"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={cn('size-12 text-brand', className)}
+      className={cn('h-auto w-full text-brand', className)}
       aria-hidden="true"
+      focusable="false"
     >
-      {/* Wind trail dots/dashes */}
+      {/* soft blue wash */}
       <path
-        d="M6 46C12 43 18 45 22 40"
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeDasharray="2 4"
-        opacity="0.55"
-      />
-      <path
-        d="M10 54C16 51 22 52 26 48"
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeDasharray="2 4"
-        opacity="0.4"
-      />
-      {/* Hand-drawn paper plane body */}
-      <path
-        d="M58 8L18 34L32 40L36 54L43 43L58 8Z"
+        d="M52 118C44 72 84 30 136 26c50-4 92 22 98 66 6 46-30 88-82 100-51 12-94-19-100-74Z"
         fill="currentColor"
-        fillOpacity="0.12"
-        stroke="currentColor"
-        strokeWidth="2.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        fillOpacity="0.09"
       />
-      {/* Fold crease */}
+      {/* wobbly orbit */}
       <path
-        d="M32 40L58 8"
+        d="M28 154C10 122 26 78 66 54c42-25 100-30 142-3 38 25 44 71 18 103-27 33-84 46-132 37-36-7-56-19-66-37Z"
         stroke="currentColor"
-        strokeWidth="2.4"
+        strokeOpacity="0.32"
+        strokeWidth="1.6"
+        strokeDasharray="7 9"
         strokeLinecap="round"
-        strokeLinejoin="round"
       />
-      {/* Wing detail */}
+      {/* dotted route */}
       <path
-        d="M18 34L43 43"
+        d="M36 186c26-6 48-19 66-39 8-9 14-19 20-30"
         stroke="currentColor"
+        strokeOpacity="0.55"
         strokeWidth="1.8"
         strokeLinecap="round"
-        strokeLinejoin="round"
-        opacity="0.65"
+        strokeDasharray="2 7"
       />
-    </svg>
-  );
-}
-
-/**
- * Hand-drawn sparkle / 4-point doodle star.
- */
-export function SparkleDoodle({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={cn('size-5 text-amber-400', className)}
-      aria-hidden="true"
-    >
       <path
-        d="M12 2C12.4 7.2 14.8 9.6 20 10C14.8 10.4 12.4 12.8 12 18C11.6 12.8 9.2 10.4 4 10C9.2 9.6 11.6 7.2 12 2Z"
-        fill="currentColor"
+        d="M114 112c1.9-3 4.3-5.2 7.4-6.6"
         stroke="currentColor"
-        strokeWidth="1.2"
+        strokeOpacity="0.55"
+        strokeWidth="1.8"
         strokeLinecap="round"
-        strokeLinejoin="round"
       />
+
+      {/* paper plane */}
+      <g>
+        <path
+          d="M231 40 132 105l-2 33 20-19 30 22 51-101Z"
+          fill="currentColor"
+          fillOpacity="0.14"
+          stroke="currentColor"
+          strokeWidth="2.4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M130 138 231 40l-51 101"
+          stroke="currentColor"
+          strokeWidth="2.4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M132 105l28 17"
+          stroke="currentColor"
+          strokeWidth="2.1"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </g>
+
+      {/* little sparkles */}
+      <path
+        d="M60 44c.5 5.4 2.6 7.6 8 8-5.4.5-7.5 2.6-8 8-.5-5.4-2.6-7.5-8-8 5.4-.4 7.5-2.6 8-8Z"
+        fill="currentColor"
+        fillOpacity="0.55"
+      />
+      <path
+        d="M206 158c.4 4 2 5.7 6 6-4 .4-5.6 2-6 6-.4-4-2-5.6-6-6 4-.3 5.6-2 6-6Z"
+        fill="currentColor"
+        fillOpacity="0.4"
+      />
+      <circle cx="196" cy="30" r="2.4" fill="currentColor" fillOpacity="0.45" />
+      <circle cx="46" cy="120" r="2" fill="currentColor" fillOpacity="0.35" />
     </svg>
   );
 }
 
-/**
- * Curved hand-drawn arrow pointing downwards.
- */
+/** Curved hand-drawn arrow, useful for pointing at the primary action. */
 export function HandDrawnArrow({ className }: { className?: string }) {
   return (
     <svg
@@ -118,18 +174,19 @@ export function HandDrawnArrow({ className }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       className={cn('h-10 w-auto text-muted', className)}
       aria-hidden="true"
+      focusable="false"
     >
       <path
         d="M10 4C18 12 24 24 18 38"
         stroke="currentColor"
-        strokeWidth="2.2"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M11 32L18 39L25 33"
         stroke="currentColor"
-        strokeWidth="2.2"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -137,10 +194,8 @@ export function HandDrawnArrow({ className }: { className?: string }) {
   );
 }
 
-/**
- * Organic sketch badge / circle highlight.
- */
-export function SketchCircle({ className, children }: { className?: string; children: React.ReactNode }) {
+/** Organic sketch circle used around numbers and small labels. */
+export function SketchCircle({ className, children }: { className?: string; children: ReactNode }) {
   return (
     <span className={cn('relative inline-flex items-center justify-center px-2 py-0.5', className)}>
       <svg
@@ -148,31 +203,31 @@ export function SketchCircle({ className, children }: { className?: string; chil
         preserveAspectRatio="none"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="pointer-events-none absolute inset-0 size-full text-brand/35"
+        className="pointer-events-none absolute inset-0 size-full text-line-strong"
         aria-hidden="true"
+        focusable="false"
       >
         <path
           d="M6 20C5 10 16 5 50 4C84 3 95 9 94 20C93 31 82 36 50 36C18 36 7 30 6 20Z"
           stroke="currentColor"
-          strokeWidth="2.2"
+          strokeWidth="1.6"
           strokeLinecap="round"
-          strokeDasharray="95 5"
         />
       </svg>
-      {children}
+      <span className="relative">{children}</span>
     </span>
   );
 }
 
 /**
- * Subtle hand-drawn background sketch lines, curves, and light hatching
- * that give a handcrafted notebook/editorial charm without visual noise.
+ * Very light page texture: a dotted arc and two pencil strokes. Kept under 5%
+ * opacity so it never competes with content or harms contrast.
  */
 export function HandDrawnBackground({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        'pointer-events-none fixed inset-0 -z-10 overflow-hidden select-none opacity-[0.04] dark:opacity-[0.07] text-ink dark:text-brand transition-opacity duration-300',
+        'pointer-events-none fixed inset-0 -z-10 overflow-hidden select-none opacity-[0.05] dark:opacity-[0.09] text-ink transition-opacity duration-300',
         className,
       )}
       aria-hidden="true"
@@ -184,44 +239,26 @@ export function HandDrawnBackground({ className }: { className?: string }) {
         preserveAspectRatio="xMidYMid slice"
         className="size-full"
       >
-        {/* Soft flowing sketch contour line 1 */}
         <path
-          d="M-80 180C140 120 320 260 580 160C840 60 1100 240 1520 130"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeDasharray="6 8"
-        />
-
-        {/* Soft flowing sketch contour line 2 */}
-        <path
-          d="M-40 450C220 380 480 520 800 420C1120 320 1340 480 1560 390"
+          d="M-60 210C160 150 330 280 590 190C850 100 1110 260 1500 160"
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
+          strokeDasharray="5 10"
         />
-
-        {/* Soft flowing sketch contour line 3 */}
         <path
-          d="M-60 760C180 700 420 840 740 750C1060 660 1280 820 1540 730"
+          d="M-40 720C200 660 430 790 760 700C1090 610 1300 760 1520 690"
           stroke="currentColor"
-          strokeWidth="2.5"
+          strokeWidth="1.7"
           strokeLinecap="round"
-          strokeDasharray="8 10"
         />
-
-        {/* Subtle corner hatching / sketch strokes (Top Right) */}
-        <g opacity="0.8">
-          <line x1="1320" y1="40" x2="1420" y2="140" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-          <line x1="1345" y1="35" x2="1435" y2="125" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-          <line x1="1370" y1="30" x2="1450" y2="110" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+        <g opacity="0.75">
+          <line x1="1330" y1="50" x2="1420" y2="140" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+          <line x1="1354" y1="44" x2="1438" y2="128" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
         </g>
-
-        {/* Subtle corner hatching / sketch strokes (Bottom Left) */}
-        <g opacity="0.8">
-          <line x1="20" y1="780" x2="120" y2="880" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-          <line x1="45" y1="775" x2="135" y2="865" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-          <line x1="70" y1="770" x2="150" y2="850" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+        <g opacity="0.6">
+          <line x1="30" y1="800" x2="110" y2="880" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+          <line x1="54" y1="794" x2="128" y2="868" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
         </g>
       </svg>
     </div>

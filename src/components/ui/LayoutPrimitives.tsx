@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { cn } from '../../lib/cn';
+import { SketchRuleDashed } from './Doodles';
 
 export function Container({
   children,
@@ -10,8 +11,8 @@ export function Container({
   className?: string;
   size?: 'default' | 'narrow' | 'wide';
 }) {
-  const max = size === 'narrow' ? 'max-w-3xl' : size === 'wide' ? 'max-w-7xl' : 'max-w-6xl';
-  return <div className={cn('mx-auto w-full px-4 sm:px-6 lg:px-8', max, className)}>{children}</div>;
+  const max = size === 'narrow' ? 'max-w-3xl' : size === 'wide' ? 'max-w-7xl' : 'max-w-5xl';
+  return <div className={cn('mx-auto w-full px-5 sm:px-6 lg:px-8', max, className)}>{children}</div>;
 }
 
 export function Section({
@@ -29,9 +30,9 @@ export function Section({
     <section
       id={id}
       className={cn(
-        'py-3 sm:py-5 lg:py-6',
-        tone === 'surface' && 'border-y border-line bg-surface',
-        tone === 'soft' && 'bg-surface-2/50',
+        'py-9 sm:py-12',
+        tone === 'surface' && 'bg-surface',
+        tone === 'soft' && 'bg-surface-2/40',
         className,
       )}
     >
@@ -58,22 +59,34 @@ export function SectionHeading({
   return (
     <div
       className={cn(
-        'flex flex-col gap-4',
+        'flex flex-col gap-3',
         align === 'center' && 'items-center text-center',
         className,
       )}
     >
       {eyebrow ? (
-        <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-ink">
-          <span className="h-px w-5 bg-brand/60" aria-hidden="true" />
+        <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-ink">
+          <svg
+            viewBox="0 0 24 6"
+            className="h-1.5 w-6 text-brand/70"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M1 3.6c4-1.4 8 1.2 12-.2 4-1.4 8 1 10 .1"
+              stroke="currentColor"
+              strokeWidth="1.4"
+              strokeLinecap="round"
+            />
+          </svg>
           {eyebrow}
         </span>
       ) : null}
-      <div className={cn('flex w-full flex-col gap-6 lg:flex-row lg:items-end lg:justify-between')}>
-        <div className={cn('max-w-2xl space-y-3', align === 'center' && 'mx-auto')}>
-          <h2 className="text-2xl font-semibold sm:text-3xl">{title}</h2>
+      <div className="flex w-full flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div className={cn('max-w-xl space-y-2.5', align === 'center' && 'mx-auto')}>
+          <h2 className="text-[1.55rem] leading-tight sm:text-[1.9rem]">{title}</h2>
           {description ? (
-            <p className="text-[15px] leading-7 text-muted">{description}</p>
+            <p className="text-[13.5px] leading-6 text-muted sm:text-sm">{description}</p>
           ) : null}
         </div>
         {children ? <div className="shrink-0">{children}</div> : null}
@@ -96,16 +109,16 @@ export function PageHeader({
   className?: string;
 }) {
   return (
-    <div className={cn('border-b border-line bg-surface-2/40', className)}>
+    <div className={cn('bg-surface-2/40', className)}>
       <Container className="py-8 sm:py-10">
         <div className="max-w-3xl">
           {eyebrow ? (
-            <p className="mb-3 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-ink">
+            <p className="mb-3 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-ink">
               <span className="size-1.5 rounded-full bg-brand" aria-hidden="true" />
               {eyebrow}
             </p>
           ) : null}
-          <h1 className="text-3xl font-semibold sm:text-4xl lg:text-[2.75rem]">{title}</h1>
+          <h1 className="text-3xl font-bold sm:text-4xl lg:text-[2.6rem]">{title}</h1>
           {description ? (
             <p className="mt-4 text-[15px] leading-7 text-muted sm:text-base">{description}</p>
           ) : null}
@@ -117,5 +130,9 @@ export function PageHeader({
 }
 
 export function Divider({ className }: { className?: string }) {
-  return <div className={cn('h-px w-full bg-line', className)} role="presentation" />;
+  return (
+    <div className={cn('py-1', className)} role="presentation">
+      <SketchRuleDashed />
+    </div>
+  );
 }
