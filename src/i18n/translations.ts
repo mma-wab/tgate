@@ -101,6 +101,10 @@ const ar = {
   'home.hero.awaitingSync': 'بانتظار المزامنة',
   'home.hero.lastSync': 'آخر مزامنة',
 
+  'home.handoff.failed': 'لم يُفتح تلغرام تلقائيًا.',
+  'home.handoff.fallback': 'افتح الرابط من المتصفح',
+  'home.handoff.toast': 'لم يُفتح تلغرام تلقائيًا — استخدم زر النسخ لإضافة البروكسي يدويًا.',
+
   'home.stats.eyebrow': 'شفافية الأرقام',
   'home.stats.title': 'نظرة حيّة على الشبكة',
   'home.stats.subtitle': 'كل رقم محسوب من سجلات الفحص المنشورة، ولا يوجد أي رقم تجميلي.',
@@ -195,7 +199,7 @@ const ar = {
   'home.how.step1.title': 'قارن الخيارات',
   'home.how.step1.body': 'افلتر بحسب الحالة والدولة والاستجابة، وافتح التفاصيل لقراءة سجل الفحص.',
   'home.how.step2.title': 'انسخ أو اتصل',
-  'home.how.step2.body': 'استخدم زر الاتصال لفتح رابط t.me الرسمي، أو انسخ العنوان وأضفه يدويًا.',
+  'home.how.step2.body': 'استخدم زر الاتصال لينتقل بك إلى تطبيق تلغرام مباشرة، أو انسخ العنوان وأضفه يدويًا.',
   'home.how.step3.title': 'أكّد داخل التطبيق',
   'home.how.step3.body': 'يراجع تلغرام بيانات البروكسي ثم يطلب تأكيدك قبل تفعيله.',
   'home.how.cta': 'دليل الإعداد لكل منصة',
@@ -674,6 +678,10 @@ const en: Dictionary = {
   'home.hero.awaitingSync': 'Awaiting sync',
   'home.hero.lastSync': 'Last sync',
 
+  'home.handoff.failed': 'Telegram did not open automatically.',
+  'home.handoff.fallback': 'Open the link in your browser',
+  'home.handoff.toast': 'Telegram did not open automatically — use the copy button to add it manually.',
+
   'home.stats.eyebrow': 'Numbers you can trace',
   'home.stats.title': 'A live view of the network',
   'home.stats.subtitle': 'Every figure is derived from published check history. No decorative statistics.',
@@ -771,7 +779,7 @@ const en: Dictionary = {
   'home.how.step1.title': 'Compare options',
   'home.how.step1.body': 'Filter by status, country, and response time, then open details to read the check history.',
   'home.how.step2.title': 'Copy or connect',
-  'home.how.step2.body': 'Use Connect for the official t.me link, or copy the address and add it manually.',
+  'home.how.step2.body': 'Use Connect to jump straight into the Telegram app, or copy the address and add it manually.',
   'home.how.step3.title': 'Confirm in the app',
   'home.how.step3.body': 'Telegram reviews the proxy details and asks for your confirmation before enabling it.',
   'home.how.cta': 'Setup guide for every platform',

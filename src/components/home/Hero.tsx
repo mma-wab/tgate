@@ -4,6 +4,7 @@ import { useI18n } from '../../i18n';
 import type { DirectoryStats } from '../../types/proxy';
 import type { FeaturedProxyRecord } from '../../types/top-proxy';
 import { buildFeaturedTelegramLink, buildFeaturedTelegramTgLink } from '../../lib/top-proxies';
+import { openTelegramLink } from '../../lib/open-telegram';
 import { formatLatency, formatNumber, formatRelative } from '../../lib/format';
 import { Container } from '../ui/LayoutPrimitives';
 import { useCopy } from '../../hooks/useCopy';
@@ -35,27 +36,19 @@ export function Hero({
   const now = useNow();
   const reduceMotion = useReducedMotion();
   const [copiedFastest, setCopiedFastest] = useState(false);
+  const [handoffFailed, setHandoffFailed] = useState(false);
 
   const link = topProxy ? buildFeaturedTelegramLink(topProxy) : '';
   const tgLink = topProxy ? buildFeaturedTelegramTgLink(topProxy) : '';
 
-  const handleConnect = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (topProxy) {
-      e.preventDefault();
-      window.location.href = tgLink;
+  const handleConnect = async (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!topProxy) return;
+    e.preventDefault();
+    setHandoffFailed(false);
 
-      const fallbackTimer = window.setTimeout(() => {
-        if (document.visibilityState === 'visible') {
-          window.open(link, '_blank', 'noopener,noreferrer');
-        }
-      }, 2000);
-
-      window.addEventListener(
-        'pagehide',
-        () => window.clearTimeout(fallbackTimer),
-        { once: true },
-      );
-    }
+    // Straight to the Telegram app; no intermediate page and no extra tab.
+    const opened = await openTelegramLink(tgLink);
+    if (!opened) setHandoffFailed(true);
   };
 
   const handleCopy = async () => {
@@ -167,6 +160,20 @@ export function Hero({
                   <p className="mt-2 inline-flex items-center gap-1.5 text-[11.5px] text-muted">
                     <ClockIcon className="size-3.5" />
                     {t('home.featured.lastVerified')}: {lastChecked}
+                  </p>
+                ) : null}
+
+                {handoffFailed ? (
+                  <p className="mt-2 text-[11.5px] leading-5 text-muted">
+                    {t('home.handoff.failed')}{' '}
+                    <a
+                      href={link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-brand underline decoration-dashed decoration-1 underline-offset-2 hover:text-brand-strong"
+                    >
+                      {t('home.handoff.fallback')}
+                    </a>
                   </p>
                 ) : null}
               </>

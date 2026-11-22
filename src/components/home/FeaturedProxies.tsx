@@ -14,6 +14,7 @@ import {
 } from '../../lib/format';
 import { cn } from '../../lib/cn';
 import { buildFeaturedTelegramLink, buildFeaturedTelegramTgLink } from '../../lib/top-proxies';
+import { openTelegramLink } from '../../lib/open-telegram';
 import { Button } from '../ui/Button';
 import { Container, Section } from '../ui/LayoutPrimitives';
 import { EmptyState, ErrorState, Skeleton } from '../ui/Feedback';
@@ -50,6 +51,7 @@ function StatusIndicator({ status }: { status: FeaturedStatus }) {
 function ProxyRow({ proxy, index }: { proxy: FeaturedProxyRecord; index: number }) {
   const { t, lang } = useI18n();
   const copy = useCopy();
+  const { push } = useToast();
   const reduceMotion = useReducedMotion();
   const [copied, setCopied] = useState(false);
 
@@ -58,19 +60,12 @@ function ProxyRow({ proxy, index }: { proxy: FeaturedProxyRecord; index: number 
   const country = countryLabel(proxy.country, lang);
   const fast = proxy.latencyMs !== null && proxy.latencyMs < 200;
 
-  const handleConnect = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleConnect = async (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    window.location.href = tgLink;
 
-    const fallbackTimer = window.setTimeout(() => {
-      if (document.visibilityState === 'visible') {
-        window.open(link, '_blank', 'noopener,noreferrer');
-      }
-    }, 2000);
-
-    const clearFallback = () => window.clearTimeout(fallbackTimer);
-    window.addEventListener('pagehide', clearFallback, { once: true });
-    window.addEventListener('blur', clearFallback, { once: true });
+    // Straight to the Telegram app; no intermediate page and no extra tab.
+    const opened = await openTelegramLink(tgLink);
+    if (!opened) push(t('home.handoff.toast'), 'info');
   };
 
   const handleCopy = async () => {
