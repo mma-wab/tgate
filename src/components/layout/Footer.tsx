@@ -122,7 +122,7 @@ export function Footer() {
           <div className="border-t border-dashed border-line py-5">
             <p className="max-w-3xl text-[11px] leading-5 text-muted">{t('footer.disclaimer')}</p>
             <div className="mt-3 flex flex-col gap-1 text-[10.5px] text-muted sm:flex-row sm:items-center sm:justify-between">
-              <p>© {year} Mohammed Majid. All rights reserved.</p>
+              <p>© {year} Mohammed Majid.</p>
               <p>{t('footer.built')}</p>
             </div>
           </div>
