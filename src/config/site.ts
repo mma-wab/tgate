@@ -10,7 +10,7 @@ export const siteConfig = {
   name: 'T-Gate',
   nameAr: 'T-Gate · بوابة بروكسيات تيليجرام',
   author: 'Mohammed Majid',
-  copyright: '© 2026 Mohammed Majid. All rights reserved.',
+  copyright: '© 2026 Mohammed Majid.',
   url: rawSiteUrl ? trimTrailingSlash(rawSiteUrl) : '',
   repoUrl: rawRepoUrl ? trimTrailingSlash(rawRepoUrl) : '',
   dataUrl: rawDataUrl ?? '',

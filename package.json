@@ -5,7 +5,7 @@
   "description": "A bilingual directory for discovering, checking, and connecting to Telegram MTProto proxies.",
   "type": "module",
   "author": "Mohammed Majid",
-  "copyright": "© 2026 Mohammed Majid. All rights reserved.",
+  "copyright": "© 2026 Mohammed Majid.",
   "license": "MIT",
   "engines": {
     "node": ">=22"

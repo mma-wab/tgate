@@ -185,5 +185,5 @@ Full instructions, custom domains, and the data-branch option are in [docs/DEPLO
 
 ## License and Copyright
 
-© 2026 Mohammed Majid. All rights reserved.  
+© 2026 Mohammed Majid.  
 Released under the [MIT License](./LICENSE).
