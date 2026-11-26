@@ -1,84 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-26T00:19:05.918Z",
+  "updatedAt": "2026-11-26T10:51:28.806Z",
   "endpoints": [
-    {
-      "id": "proxy-1f480eff",
-      "server": "iro.varfootball2.co.uk",
-      "port": 2053,
-      "secret": "79e344818749bd7ac519130220c25d09",
-      "sources": [
-        "iwizard7",
-        "radikal",
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 184
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 186
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 186
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 185
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 188
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 198
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 322
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 312
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 310
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 253
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 253
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 244
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-17T14:33:43.916Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
     {
       "id": "proxy-d788eb96",
       "server": "se.anotelinopalk.co.uk",
@@ -91,21 +14,6 @@
       ],
       "country": null,
       "attempts": [
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 185
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 184
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 182
-        },
         {
           "at": "2026-11-25T02:23:28.736Z",
           "result": "success",
@@ -150,11 +58,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 231
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 198
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 193
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 199
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-17T14:33:43.916Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-37b3c1b1",
@@ -168,21 +91,6 @@
       ],
       "country": null,
       "attempts": [
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 183
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 196
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 172
-        },
         {
           "at": "2026-11-25T02:23:28.736Z",
           "result": "success",
@@ -227,11 +135,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 218
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 181
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 203
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 180
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-22T09:48:07.615Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-9fb52012",
@@ -245,21 +168,6 @@
       ],
       "country": null,
       "attempts": [
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 185
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 186
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 184
-        },
         {
           "at": "2026-11-25T02:23:28.736Z",
           "result": "success",
@@ -304,319 +212,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 247
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 198
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 193
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 193
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-20T03:10:31.890Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-d55b76f5",
-      "server": "run.golgoli2.co.uk",
-      "port": 2053,
-      "secret": "79e344818749bd7ac519130220c25d09",
-      "sources": [
-        "iwizard7",
-        "radikal",
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 184
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 190
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 186
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 193
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 193
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 192
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 317
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 309
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 292
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 245
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 248
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 263
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-17T14:33:43.916Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-db2a8197",
-      "server": "haf.anotelinopalk.co.uk",
-      "port": 8880,
-      "secret": "79e344818749bd7ac519130220c25d09",
-      "sources": [
-        "iwizard7",
-        "radikal",
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 185
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 185
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 187
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 190
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 191
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 185
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 308
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 313
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 306
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 238
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 230
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 247
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-23T07:32:10.495Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-4e237c73",
-      "server": "opss.anotelinopalk.co.uk",
-      "port": 8880,
-      "secret": "79e344818749bd7ac519130220c25d09",
-      "sources": [
-        "iwizard7",
-        "radikal",
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 181
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 185
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 192
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 188
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 190
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 196
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 307
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 308
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 322
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 237
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 248
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 231
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-18T18:50:23.274Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-3ba9121d",
-      "server": "a2.anotelinopalk.co.uk",
-      "port": 8880,
-      "secret": "79e344818749bd7ac519130220c25d09",
-      "sources": [
-        "iwizard7",
-        "radikal",
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 184
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 183
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 183
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 193
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 200
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 191
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 327
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 317
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 310
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 238
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 247
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 252
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-24T04:48:00.638Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-8cb74a28",
@@ -630,21 +245,6 @@
       ],
       "country": null,
       "attempts": [
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 196
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 186
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 184
-        },
         {
           "at": "2026-11-25T02:23:28.736Z",
           "result": "success",
@@ -689,11 +289,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 242
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 196
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 204
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-24T04:48:00.638Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-2d9a8201",
@@ -707,21 +322,6 @@
       ],
       "country": null,
       "attempts": [
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 188
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 186
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 185
-        },
         {
           "at": "2026-11-25T02:23:28.736Z",
           "result": "success",
@@ -766,73 +366,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 244
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 198
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 202
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-18T18:50:23.274Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-647db8f4",
-      "server": "hasht.ionox.co.uk",
-      "port": 8880,
-      "secret": "79e344818749bd7ac519130220c25d09",
-      "sources": [
-        "iwizard7",
-        "radikal",
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 195
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 191
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 189
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 301
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 309
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 304
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 234
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 253
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 242
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-25T02:23:28.736Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-eb6d2acb",
@@ -890,387 +443,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 233
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 195
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 199
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 197
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-25T02:23:28.736Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-ff0ff5b4",
-      "server": "s1.server-space52.info",
-      "port": 2020,
-      "secret": "00000000000000000000000000000000",
-      "sources": [
-        "radikal",
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 175
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 170
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 171
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 203
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 194
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 194
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 302
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 298
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 313
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 223
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 215
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 211
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-17T14:33:43.916Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-af5cfc30",
-      "server": "85.17.89.193",
-      "port": 443,
-      "secret": "ee76f6583e6b509d946c56287a9ca59dc362726f7773696e672e79616e6465782e636f6d",
-      "sources": [
-        "radikal"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 263
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 269
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 264
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 280
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 275
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 278
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 449
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 432
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 430
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 352
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 345
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 347
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-21T03:12:27.074Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-6e820cef",
-      "server": "91.234.147.19",
-      "port": 443,
-      "secret": "00000000000000000000000000000000",
-      "sources": [
-        "radikal"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 171
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 168
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 172
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 197
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 204
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 197
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 295
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 311
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 317
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 219
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 222
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 215
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-21T12:36:49.735Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-e4cfabc3",
-      "server": "45.95.42.23",
-      "port": 8443,
-      "secret": "eecb57182154aa2419fd85f568d20cbb837777772e636c6f7564666c6172652e636f6d",
-      "sources": [
-        "radikal"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 272
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 274
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 287
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 295
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 293
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 291
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 449
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 444
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 453
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 353
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 371
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 353
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-21T20:30:37.388Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-3560239e",
-      "server": "190.2.144.63",
-      "port": 443,
-      "secret": "eea3c15217ac9f487f3a9c2a1cab661ebb7777772e676f6f676c652e636f6d",
-      "sources": [
-        "radikal"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 276
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 297
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 270
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 294
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 283
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 281
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 451
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 448
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 438
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 359
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 361
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 339
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-24T04:48:00.638Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-77dd6ee1",
@@ -1278,26 +470,12 @@
       "port": 443,
       "secret": "dd4482437e89f9af8929514eee7faaf61f",
       "sources": [
+        "iwizard7",
         "radikal",
         "solispirit"
       ],
       "country": null,
       "attempts": [
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 189
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 199
-        },
-        {
-          "at": "2026-11-24T17:38:49.833Z",
-          "result": "success",
-          "latencyMs": 201
-        },
         {
           "at": "2026-11-25T02:23:28.736Z",
           "result": "success",
@@ -1342,11 +520,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 264
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 199
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 200
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 202
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-24T17:38:49.833Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-28206f2a",
@@ -1404,18 +597,299 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 252
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 197
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 193
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-25T02:23:28.736Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
-      "id": "proxy-a4fccbd4",
-      "server": "faq.slamawna.info",
-      "port": 444,
-      "secret": "dd41b712fe12019c64e281bcb6aeccded7",
+      "id": "proxy-3c59f4ee",
+      "server": "char.anotelinopalk.co.uk",
+      "port": 8880,
+      "secret": "79e344818749bd7ac519130220c25d09",
       "sources": [
+        "iwizard7",
+        "radikal",
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 242
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 232
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 241
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 197
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 200
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 198
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T00:19:05.918Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-fa669a48",
+      "server": "87.248.144.253",
+      "port": 2096,
+      "secret": "79e344818749bd7ac519130220c25d09",
+      "sources": [
+        "iwizard7",
+        "radikal",
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 234
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 241
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 252
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 203
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 200
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T00:19:05.918Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-7d20546b",
+      "server": "do.ionox.co.uk",
+      "port": 8880,
+      "secret": "79e344818749bd7ac519130220c25d09",
+      "sources": [
+        "iwizard7",
+        "radikal",
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 234
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 233
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 236
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 202
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 204
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 204
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T00:19:05.918Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-6d153b69",
+      "server": "noh.anotelinopalk.co.uk",
+      "port": 8880,
+      "secret": "79e344818749bd7ac519130220c25d09",
+      "sources": [
+        "iwizard7",
+        "radikal",
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 220
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 232
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 253
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 196
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 192
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T00:19:05.918Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-1f480eff",
+      "server": "iro.varfootball2.co.uk",
+      "port": 2053,
+      "secret": "79e344818749bd7ac519130220c25d09",
+      "sources": [
+        "iwizard7",
+        "radikal",
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 185
+        },
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 188
+        },
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 198
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 322
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 312
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 310
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 253
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 253
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 244
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 211
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 203
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 201
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-17T14:33:43.916Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-d55b76f5",
+      "server": "run.golgoli2.co.uk",
+      "port": 2053,
+      "secret": "79e344818749bd7ac519130220c25d09",
+      "sources": [
+        "iwizard7",
         "radikal",
         "solispirit"
       ],
@@ -1429,218 +903,66 @@
         {
           "at": "2026-11-25T02:23:28.736Z",
           "result": "success",
+          "latencyMs": 193
+        },
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 192
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 317
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 309
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 292
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 245
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 248
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 263
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
           "latencyMs": 195
         },
         {
-          "at": "2026-11-25T02:23:28.736Z",
+          "at": "2026-11-26T10:51:28.806Z",
           "result": "success",
-          "latencyMs": 206
+          "latencyMs": 195
         },
         {
-          "at": "2026-11-25T14:18:08.331Z",
+          "at": "2026-11-26T10:51:28.806Z",
           "result": "success",
-          "latencyMs": 307
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 290
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 301
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 242
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 225
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 234
+          "latencyMs": 196
         }
       ],
       "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-25T02:23:28.736Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "firstSeenAt": "2026-11-17T14:33:43.916Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
-      "id": "proxy-76fdf90f",
-      "server": "151.247.25.59",
-      "port": 443,
-      "secret": "eea7e6325e523331b679a1ba64dc2e962a636c6f75642e6d61696c2e7275",
-      "sources": [
-        "radikal"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 287
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 295
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 296
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 450
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 462
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 450
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 376
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 361
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 356
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-25T02:23:28.736Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-e805e3a0",
-      "server": "194.59.221.90",
-      "port": 8443,
-      "secret": "eef4b79908a669cfe8f293941da4e388916465636174686c6f6e2e636f6d",
-      "sources": [
-        "radikal"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 279
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 272
-        },
-        {
-          "at": "2026-11-25T02:23:28.736Z",
-          "result": "success",
-          "latencyMs": 276
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 452
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 441
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 459
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 358
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 367
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 360
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-25T02:23:28.736Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-bd1c68fc",
-      "server": "85.133.200.50",
-      "port": 8880,
-      "secret": "dd1603010200010001fc030386e24c3add",
-      "sources": [
-        "iwizard7",
-        "radikal",
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 312
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 304
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 296
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 243
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 237
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 229
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-25T14:18:08.331Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-2883a4a4",
-      "server": "85.133.200.12",
+      "id": "proxy-db2a8197",
+      "server": "haf.anotelinopalk.co.uk",
       "port": 8880,
       "secret": "79e344818749bd7ac519130220c25d09",
       "sources": [
@@ -1651,14 +973,96 @@
       "country": null,
       "attempts": [
         {
-          "at": "2026-11-25T14:18:08.331Z",
+          "at": "2026-11-25T02:23:28.736Z",
           "result": "success",
-          "latencyMs": 299
+          "latencyMs": 190
+        },
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 191
+        },
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 185
         },
         {
           "at": "2026-11-25T14:18:08.331Z",
           "result": "success",
-          "latencyMs": 316
+          "latencyMs": 308
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 313
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 306
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 238
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 230
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 247
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 410
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 421
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 199
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-23T07:32:10.495Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-4e237c73",
+      "server": "opss.anotelinopalk.co.uk",
+      "port": 8880,
+      "secret": "79e344818749bd7ac519130220c25d09",
+      "sources": [
+        "iwizard7",
+        "radikal",
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 188
+        },
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 190
+        },
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 196
         },
         {
           "at": "2026-11-25T14:18:08.331Z",
@@ -1666,24 +1070,579 @@
           "latencyMs": 307
         },
         {
-          "at": "2026-11-26T00:19:05.918Z",
+          "at": "2026-11-25T14:18:08.331Z",
           "result": "success",
-          "latencyMs": 232
+          "latencyMs": 308
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 322
         },
         {
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
-          "latencyMs": 243
+          "latencyMs": 237
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 248
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 231
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 201
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 508
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 206
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-18T18:50:23.274Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-3ba9121d",
+      "server": "a2.anotelinopalk.co.uk",
+      "port": 8880,
+      "secret": "79e344818749bd7ac519130220c25d09",
+      "sources": [
+        "iwizard7",
+        "radikal",
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 193
+        },
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 200
+        },
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 191
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 327
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 317
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 310
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 238
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 247
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 252
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 412
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 505
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 202
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-24T04:48:00.638Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-647db8f4",
+      "server": "hasht.ionox.co.uk",
+      "port": 8880,
+      "secret": "79e344818749bd7ac519130220c25d09",
+      "sources": [
+        "iwizard7",
+        "radikal",
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 195
+        },
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 191
+        },
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 189
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 301
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 309
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 304
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 234
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 253
         },
         {
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 242
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 422
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 199
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 213
         }
       ],
       "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-25T14:18:08.331Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "firstSeenAt": "2026-11-25T02:23:28.736Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-ff0ff5b4",
+      "server": "s1.server-space52.info",
+      "port": 2020,
+      "secret": "00000000000000000000000000000000",
+      "sources": [
+        "radikal",
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 203
+        },
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 194
+        },
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 194
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 302
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 298
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 313
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 223
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 215
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 211
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 195
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 193
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 204
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-17T14:33:43.916Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-af5cfc30",
+      "server": "85.17.89.193",
+      "port": 443,
+      "secret": "ee76f6583e6b509d946c56287a9ca59dc362726f7773696e672e79616e6465782e636f6d",
+      "sources": [
+        "radikal"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 280
+        },
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 275
+        },
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 278
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 449
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 432
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 430
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 352
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 345
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 347
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 291
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 275
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 284
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-21T03:12:27.074Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-6e820cef",
+      "server": "91.234.147.19",
+      "port": 443,
+      "secret": "00000000000000000000000000000000",
+      "sources": [
+        "radikal"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 197
+        },
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 204
+        },
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 197
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 295
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 311
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 317
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 219
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 222
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 215
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 179
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 177
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 181
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-21T12:36:49.735Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-e4cfabc3",
+      "server": "45.95.42.23",
+      "port": 8443,
+      "secret": "eecb57182154aa2419fd85f568d20cbb837777772e636c6f7564666c6172652e636f6d",
+      "sources": [
+        "radikal"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 295
+        },
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 293
+        },
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 291
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 449
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 444
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 453
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 353
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 371
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 353
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 289
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 284
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 305
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-21T20:30:37.388Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-3560239e",
+      "server": "190.2.144.63",
+      "port": 443,
+      "secret": "eea3c15217ac9f487f3a9c2a1cab661ebb7777772e676f6f676c652e636f6d",
+      "sources": [
+        "radikal"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 294
+        },
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 283
+        },
+        {
+          "at": "2026-11-25T02:23:28.736Z",
+          "result": "success",
+          "latencyMs": 281
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 451
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 448
+        },
+        {
+          "at": "2026-11-25T14:18:08.331Z",
+          "result": "success",
+          "latencyMs": 438
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 359
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 361
+        },
+        {
+          "at": "2026-11-26T00:19:05.918Z",
+          "result": "success",
+          "latencyMs": 339
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 288
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 292
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 285
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-24T04:48:00.638Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-18ce96f0",
@@ -1726,11 +1685,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 229
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 195
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 199
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-25T14:18:08.331Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-47fade11",
@@ -1773,11 +1747,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 232
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 199
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 196
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 198
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-25T14:18:08.331Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-36b71302",
@@ -1820,11 +1809,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 243
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 201
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 193
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-25T14:18:08.331Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-b2e536e8",
@@ -1865,11 +1869,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 136
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 114
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 106
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 102
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-25T14:18:08.331Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-f2815523",
@@ -1910,11 +1929,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 212
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 187
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 175
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 174
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-25T14:18:08.331Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-d2a99d47",
@@ -1955,11 +1989,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 359
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 278
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 277
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 276
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-25T14:18:08.331Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-e1998f9e",
@@ -2000,11 +2049,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 223
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 184
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 192
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 187
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-25T14:18:08.331Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-f0f6d8cb",
@@ -2045,56 +2109,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 206
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 191
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 191
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 203
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-25T14:18:08.331Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-d559493b",
-      "server": "176.65.151.68",
-      "port": 443,
-      "secret": "dd27729feca8dbcd8008c3fa4f12d92793",
-      "sources": [
-        "radikal"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 299
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 423
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 293
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 238
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 248
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 226
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-25T14:18:08.331Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-825251d7",
@@ -2137,376 +2171,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 232
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 193
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 196
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-25T14:18:08.331Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-d88ae0dc",
-      "server": "perfect.lavazem3.co.uk",
-      "port": 2096,
-      "secret": "79e344818749bd7ac519130220c25d09",
-      "sources": [
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 306
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 318
-        },
-        {
-          "at": "2026-11-25T14:18:08.331Z",
-          "result": "success",
-          "latencyMs": 314
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 229
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 232
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 219
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-25T14:18:08.331Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-5e421e77",
-      "server": "ir-immortals.sponsorafuture.co.uk",
-      "port": 443,
-      "secret": "104462821249bd7ac519130220c8dd09",
-      "sources": [
-        "iwizard7",
-        "radikal",
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 221
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 428
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 214
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-3c59f4ee",
-      "server": "char.anotelinopalk.co.uk",
-      "port": 8880,
-      "secret": "79e344818749bd7ac519130220c25d09",
-      "sources": [
-        "iwizard7",
-        "radikal",
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 242
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 232
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 241
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-639c1c3f",
-      "server": "85.133.200.13",
-      "port": 8880,
-      "secret": "79e344818749bd7ac519130220c25d09",
-      "sources": [
-        "iwizard7",
-        "radikal",
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 248
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 229
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 243
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-fa669a48",
-      "server": "87.248.144.253",
-      "port": 2096,
-      "secret": "79e344818749bd7ac519130220c25d09",
-      "sources": [
-        "iwizard7",
-        "radikal",
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 234
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 241
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 252
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-3e03477f",
-      "server": "do.anotelinopalk.co.uk",
-      "port": 8880,
-      "secret": "79e344818749bd7ac519130220c25d09",
-      "sources": [
-        "iwizard7",
-        "radikal",
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 251
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 244
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 243
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-7d20546b",
-      "server": "do.ionox.co.uk",
-      "port": 8880,
-      "secret": "79e344818749bd7ac519130220c25d09",
-      "sources": [
-        "iwizard7",
-        "radikal",
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 234
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 233
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 236
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-39d7480f",
-      "server": "85.133.200.46",
-      "port": 8880,
-      "secret": "dd1603010200010001fc030386e24c3add",
-      "sources": [
-        "iwizard7",
-        "radikal",
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 230
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 237
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 248
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-8926faf4",
-      "server": "168.119.142.46",
-      "port": 443,
-      "secret": "dd79e7010200010007f0030386e24c3add",
-      "sources": [
-        "iwizard7",
-        "radikal",
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 255
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 256
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 250
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-0f7fcf8e",
-      "server": "dah.torob.ir.solzairanbad.ir",
-      "port": 8880,
-      "secret": "79e344818749bd7ac519130220c25d09",
-      "sources": [
-        "iwizard7",
-        "radikal",
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 227
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 254
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 243
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-15546b7f",
-      "server": "87.248.144.50",
-      "port": 2083,
-      "secret": "79e344818749bd7ac519130220c25d09",
-      "sources": [
-        "iwizard7",
-        "radikal",
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 247
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 239
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 247
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-6fd6c1a8",
@@ -2534,199 +2218,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 242
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 205
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-93bc4d66",
-      "server": "dark2.qavi-13.co.uk",
-      "port": 1550,
-      "secret": "6ec11c2dc77e737d7572fd4714c9037c",
-      "sources": [
-        "iwizard7",
-        "radikal",
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 236
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 262
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 244
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-6d153b69",
-      "server": "noh.anotelinopalk.co.uk",
-      "port": 8880,
-      "secret": "79e344818749bd7ac519130220c25d09",
-      "sources": [
-        "iwizard7",
-        "radikal",
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 220
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 232
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 253
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-acd18036",
-      "server": "91.107.170.11",
-      "port": 8443,
-      "secret": "79e344818749bd7ac519130220c25d09",
-      "sources": [
-        "iwizard7",
-        "radikal",
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 247
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 260
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 257
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-943a9ec1",
-      "server": "88.99.211.3",
-      "port": 8443,
-      "secret": "104462821249bd7ac519130220c25d09",
-      "sources": [
-        "iwizard7",
-        "radikal",
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 266
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 256
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 261
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-92cf7633",
-      "server": "85.133.194.7",
-      "port": 8443,
-      "secret": "79e344818749bd7ac519130220c25d09",
-      "sources": [
-        "radikal"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 224
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 214
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 213
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-58e00694",
-      "server": "91.234.147.11",
-      "port": 2020,
-      "secret": "00000000000000000000000000000000",
-      "sources": [
-        "radikal"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 225
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 223
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 225
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-fad6fa5f",
@@ -2752,41 +2263,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 222
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 204
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 213
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 210
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-b7126592",
-      "server": "91.234.147.13",
-      "port": 2020,
-      "secret": "00000000000000000000000000000000",
-      "sources": [
-        "radikal"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 218
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 220
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 209
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-c6bfec45",
@@ -2812,11 +2308,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 206
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 198
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 195
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 192
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-1c44b3bc",
@@ -2842,11 +2353,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 355
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 307
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 279
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 296
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-d949df63",
@@ -2872,41 +2398,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 232
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 519
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 196
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-d9d507a2",
-      "server": "194.60.228.55",
-      "port": 2096,
-      "secret": "dd79e344818749bd7ac519130220c25d09",
-      "sources": [
-        "radikal"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 248
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 249
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 254
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-ce5dad34",
@@ -2932,71 +2443,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 217
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 179
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 190
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 186
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-4cb1b96f",
-      "server": "194.60.228.11",
-      "port": 2053,
-      "secret": "dd79e344818749bd7ac519130220c25d09",
-      "sources": [
-        "radikal"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 228
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 238
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 233
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-cb30da32",
-      "server": "194.60.228.189",
-      "port": 2096,
-      "secret": "79e344818749bd7ac519130220c25d09",
-      "sources": [
-        "radikal"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 233
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 237
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 246
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-5c1a8e50",
@@ -3022,11 +2488,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 369
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 310
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 318
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 313
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-126e277f",
@@ -3052,11 +2533,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 234
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 190
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 186
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 184
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-b6d489e1",
@@ -3082,41 +2578,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 238
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 197
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 204
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 202
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-381b7e35",
-      "server": "194.120.230.26",
-      "port": 443,
-      "secret": "dd79e7010200010007f0030386e24c3add",
-      "sources": [
-        "radikal"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 237
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 250
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 242
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-e116594a",
@@ -3142,11 +2623,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 233
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 198
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 205
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 211
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-ab9b2c16",
@@ -3172,341 +2668,26 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 245
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 200
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 199
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 197
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-66450454",
-      "server": "91.234.147.28",
-      "port": 2020,
-      "secret": "00000000000000000000000000000000",
-      "sources": [
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 225
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 223
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 210
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-04b2f3ab",
-      "server": "87.248.144.152",
-      "port": 8880,
-      "secret": "dd1603010200010001fc030386e24c3add",
-      "sources": [
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 227
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 251
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 232
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-928cea6e",
-      "server": "87.248.144.153",
-      "port": 8880,
-      "secret": "dd79e344818749bd7ac519130220c25d09",
-      "sources": [
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 234
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 233
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 234
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-cf08d153",
-      "server": "87.248.144.156",
-      "port": 8880,
-      "secret": "dd104462821249bd7ac519130220c25d09",
-      "sources": [
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 236
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 238
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 249
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-ff976633",
-      "server": "87.248.144.167",
-      "port": 8880,
-      "secret": "dd1603010200010001fc030386e24c3add",
-      "sources": [
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 227
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 244
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 239
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-19a86fa5",
-      "server": "dev.vetka.rest",
-      "port": 443,
-      "secret": "eecdd6a7c79fc13f435c20a0874f0658da6465762e7665746b612e72657374",
-      "sources": [
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 348
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 323
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 495
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-9ea5b1fa",
-      "server": "116.202.246.219",
-      "port": 8443,
-      "secret": "dd104462821249bd7ac519130220c25d09",
-      "sources": [
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 258
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 247
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 249
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-4d0efc68",
-      "server": "server83.esantion.info",
-      "port": 2020,
-      "secret": "00000000000000000000000000000000",
-      "sources": [
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 232
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 220
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 227
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-bbfab68c",
-      "server": "new.nikkhah.co.uk",
-      "port": 2096,
-      "secret": "79e344818749bd7ac519130220c25d09",
-      "sources": [
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 247
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 239
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 252
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-912a1575",
-      "server": "tech.gooodrat.co.uk",
-      "port": 2096,
-      "secret": "79e344818749bd7ac519130220c25d09",
-      "sources": [
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 238
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 232
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 233
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
-    },
-    {
-      "id": "proxy-770f2e6f",
-      "server": "zendebad.damavand.co.uk",
-      "port": 2096,
-      "secret": "79e344818749bd7ac519130220c25d09",
-      "sources": [
-        "solispirit"
-      ],
-      "country": null,
-      "attempts": [
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 238
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 238
-        },
-        {
-          "at": "2026-11-26T00:19:05.918Z",
-          "result": "success",
-          "latencyMs": 250
-        }
-      ],
-      "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
       "id": "proxy-c9ad25b6",
@@ -3532,41 +2713,1128 @@
           "at": "2026-11-26T00:19:05.918Z",
           "result": "success",
           "latencyMs": 248
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 193
         }
       ],
       "consecutiveFailedRuns": 0,
       "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     },
     {
-      "id": "proxy-22d79ccf",
-      "server": "87.248.144.154",
+      "id": "proxy-ca81a6b5",
+      "server": "85.133.200.11",
       "port": 8880,
-      "secret": "dd79e344818749bd7ac519130220c25d09",
+      "secret": "79e344818749bd7ac519130220c25d09",
+      "sources": [
+        "iwizard7",
+        "radikal",
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 193
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-70494141",
+      "server": "85.133.200.44",
+      "port": 8880,
+      "secret": "dd1603010200010001fc030386e24c3add",
+      "sources": [
+        "iwizard7",
+        "radikal",
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 197
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 195
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-bdf6d368",
+      "server": "85.133.200.47",
+      "port": 8880,
+      "secret": "dd1603010200010001fc030386e24c3add",
+      "sources": [
+        "iwizard7",
+        "radikal",
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 199
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 197
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 196
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-e01bb5f8",
+      "server": "pnj.ionox.co.uk",
+      "port": 8880,
+      "secret": "79e344818749bd7ac519130220c25d09",
+      "sources": [
+        "iwizard7",
+        "radikal",
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 200
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 203
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 198
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-e392a15f",
+      "server": "char.torob.ir.solzairanbad.ir",
+      "port": 8880,
+      "secret": "79e344818749bd7ac519130220c25d09",
+      "sources": [
+        "iwizard7",
+        "radikal",
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 193
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 198
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-8b860a33",
+      "server": "yek.anotelinopalk.co.uk",
+      "port": 8880,
+      "secret": "79e344818749bd7ac519130220c25d09",
+      "sources": [
+        "iwizard7",
+        "radikal",
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 193
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-1d90ca0e",
+      "server": "91.234.147.18",
+      "port": 443,
+      "secret": "00000000000000000000000000000000",
+      "sources": [
+        "iwizard7",
+        "radikal",
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 203
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 195
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-f891ef66",
+      "server": "87.248.144.92",
+      "port": 2053,
+      "secret": "79e344818749bd7ac519130220c25d09",
+      "sources": [
+        "iwizard7",
+        "radikal",
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 204
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 195
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-bc83cc7d",
+      "server": "day.lavazem4.co.uk",
+      "port": 2053,
+      "secret": "79e344818749bd7ac519130220c25d09",
+      "sources": [
+        "iwizard7",
+        "radikal",
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 202
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 193
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-b61f8df9",
+      "server": "dah.ionox.co.uk",
+      "port": 8880,
+      "secret": "79e344818749bd7ac519130220c25d09",
+      "sources": [
+        "iwizard7",
+        "radikal",
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 209
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 196
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-78becb4d",
+      "server": "85.133.200.48",
+      "port": 8880,
+      "secret": "dd1603010200010001fc030386e24c3add",
+      "sources": [
+        "iwizard7",
+        "radikal",
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 200
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 193
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-7a694b1a",
+      "server": "185.84.156.44",
+      "port": 444,
+      "secret": "dd41b712fe12019c64e281bcb6aeccded7",
+      "sources": [
+        "radikal"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 186
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 224
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 190
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-3a77cd0e",
+      "server": "194.60.228.122",
+      "port": 8880,
+      "secret": "79e344818749bd7ac519130220c25d09",
+      "sources": [
+        "radikal"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 193
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 205
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-263aaf62",
+      "server": "194.60.228.128",
+      "port": 2053,
+      "secret": "79e344818749bd7ac519130220c25d09",
+      "sources": [
+        "radikal"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 195
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-b1420684",
+      "server": "194.60.228.146",
+      "port": 8880,
+      "secret": "79e344818749bd7ac519130220c25d09",
+      "sources": [
+        "radikal"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 196
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-1786d495",
+      "server": "89.19.217.206",
+      "port": 443,
+      "secret": "44f63df50ec68c8fa7d7ea1347ef6ea4",
+      "sources": [
+        "radikal"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 174
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 195
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 178
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-bd6c9d6a",
+      "server": "176.65.128.63",
+      "port": 443,
+      "secret": "dd79e7010200010007f0030386e24c3add",
+      "sources": [
+        "radikal"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 201
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 197
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-6811f8b0",
+      "server": "146.103.109.134",
+      "port": 443,
+      "secret": "a4bc6821c58eee9b48038b104950504a",
+      "sources": [
+        "radikal"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 395
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 224
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 247
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-f3256016",
+      "server": "89.124.95.185",
+      "port": 8443,
+      "secret": "ee6403877430086085167456439119957338392e3132342e39352e313835",
+      "sources": [
+        "radikal"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 1447
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 317
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 381
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-d129524b",
+      "server": "proxy.tonservice.site",
+      "port": 8443,
+      "secret": "dd00000000000000000000000000000000",
+      "sources": [
+        "radikal"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 203
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 229
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 211
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-1132d435",
+      "server": "t03.b.qaz.it.com",
+      "port": 443,
+      "secret": "ee1139e8925327971da848d3b81b7fd4876170692e74696d657765622e636c6f7564",
+      "sources": [
+        "radikal"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 306
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 307
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 307
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-e7c2e547",
+      "server": "109.107.166.49",
+      "port": 443,
+      "secret": "a4bc6821c58eee9b48038b104950504a",
+      "sources": [
+        "radikal"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 186
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 199
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 212
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-220963aa",
+      "server": "t01.b.qaz.it.com",
+      "port": 443,
+      "secret": "eebfe9045b7adc0d9a306e5c9f41978de16170692e74696d657765622e636c6f7564",
+      "sources": [
+        "radikal"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 305
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 311
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 314
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-f1f337a7",
+      "server": "banoo.khooorshid.co.uk",
+      "port": 2096,
+      "secret": "79e344818749bd7ac519130220c25d09",
       "sources": [
         "solispirit"
       ],
       "country": null,
       "attempts": [
         {
-          "at": "2026-11-26T00:19:05.918Z",
+          "at": "2026-11-26T10:51:28.806Z",
           "result": "success",
-          "latencyMs": 242
+          "latencyMs": 195
         },
         {
-          "at": "2026-11-26T00:19:05.918Z",
+          "at": "2026-11-26T10:51:28.806Z",
           "result": "success",
-          "latencyMs": 243
+          "latencyMs": 209
         },
         {
-          "at": "2026-11-26T00:19:05.918Z",
+          "at": "2026-11-26T10:51:28.806Z",
           "result": "success",
-          "latencyMs": 248
+          "latencyMs": 198
         }
       ],
       "consecutiveFailedRuns": 0,
-      "firstSeenAt": "2026-11-26T00:19:05.918Z",
-      "lastAttemptAt": "2026-11-26T00:19:05.918Z"
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-32476499",
+      "server": "nectar.velvetwindow.cc",
+      "port": 443,
+      "secret": "eed09fb30e9ba945e3eb272875413c8c946e65637461722e76656c76657477696e646f772e6363",
+      "sources": [
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 371
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 359
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 380
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-63f28e95",
+      "server": "rimika57.sorrelbay.xyz",
+      "port": 8443,
+      "secret": "ee2ad112aa3c927eb2ebec44fd1733cc49786170692e6f7a6f6e2e7275",
+      "sources": [
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 356
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 372
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 354
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-26f2b2b0",
+      "server": "haf.torob.ir.solzairanbad.ir",
+      "port": 8880,
+      "secret": "79e344818749bd7ac519130220c25d09",
+      "sources": [
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 194
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 203
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 209
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-7d4cb7ae",
+      "server": "79.137.196.223",
+      "port": 20443,
+      "secret": "ee19cebd24e6780701cc9839053c6da7677777772e636c6f7564666c6172652e636f6d",
+      "sources": [
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 338
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 1044
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 379
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-97bdf0f2",
+      "server": "o05d9opx.ir.ir.ir.meli-n12.info",
+      "port": 8443,
+      "secret": "dd104462821249bd7ac519130220c25d09",
+      "sources": [
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 295
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 285
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 418
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-ec64305f",
+      "server": "o06d9opx.ir.ir.ir.meli-n12.info",
+      "port": 8443,
+      "secret": "dd104462821249bd7ac519130220c25d09",
+      "sources": [
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 325
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 293
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 266
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-694a081f",
+      "server": "o09dhdopx.ir.ir.ir.meli-n12.info",
+      "port": 8443,
+      "secret": "dd104462821249bd7ac519130220c25d09",
+      "sources": [
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 280
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 263
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 270
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-87d13e2e",
+      "server": "o09dyopx.ir.ir.ir.meli-n12.info",
+      "port": 8443,
+      "secret": "dd104462821249bd7ac519130220c25d09",
+      "sources": [
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 284
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 266
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 396
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-a9e79829",
+      "server": "o09opx.ir.ir.ir.meli-n12.info",
+      "port": 8443,
+      "secret": "dd104462821249bd7ac519130220c25d09",
+      "sources": [
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 267
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 274
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 618
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-6f216995",
+      "server": "o0hd9opx.ir.ir.ir.meli-n12.info",
+      "port": 8443,
+      "secret": "dd104462821249bd7ac519130220c25d09",
+      "sources": [
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 289
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 283
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 279
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-726c9f54",
+      "server": "oo0px.ir.ir.ir.meli-n12.info",
+      "port": 8443,
+      "secret": "dd104462821249bd7ac519130220c25d09",
+      "sources": [
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 283
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 324
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 310
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
+    },
+    {
+      "id": "proxy-36686b1e",
+      "server": "nectar.paperteapot.com",
+      "port": 443,
+      "secret": "eed09fb30e9ba945e3eb272875413c8c946e65637461722e7061706572746561706f742e636f6d",
+      "sources": [
+        "solispirit"
+      ],
+      "country": null,
+      "attempts": [
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 358
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 358
+        },
+        {
+          "at": "2026-11-26T10:51:28.806Z",
+          "result": "success",
+          "latencyMs": 364
+        }
+      ],
+      "consecutiveFailedRuns": 0,
+      "firstSeenAt": "2026-11-26T10:51:28.806Z",
+      "lastAttemptAt": "2026-11-26T10:51:28.806Z"
     }
   ],
   "exclusions": []
